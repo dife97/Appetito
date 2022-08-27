@@ -19,4 +19,6 @@ extension ViewConfiguration {
         setupContraints()
         setupAdditionalConfiguration()
     }
+    
+    func setupAdditionalConfiguration() {}
 }
