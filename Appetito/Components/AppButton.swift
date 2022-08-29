@@ -35,11 +35,12 @@ class AppButton: UIView {
     }()
     
     //MARK: - Initializer
-    init(text: String, background: UIColor = UIColor(named: "mainYellow")!, leftImageName: String? = nil) {
+    init(text: String, background: UIColor = UIColor(named: "mainYellow")!, leftImageName: String? = nil, textColor: UIColor) {
         self.text = text
         self.bgColor = background
         self.leftImageName = leftImageName
         super.init(frame: .zero)
+        self.mainButton.setTitleColor(textColor, for: .normal)
         
         buildViewHierarchy()
         setupContraints()
