@@ -15,7 +15,6 @@ class InitialViewController: UIViewController {
         return initialView
     }()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white

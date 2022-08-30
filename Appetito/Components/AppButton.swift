@@ -23,6 +23,7 @@ class AppButton: UIView {
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         button.setTitleColor(.black, for: .normal)
         button.setTitle(text, for: .normal)
+        
         return button
     }()
     
@@ -31,6 +32,7 @@ class AppButton: UIView {
         imageview.translatesAutoresizingMaskIntoConstraints = false
         imageview.contentMode = .scaleAspectFill
         imageview.image = UIImage(named: leftImageName ?? "")
+        
         return imageview
     }()
     
