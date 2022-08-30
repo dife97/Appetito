@@ -7,9 +7,7 @@
 
 import UIKit
 
-
-
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController{
     
     private let loginView: LoginView = {
         let loginView = LoginView()
@@ -21,6 +19,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(named: "mainBackground")
         setupView()
+        loginView.delegate = self
     }
 }
 extension LoginViewController: ViewConfiguration {
@@ -37,5 +36,15 @@ extension LoginViewController: ViewConfiguration {
             loginView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
             
         ])
+    }
+    func setupAdditionalConfiguration() {
+        navigationItem.setHidesBackButton(false, animated: true)
+    }
+}
+
+extension LoginViewController: LoginViewProtocol {
+    func tappedLogin() {
+        let homeViewController = HomeViewController()
+        navigationController?.pushViewController(homeViewController, animated: true)
     }
 }

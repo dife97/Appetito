@@ -7,9 +7,13 @@
 
 import UIKit
 
+protocol LoginViewProtocol: AnyObject {
+    func tappedLogin()
+}
 
 class LoginView: UIView {
     
+    weak var delegate: LoginViewProtocol?
     
     private lazy var titleLabel: UILabel = {
         let titleLabel = UILabel(frame: .zero)
@@ -55,13 +59,25 @@ class LoginView: UIView {
         return passwordTextField
         }()
     
+    lazy var mainButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.cornerRadius = 8
+        button.backgroundColor = UIColor(named: "mainYellow")
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        button.setTitleColor(.black, for: .normal)
+        button.setTitle("ENTRAR", for: .normal)
+        button.addTarget(self, action: #selector(tappedLogin), for: .touchUpInside)
+        return button
+    }()
     
     let googleButton: AppButton = {
         let button = AppButton(
             text: "Entrar com o Google",
             background: .white,
             leftImageName: "google",
-            textColor: .black)
+            textColor: .black
+        )
         
         return button
     }()
@@ -71,25 +87,14 @@ class LoginView: UIView {
             text: "Entrar com a Apple",
             background: .black,
             leftImageName: "apple", // TODO: colocar imagem da apple em branco
-            textColor: .white)
+            textColor: .white
+        )
+        return button
+    }()
             
-        
-        return button
-    }()
-    let emailButton: AppButton = {
-        let button = AppButton(
-            text: "Entrar com o seu Email",
-            background: .lightGray,
-            leftImageName: "", // TODO: colocar imagem de envelope
-            textColor: .black)
-        
-        
-        return button
-    }()
-    
     
     lazy var stackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [emailButton, googleButton, appleButton ])
+        let stackView = UIStackView(arrangedSubviews: [googleButton, appleButton ])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.spacing = 15
         stackView.axis = .vertical
@@ -108,6 +113,10 @@ class LoginView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    @objc func tappedLogin(){
+        self.delegate?.tappedLogin()
+    }
 }
 
 extension LoginView: ViewConfiguration {
@@ -117,6 +126,7 @@ extension LoginView: ViewConfiguration {
         addSubview(stackView)
         addSubview(loginTextField)
         addSubview(passwordTextField)
+        addSubview(mainButton)
     }
     
     func setupContraints() {
@@ -142,10 +152,16 @@ extension LoginView: ViewConfiguration {
             passwordTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             passwordTextField.heightAnchor.constraint(equalToConstant: 48),
             
-            stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -50),
+            
+            mainButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 26),
+            mainButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 100),
+            mainButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -100),
+            mainButton.heightAnchor.constraint(equalToConstant: 48),
+            
+            stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -100),
             stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
-            stackView.heightAnchor.constraint(equalToConstant: 200)
+            stackView.heightAnchor.constraint(equalToConstant: 111)
             
         ])
     }

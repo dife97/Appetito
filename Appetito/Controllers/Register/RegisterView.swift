@@ -27,7 +27,6 @@ class RegisterView: UIView {
         registerUser.layer.cornerRadius = 8
         registerUser.placeholder = "  usuario"
         registerUser.textColor = UIColor.black
-        
 
         return registerUser
         }()
