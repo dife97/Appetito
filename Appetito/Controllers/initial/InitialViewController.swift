@@ -52,6 +52,7 @@ extension InitialViewController: InitialViewProtocol {
     }
     
     func tappedLogin() {
-        print("")
+        let loginViewController = LoginViewController()
+        navigationController?.pushViewController(loginViewController, animated: true)
     }
 }

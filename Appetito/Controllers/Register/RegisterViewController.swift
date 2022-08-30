@@ -1,13 +1,11 @@
 //
-//  ViewController.swift
+//  RegisterViewController.swift
 //  Appetito
 //
-//  Created by Diego Rodrigues on 26/08/22.
+//  Created by Gustavo Fernandes on 29/08/22.
 //
 
 import UIKit
-
-
 
 class RegisterViewController: UIViewController {
     
@@ -16,6 +14,7 @@ class RegisterViewController: UIViewController {
         registerView.translatesAutoresizingMaskIntoConstraints = false
         return registerView
     }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +25,7 @@ class RegisterViewController: UIViewController {
 extension RegisterViewController: ViewConfiguration {
     func buildViewHierarchy() {
         view.addSubview(registerView)
+        
     }
     
     func setupContraints() {
@@ -38,4 +38,8 @@ extension RegisterViewController: ViewConfiguration {
             
         ])
     }
+    
+    
+    
+    
 }

@@ -105,7 +105,7 @@ extension InitialView: ViewConfiguration {
             imageViewBackGround.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0),
             imageViewBackGround.heightAnchor.constraint(equalToConstant: 434),
             
-            titleLabel.topAnchor.constraint(equalTo: imageViewBackGround.bottomAnchor, constant: 10),
+            titleLabel.topAnchor.constraint(equalTo: imageViewBackGround.bottomAnchor, constant: 0),
             titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 37),
             titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -37),
             titleLabel.heightAnchor.constraint(equalToConstant: 90),
