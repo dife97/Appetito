@@ -116,7 +116,6 @@ extension RegisterView: ViewConfiguration {
             stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             stackView.heightAnchor.constraint(equalToConstant: 300),
             
-            
             confirmButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 100),
             confirmButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -100),
             confirmButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -50),
