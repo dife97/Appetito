@@ -15,12 +15,16 @@
 		2E4C5A6C28B998C4003712C5 /* ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4C5A6B28B998C4003712C5 /* ViewConfiguration.swift */; };
 		2E4C5A7128B99C6C003712C5 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4C5A7028B99C6C003712C5 /* AppButton.swift */; };
 		2E4C5A7628B9AA0E003712C5 /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4C5A7528B9AA0E003712C5 /* InitialView.swift */; };
+		3AD7824628BDD2EF00BD679C /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD7824528BDD2EF00BD679C /* CustomCollectionViewCell.swift */; };
 		911E792C28BD353C00CF4F1B /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911E792B28BD353C00CF4F1B /* InitialViewController.swift */; };
 		911E792E28BD4BE300CF4F1B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911E792D28BD4BE300CF4F1B /* LoginView.swift */; };
 		91AC831128BD9D2700EC98DE /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AC831028BD9D2700EC98DE /* RegisterViewController.swift */; };
 		91AC831328BD9D3700EC98DE /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AC831228BD9D3700EC98DE /* RegisterView.swift */; };
 		91AC831628BDB44D00EC98DE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AC831528BDB44D00EC98DE /* HomeViewController.swift */; };
 		91AC831828BDB46000EC98DE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AC831728BDB46000EC98DE /* HomeView.swift */; };
+		91D78A0628BEAB0F00582AC6 /* InfosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D78A0528BEAB0F00582AC6 /* InfosView.swift */; };
+		91D78A0828BEAB2200582AC6 /* InfosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D78A0728BEAB2200582AC6 /* InfosViewController.swift */; };
+		91D78A0A28BEB3E700582AC6 /* CarouselCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D78A0928BEB3E700582AC6 /* CarouselCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,12 +38,16 @@
 		2E4C5A6B28B998C4003712C5 /* ViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfiguration.swift; sourceTree = "<group>"; };
 		2E4C5A7028B99C6C003712C5 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
 		2E4C5A7528B9AA0E003712C5 /* InitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialView.swift; sourceTree = "<group>"; };
+		3AD7824528BDD2EF00BD679C /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		911E792B28BD353C00CF4F1B /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		911E792D28BD4BE300CF4F1B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		91AC831028BD9D2700EC98DE /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		91AC831228BD9D3700EC98DE /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		91AC831528BDB44D00EC98DE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		91AC831728BDB46000EC98DE /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		91D78A0528BEAB0F00582AC6 /* InfosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfosView.swift; sourceTree = "<group>"; };
+		91D78A0728BEAB2200582AC6 /* InfosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfosViewController.swift; sourceTree = "<group>"; };
+		91D78A0928BEB3E700582AC6 /* CarouselCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +101,7 @@
 		2E4C5A6D28B998D4003712C5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				91D78A0428BEAAFA00582AC6 /* Infos */,
 				91AC831428BDB41B00EC98DE /* Home */,
 				2E4C5A7428B9AA00003712C5 /* Initial */,
 				911E793028BD603300CF4F1B /* Register */,
@@ -151,8 +160,19 @@
 			children = (
 				91AC831728BDB46000EC98DE /* HomeView.swift */,
 				91AC831528BDB44D00EC98DE /* HomeViewController.swift */,
+				3AD7824528BDD2EF00BD679C /* CustomCollectionViewCell.swift */,
+				91D78A0928BEB3E700582AC6 /* CarouselCollectionViewCell.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		91D78A0428BEAAFA00582AC6 /* Infos */ = {
+			isa = PBXGroup;
+			children = (
+				91D78A0528BEAB0F00582AC6 /* InfosView.swift */,
+				91D78A0728BEAB2200582AC6 /* InfosViewController.swift */,
+			);
+			path = Infos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,13 +245,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91D78A0A28BEB3E700582AC6 /* CarouselCollectionViewCell.swift in Sources */,
 				91AC831128BD9D2700EC98DE /* RegisterViewController.swift in Sources */,
 				91AC831328BD9D3700EC98DE /* RegisterView.swift in Sources */,
 				2E4C5A5B28B99838003712C5 /* LoginViewController.swift in Sources */,
+				3AD7824628BDD2EF00BD679C /* CustomCollectionViewCell.swift in Sources */,
 				911E792C28BD353C00CF4F1B /* InitialViewController.swift in Sources */,
+				91D78A0828BEAB2200582AC6 /* InfosViewController.swift in Sources */,
 				2E4C5A6C28B998C4003712C5 /* ViewConfiguration.swift in Sources */,
 				2E4C5A5728B99838003712C5 /* AppDelegate.swift in Sources */,
 				2E4C5A7628B9AA0E003712C5 /* InitialView.swift in Sources */,
+				91D78A0628BEAB0F00582AC6 /* InfosView.swift in Sources */,
 				91AC831628BDB44D00EC98DE /* HomeViewController.swift in Sources */,
 				911E792E28BD4BE300CF4F1B /* LoginView.swift in Sources */,
 				91AC831828BDB46000EC98DE /* HomeView.swift in Sources */,
