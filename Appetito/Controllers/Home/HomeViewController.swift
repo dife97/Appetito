@@ -69,14 +69,14 @@ extension HomeViewController: ViewConfiguration {
             homeView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
             homeView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
             
-            carouselCollectionView.topAnchor.constraint(equalTo: homeView.topAnchor, constant: 100),
+            carouselCollectionView.topAnchor.constraint(equalTo: homeView.topAnchor, constant: 140),
             carouselCollectionView.leadingAnchor.constraint(equalTo: homeView.leadingAnchor, constant: 0),
             carouselCollectionView.trailingAnchor.constraint(equalTo: homeView.trailingAnchor, constant: 0),
-            carouselCollectionView.heightAnchor.constraint(equalToConstant: 50),
+            carouselCollectionView.heightAnchor.constraint(equalToConstant: 25),
             
-            categoryCollectionView.topAnchor.constraint(equalTo: carouselCollectionView.bottomAnchor, constant: 50),
-            categoryCollectionView.leadingAnchor.constraint(equalTo: homeView.leadingAnchor, constant: 20),
-            categoryCollectionView.trailingAnchor.constraint(equalTo: homeView.trailingAnchor, constant: -20),
+            categoryCollectionView.topAnchor.constraint(equalTo: carouselCollectionView.bottomAnchor, constant: 10),
+            categoryCollectionView.leadingAnchor.constraint(equalTo: homeView.leadingAnchor, constant: 10),
+            categoryCollectionView.trailingAnchor.constraint(equalTo: homeView.trailingAnchor, constant: -10),
             categoryCollectionView.bottomAnchor.constraint(equalTo: homeView.bottomAnchor, constant: 0)
         ])
     }
@@ -93,7 +93,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         if collectionView == self.categoryCollectionView {
             return 20
         }
-        return 5
+        return 10
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -114,7 +114,11 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 173, height: 200)
+        if collectionView == self.categoryCollectionView{
+            return CGSize(width: 165, height: 200)
+            
+        }
+        return CGSize(width: 150, height: 50)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
