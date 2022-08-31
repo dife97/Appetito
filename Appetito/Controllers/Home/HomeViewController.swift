@@ -22,7 +22,7 @@ class HomeViewController: UIViewController {
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.backgroundColor = UIColor(named: "mainBackground")
         collection.translatesAutoresizingMaskIntoConstraints = false
-        collection.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collection.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: "CustomCollectionViewCell")
         
         return collection
     }()
@@ -40,8 +40,7 @@ class HomeViewController: UIViewController {
         let carouselFlowCollectionView = UICollectionView(frame: .zero, collectionViewLayout: carouselCollectionView)
         carouselFlowCollectionView.backgroundColor = UIColor(named: "mainBackground")
         carouselFlowCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        carouselFlowCollectionView.register(CarouselCollectionViewCell.self, forCellWithReuseIdentifier: "carouCell")
-        
+        carouselFlowCollectionView.register(CarouselCollectionViewCell.self, forCellWithReuseIdentifier: "CarouselCollectionViewCell")
         return carouselFlowCollectionView
     }()
     
