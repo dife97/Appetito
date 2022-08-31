@@ -53,6 +53,12 @@ class HomeViewController: UIViewController {
         carouselCollectionView.dataSource = self
         self.view.backgroundColor = UIColor(named: "mainBackground")
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
 }
 extension HomeViewController: ViewConfiguration {
     func buildViewHierarchy() {
@@ -82,7 +88,7 @@ extension HomeViewController: ViewConfiguration {
     }
     func setupAdditionalConfiguration() {
         navigationItem.setHidesBackButton(true, animated: true)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sair", style: .plain, target: self, action: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sair", style: .plain, target: self, action: #selector(didTapSignOut))
         self.navigationItem.searchController = searchBar
     }
 }
@@ -108,6 +114,26 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             }
             return carouCell
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == self.categoryCollectionView {
+            print("index path: \(indexPath)")
+            
+            let infosViewController = InfosViewController()
+            let navigationController = UINavigationController(rootViewController: infosViewController)
+            
+            self.present(navigationController, animated: true)
+        }
+    }
+    
+    @objc func didTapSignOut() {
+        //TODO: Implementar SignOut firebase
+        let loginViewController = LoginViewController()
+        self.modalPresentationStyle = .fullScreen
+        self.modalTransitionStyle = .coverVertical
+        navigationController?.setNavigationBarHidden(true, animated: true)
+        self.show(loginViewController, sender: self)
     }
 }
 
