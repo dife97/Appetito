@@ -20,6 +20,8 @@
 		3AF89B0A28C07D8000585BFF /* ReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF89B0928C07D8000585BFF /* ReservationView.swift */; };
 		911E792C28BD353C00CF4F1B /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911E792B28BD353C00CF4F1B /* InitialViewController.swift */; };
 		911E792E28BD4BE300CF4F1B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911E792D28BD4BE300CF4F1B /* LoginView.swift */; };
+		9149393528C145B3005C7B83 /* MyReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9149393428C145B3005C7B83 /* MyReservationViewController.swift */; };
+		9149393728C145C4005C7B83 /* MyReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9149393628C145C4005C7B83 /* MyReservationView.swift */; };
 		91AC831128BD9D2700EC98DE /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AC831028BD9D2700EC98DE /* RegisterViewController.swift */; };
 		91AC831328BD9D3700EC98DE /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AC831228BD9D3700EC98DE /* RegisterView.swift */; };
 		91AC831628BDB44D00EC98DE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AC831528BDB44D00EC98DE /* HomeViewController.swift */; };
@@ -45,6 +47,8 @@
 		3AF89B0928C07D8000585BFF /* ReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationView.swift; sourceTree = "<group>"; };
 		911E792B28BD353C00CF4F1B /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		911E792D28BD4BE300CF4F1B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		9149393428C145B3005C7B83 /* MyReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReservationViewController.swift; sourceTree = "<group>"; };
+		9149393628C145C4005C7B83 /* MyReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReservationView.swift; sourceTree = "<group>"; };
 		91AC831028BD9D2700EC98DE /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		91AC831228BD9D3700EC98DE /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		91AC831528BDB44D00EC98DE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +109,7 @@
 		2E4C5A6D28B998D4003712C5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9149393328C14595005C7B83 /* MyReservation */,
 				3AF89B0628C0666800585BFF /* Reservation */,
 				91D78A0428BEAAFA00582AC6 /* Infos */,
 				91AC831428BDB41B00EC98DE /* Home */,
@@ -167,6 +172,15 @@
 				91AC831028BD9D2700EC98DE /* RegisterViewController.swift */,
 			);
 			path = Register;
+			sourceTree = "<group>";
+		};
+		9149393328C14595005C7B83 /* MyReservation */ = {
+			isa = PBXGroup;
+			children = (
+				9149393628C145C4005C7B83 /* MyReservationView.swift */,
+				9149393428C145B3005C7B83 /* MyReservationViewController.swift */,
+			);
+			path = MyReservation;
 			sourceTree = "<group>";
 		};
 		91AC831428BDB41B00EC98DE /* Home */ = {
@@ -268,7 +282,9 @@
 				911E792C28BD353C00CF4F1B /* InitialViewController.swift in Sources */,
 				91D78A0828BEAB2200582AC6 /* InfosViewController.swift in Sources */,
 				2E4C5A6C28B998C4003712C5 /* ViewConfiguration.swift in Sources */,
+				9149393728C145C4005C7B83 /* MyReservationView.swift in Sources */,
 				2E4C5A5728B99838003712C5 /* AppDelegate.swift in Sources */,
+				9149393528C145B3005C7B83 /* MyReservationViewController.swift in Sources */,
 				2E4C5A7628B9AA0E003712C5 /* InitialView.swift in Sources */,
 				91D78A0628BEAB0F00582AC6 /* InfosView.swift in Sources */,
 				91AC831628BDB44D00EC98DE /* HomeViewController.swift in Sources */,

@@ -19,7 +19,52 @@ class RegisterView: UIView {
         
         return titleLabel
     }()
-
+    
+    private lazy var nameLabel: UILabel = {
+        let subTitleLabel = UILabel(frame: .zero)
+        subTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        subTitleLabel.numberOfLines = 0
+        subTitleLabel.font = UIFont(name:"KohinoorDevanagari-Light", size:15)
+        subTitleLabel.text = "Usuario: "
+        subTitleLabel.textColor = .white
+        
+        return subTitleLabel
+    }()
+    
+    private lazy var phoneLabel: UILabel = {
+        let subTitleLabel = UILabel(frame: .zero)
+        subTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        subTitleLabel.numberOfLines = 0
+        subTitleLabel.font = UIFont(name:"KohinoorDevanagari-Light", size:15)
+        subTitleLabel.text = "Telefone: "
+        subTitleLabel.textColor = .white
+        
+        return subTitleLabel
+    }()
+    
+    private lazy var emailLabel: UILabel = {
+        let subTitleLabel = UILabel(frame: .zero)
+        subTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        subTitleLabel.numberOfLines = 0
+        subTitleLabel.font = UIFont(name:"KohinoorDevanagari-Light", size:15)
+        subTitleLabel.text = "E-mail: "
+        subTitleLabel.textColor = .white
+        
+        return subTitleLabel
+    }()
+    
+    private lazy var passwordLabel: UILabel = {
+        let subTitleLabel = UILabel(frame: .zero)
+        subTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        subTitleLabel.numberOfLines = 0
+        subTitleLabel.font = UIFont(name:"KohinoorDevanagari-Light", size:15)
+        subTitleLabel.text = "Senha: "
+        subTitleLabel.textColor = .white
+        
+        return subTitleLabel
+    }()
+    
+    
     private lazy var registerUser: UITextField = {
         let registerUser = UITextField(frame: .zero)
         registerUser.translatesAutoresizingMaskIntoConstraints = false
@@ -77,9 +122,9 @@ class RegisterView: UIView {
     }()
     
     lazy var stackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [registerUser, registerPassword, registerEmail, registerPhone])
+        let stackView = UIStackView(arrangedSubviews: [nameLabel,registerUser,passwordLabel, registerPassword, emailLabel, registerEmail, phoneLabel, registerPhone])
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.spacing = 30
+        stackView.spacing = 5
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
         
@@ -111,14 +156,14 @@ extension RegisterView: ViewConfiguration {
             titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             titleLabel.heightAnchor.constraint(equalToConstant: 50),
             
-            stackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 100),
+            stackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 50),
             stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
-            stackView.heightAnchor.constraint(equalToConstant: 300),
+            stackView.heightAnchor.constraint(equalToConstant: 400),
             
             confirmButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 100),
             confirmButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -100),
-            confirmButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -50),
+            confirmButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -80),
             confirmButton.heightAnchor.constraint(equalToConstant: 48)
             
             ])

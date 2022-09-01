@@ -21,6 +21,7 @@ class InfosViewController: UIViewController {
         setupView()
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(didTapDismiss))
         navigationController?.navigationBar.tintColor = UIColor(named: "mainYellow")
+        
     }
     
     @objc func didTapDismiss() {
@@ -55,6 +56,7 @@ extension InfosViewController: InfosViewProtocol {
         let reservationViewController = ReservationViewController()
         self.modalPresentationStyle = .fullScreen
         navigationController?.show(reservationViewController, sender: .none)
+        
     }
        
 }

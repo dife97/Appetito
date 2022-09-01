@@ -89,6 +89,7 @@ extension HomeViewController: ViewConfiguration {
     func setupAdditionalConfiguration() {
         navigationItem.setHidesBackButton(true, animated: true)
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sair", style: .plain, target: self, action: #selector(didTapSignOut))
+        navigationItem.rightBarButtonItem?.tintColor = UIColor(named: "mainYellow")
         self.navigationItem.searchController = searchBar
     }
 }
@@ -130,11 +131,11 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     @objc func didTapSignOut() {
         //TODO: Implementar SignOut firebase
-        let loginViewController = LoginViewController()
+        let initialViewController = InitialViewController()
         self.modalPresentationStyle = .fullScreen
         self.modalTransitionStyle = .coverVertical
         navigationController?.setNavigationBarHidden(true, animated: true)
-        self.show(loginViewController, sender: self)
+        self.show(initialViewController, sender: self)
     }
 }
 

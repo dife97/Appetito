@@ -45,6 +45,19 @@ extension LoginViewController: ViewConfiguration {
 extension LoginViewController: LoginViewProtocol {
     func tappedLogin() {
         let homeViewController = HomeViewController()
-        navigationController?.pushViewController(homeViewController, animated: true)
+        let myReservationController = MyReservationViewController()
+        myReservationController.tabBarItem = UITabBarItem(title: "Reservas", image: UIImage(systemName: "folder"), selectedImage: UIImage(systemName: "folder.fill"))
+        myReservationController.tabBarItem.tag = 1
+        let tabbar = UITabBarController()
+        homeViewController.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), selectedImage: UIImage(systemName: "house.fill"))
+        homeViewController.tabBarItem.tag = 0
+        let navigationController = UINavigationController(rootViewController: homeViewController)
+        tabbar.viewControllers = [navigationController, myReservationController]
+        tabbar.modalPresentationStyle = .fullScreen
+        tabbar.view.backgroundColor = UIColor(named: "mainBackground")
+        tabbar.tabBar.isTranslucent = false
+        tabbar.view.tintColor = UIColor.white
+        present(tabbar, animated: true)
+        
     }
 }

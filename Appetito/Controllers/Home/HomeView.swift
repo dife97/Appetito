@@ -32,5 +32,6 @@ extension HomeView: ViewConfiguration {
     
     func setupContraints(){
         
+        
     }
 }

@@ -25,7 +25,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
     lazy var cellBackground: UIView = {
         let cellBackground = UIView()
         cellBackground.translatesAutoresizingMaskIntoConstraints = false
-        cellBackground.backgroundColor = .lightGray
+        cellBackground.backgroundColor = UIColor(named: "mainCollection")
         cellBackground.layer.cornerRadius = 20
         return cellBackground
     }()
@@ -34,7 +34,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
         let nameLabel = UILabel()
         nameLabel.text = "Fogo de Chão"
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        nameLabel.textColor = .black
+        nameLabel.textColor = .white
         nameLabel.textAlignment = .center
         nameLabel.font = UIFont(name:"", size:18)
         nameLabel.numberOfLines = 0
@@ -46,7 +46,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
         let nota = UILabel()
         nota.text = "4.5"
         nota.translatesAutoresizingMaskIntoConstraints = false
-        nota.textColor = .black
+        nota.textColor = .white
         nota.textAlignment = .center
         nota.font = UIFont(name:"", size:18)
         nota.numberOfLines = 0
@@ -101,12 +101,14 @@ extension CustomCollectionViewCell: ViewConfiguration {
             nameLabel.trailingAnchor.constraint(equalTo: cellBackground.trailingAnchor, constant: -16),
             nameLabel.heightAnchor.constraint(equalToConstant: 22),
             
-            notaLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor,constant: 10),
+            notaLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor,constant: 5),
             notaLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
             notaLabel.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor),
             
             starImageView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor,constant: 5),
-            starImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20)
+            starImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
+            starImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 80),
+            starImageView.heightAnchor.constraint(equalToConstant: 20)
         ])
     }
     

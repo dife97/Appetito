@@ -58,7 +58,7 @@ class InfosView: UIView {
         button.backgroundColor = UIColor(named: "mainYellow")
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         button.setTitleColor(.black, for: .normal)
-        button.setTitle("CONFIRMAR", for: .normal)
+        button.setTitle("AGENDAR", for: .normal)
         button.addTarget(self, action: #selector(tappedConfirm), for: .touchUpInside)
         
         return button
