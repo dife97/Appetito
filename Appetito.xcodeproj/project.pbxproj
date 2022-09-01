@@ -9,21 +9,53 @@
 /* Begin PBXBuildFile section */
 		2E4C5A5728B99838003712C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4C5A5628B99838003712C5 /* AppDelegate.swift */; };
 		2E4C5A5928B99838003712C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4C5A5828B99838003712C5 /* SceneDelegate.swift */; };
-		2E4C5A5B28B99838003712C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4C5A5A28B99838003712C5 /* ViewController.swift */; };
+		2E4C5A5B28B99838003712C5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4C5A5A28B99838003712C5 /* LoginViewController.swift */; };
 		2E4C5A6028B9983B003712C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E4C5A5F28B9983B003712C5 /* Assets.xcassets */; };
 		2E4C5A6328B9983B003712C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E4C5A6128B9983B003712C5 /* LaunchScreen.storyboard */; };
 		2E4C5A6C28B998C4003712C5 /* ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4C5A6B28B998C4003712C5 /* ViewConfiguration.swift */; };
+		2E4C5A7128B99C6C003712C5 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4C5A7028B99C6C003712C5 /* AppButton.swift */; };
+		2E4C5A7628B9AA0E003712C5 /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4C5A7528B9AA0E003712C5 /* InitialView.swift */; };
+		3AD7824628BDD2EF00BD679C /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD7824528BDD2EF00BD679C /* CustomCollectionViewCell.swift */; };
+		3AF89B0828C066A000585BFF /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF89B0728C066A000585BFF /* ReservationViewController.swift */; };
+		3AF89B0A28C07D8000585BFF /* ReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF89B0928C07D8000585BFF /* ReservationView.swift */; };
+		911E792C28BD353C00CF4F1B /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911E792B28BD353C00CF4F1B /* InitialViewController.swift */; };
+		911E792E28BD4BE300CF4F1B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911E792D28BD4BE300CF4F1B /* LoginView.swift */; };
+		9149393528C145B3005C7B83 /* MyReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9149393428C145B3005C7B83 /* MyReservationViewController.swift */; };
+		9149393728C145C4005C7B83 /* MyReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9149393628C145C4005C7B83 /* MyReservationView.swift */; };
+		91AC831128BD9D2700EC98DE /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AC831028BD9D2700EC98DE /* RegisterViewController.swift */; };
+		91AC831328BD9D3700EC98DE /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AC831228BD9D3700EC98DE /* RegisterView.swift */; };
+		91AC831628BDB44D00EC98DE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AC831528BDB44D00EC98DE /* HomeViewController.swift */; };
+		91AC831828BDB46000EC98DE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AC831728BDB46000EC98DE /* HomeView.swift */; };
+		91D78A0628BEAB0F00582AC6 /* InfosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D78A0528BEAB0F00582AC6 /* InfosView.swift */; };
+		91D78A0828BEAB2200582AC6 /* InfosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D78A0728BEAB2200582AC6 /* InfosViewController.swift */; };
+		91D78A0A28BEB3E700582AC6 /* CarouselCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D78A0928BEB3E700582AC6 /* CarouselCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2E4C5A5328B99838003712C5 /* Appetito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Appetito.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E4C5A5628B99838003712C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E4C5A5828B99838003712C5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2E4C5A5A28B99838003712C5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2E4C5A5A28B99838003712C5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2E4C5A5F28B9983B003712C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E4C5A6228B9983B003712C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2E4C5A6428B9983B003712C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E4C5A6B28B998C4003712C5 /* ViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfiguration.swift; sourceTree = "<group>"; };
+		2E4C5A7028B99C6C003712C5 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
+		2E4C5A7528B9AA0E003712C5 /* InitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialView.swift; sourceTree = "<group>"; };
+		3AD7824528BDD2EF00BD679C /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		3AF89B0728C066A000585BFF /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
+		3AF89B0928C07D8000585BFF /* ReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationView.swift; sourceTree = "<group>"; };
+		911E792B28BD353C00CF4F1B /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		911E792D28BD4BE300CF4F1B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		9149393428C145B3005C7B83 /* MyReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReservationViewController.swift; sourceTree = "<group>"; };
+		9149393628C145C4005C7B83 /* MyReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReservationView.swift; sourceTree = "<group>"; };
+		91AC831028BD9D2700EC98DE /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		91AC831228BD9D3700EC98DE /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		91AC831528BDB44D00EC98DE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		91AC831728BDB46000EC98DE /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		91D78A0528BEAB0F00582AC6 /* InfosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfosView.swift; sourceTree = "<group>"; };
+		91D78A0728BEAB2200582AC6 /* InfosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfosViewController.swift; sourceTree = "<group>"; };
+		91D78A0928BEB3E700582AC6 /* CarouselCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +91,7 @@
 				2E4C5A5628B99838003712C5 /* AppDelegate.swift */,
 				2E4C5A5828B99838003712C5 /* SceneDelegate.swift */,
 				2E4C5A6E28B99902003712C5 /* Files */,
+				2E4C5A6F28B99C48003712C5 /* Components */,
 				2E4C5A6A28B998B6003712C5 /* Helpers */,
 				2E4C5A6D28B998D4003712C5 /* Controllers */,
 			);
@@ -76,7 +109,13 @@
 		2E4C5A6D28B998D4003712C5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				2E4C5A5A28B99838003712C5 /* ViewController.swift */,
+				9149393328C14595005C7B83 /* MyReservation */,
+				3AF89B0628C0666800585BFF /* Reservation */,
+				91D78A0428BEAAFA00582AC6 /* Infos */,
+				91AC831428BDB41B00EC98DE /* Home */,
+				2E4C5A7428B9AA00003712C5 /* Initial */,
+				911E793028BD603300CF4F1B /* Register */,
+				911E792F28BD602600CF4F1B /* Login */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -89,6 +128,79 @@
 				2E4C5A6428B9983B003712C5 /* Info.plist */,
 			);
 			name = Files;
+			sourceTree = "<group>";
+		};
+		2E4C5A6F28B99C48003712C5 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2E4C5A7028B99C6C003712C5 /* AppButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		2E4C5A7428B9AA00003712C5 /* Initial */ = {
+			isa = PBXGroup;
+			children = (
+				2E4C5A7528B9AA0E003712C5 /* InitialView.swift */,
+				911E792B28BD353C00CF4F1B /* InitialViewController.swift */,
+			);
+			path = Initial;
+			sourceTree = "<group>";
+		};
+		3AF89B0628C0666800585BFF /* Reservation */ = {
+			isa = PBXGroup;
+			children = (
+				3AF89B0928C07D8000585BFF /* ReservationView.swift */,
+				3AF89B0728C066A000585BFF /* ReservationViewController.swift */,
+			);
+			path = Reservation;
+			sourceTree = "<group>";
+		};
+		911E792F28BD602600CF4F1B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				911E792D28BD4BE300CF4F1B /* LoginView.swift */,
+				2E4C5A5A28B99838003712C5 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		911E793028BD603300CF4F1B /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				91AC831228BD9D3700EC98DE /* RegisterView.swift */,
+				91AC831028BD9D2700EC98DE /* RegisterViewController.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		9149393328C14595005C7B83 /* MyReservation */ = {
+			isa = PBXGroup;
+			children = (
+				9149393628C145C4005C7B83 /* MyReservationView.swift */,
+				9149393428C145B3005C7B83 /* MyReservationViewController.swift */,
+			);
+			path = MyReservation;
+			sourceTree = "<group>";
+		};
+		91AC831428BDB41B00EC98DE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				91AC831728BDB46000EC98DE /* HomeView.swift */,
+				91AC831528BDB44D00EC98DE /* HomeViewController.swift */,
+				3AD7824528BDD2EF00BD679C /* CustomCollectionViewCell.swift */,
+				91D78A0928BEB3E700582AC6 /* CarouselCollectionViewCell.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		91D78A0428BEAAFA00582AC6 /* Infos */ = {
+			isa = PBXGroup;
+			children = (
+				91D78A0528BEAB0F00582AC6 /* InfosView.swift */,
+				91D78A0728BEAB2200582AC6 /* InfosViewController.swift */,
+			);
+			path = Infos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,10 +273,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E4C5A5B28B99838003712C5 /* ViewController.swift in Sources */,
+				91D78A0A28BEB3E700582AC6 /* CarouselCollectionViewCell.swift in Sources */,
+				3AF89B0A28C07D8000585BFF /* ReservationView.swift in Sources */,
+				91AC831128BD9D2700EC98DE /* RegisterViewController.swift in Sources */,
+				91AC831328BD9D3700EC98DE /* RegisterView.swift in Sources */,
+				2E4C5A5B28B99838003712C5 /* LoginViewController.swift in Sources */,
+				3AD7824628BDD2EF00BD679C /* CustomCollectionViewCell.swift in Sources */,
+				911E792C28BD353C00CF4F1B /* InitialViewController.swift in Sources */,
+				91D78A0828BEAB2200582AC6 /* InfosViewController.swift in Sources */,
 				2E4C5A6C28B998C4003712C5 /* ViewConfiguration.swift in Sources */,
+				9149393728C145C4005C7B83 /* MyReservationView.swift in Sources */,
 				2E4C5A5728B99838003712C5 /* AppDelegate.swift in Sources */,
+				9149393528C145B3005C7B83 /* MyReservationViewController.swift in Sources */,
+				2E4C5A7628B9AA0E003712C5 /* InitialView.swift in Sources */,
+				91D78A0628BEAB0F00582AC6 /* InfosView.swift in Sources */,
+				91AC831628BDB44D00EC98DE /* HomeViewController.swift in Sources */,
+				911E792E28BD4BE300CF4F1B /* LoginView.swift in Sources */,
+				91AC831828BDB46000EC98DE /* HomeView.swift in Sources */,
 				2E4C5A5928B99838003712C5 /* SceneDelegate.swift in Sources */,
+				2E4C5A7128B99C6C003712C5 /* AppButton.swift in Sources */,
+				3AF89B0828C066A000585BFF /* ReservationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +438,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -337,6 +466,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
