@@ -17,7 +17,7 @@ class InfosViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        infosView.delegate = self
         setupView()
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(didTapDismiss))
         navigationController?.navigationBar.tintColor = UIColor(named: "mainYellow")
@@ -48,12 +48,13 @@ extension InfosViewController: ViewConfiguration {
         
     }
 }
+
 extension InfosViewController: InfosViewProtocol {
+   
     func tappedConfirm() {
-        //        let registerViewController = TODO: confirmar pra proxima tela
-        //        navigationController?.pushViewController(registerViewController, animated: true)
-        //    }
-        
-        
+        let reservationViewController = ReservationViewController()
+        self.modalPresentationStyle = .fullScreen
+        navigationController?.show(reservationViewController, sender: .none)
     }
+       
 }

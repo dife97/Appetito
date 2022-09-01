@@ -95,6 +95,7 @@ extension HomeViewController: ViewConfiguration {
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.categoryCollectionView {
             return 20

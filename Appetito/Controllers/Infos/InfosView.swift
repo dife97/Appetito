@@ -13,7 +13,7 @@ protocol InfosViewProtocol: AnyObject {
 
 class InfosView: UIView {
     
-    weak var delegate: InfosView?
+    weak var delegate: InfosViewProtocol?
     
     private lazy var restaurantImageView: UIImageView = {
         let restaurantImageView = UIImageView()
@@ -59,7 +59,7 @@ class InfosView: UIView {
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         button.setTitleColor(.black, for: .normal)
         button.setTitle("CONFIRMAR", for: .normal)
-        //        button.addTarget(self, action: #selector(tappedLogin), for: .touchUpInside)
+        button.addTarget(self, action: #selector(tappedConfirm), for: .touchUpInside)
         
         return button
     }()

@@ -86,7 +86,7 @@ class LoginView: UIView {
         let button = AppButton(
             text: "Entrar com a Apple",
             background: .black,
-            leftImageName: "apple", // TODO: colocar imagem da apple em branco
+            leftImageName: "appleS", // TODO: colocar imagem da apple em branco
             textColor: .white
         )
         return button
