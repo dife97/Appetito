@@ -70,7 +70,7 @@ class RegisterView: UIView {
         registerUser.translatesAutoresizingMaskIntoConstraints = false
         registerUser.backgroundColor = .white
         registerUser.layer.cornerRadius = 8
-        registerUser.placeholder = "  usuario"
+        registerUser.placeholder = "  Digite seu usuario"
         registerUser.textColor = UIColor.black
 
         return registerUser
@@ -81,7 +81,7 @@ class RegisterView: UIView {
         registerPassword.translatesAutoresizingMaskIntoConstraints = false
         registerPassword.backgroundColor = .white
         registerPassword.layer.cornerRadius = 8
-        registerPassword.placeholder = "  senha"
+        registerPassword.placeholder = "  Digite sua senha"
         registerPassword.textColor = UIColor.black
 
         return registerPassword
@@ -92,7 +92,7 @@ class RegisterView: UIView {
         registerPhone.translatesAutoresizingMaskIntoConstraints = false
         registerPhone.backgroundColor = .white
         registerPhone.layer.cornerRadius = 8
-        registerPhone.placeholder = "  telefone"
+        registerPhone.placeholder = " Digite seu telefone"
         registerPhone.textColor = UIColor.black
 
         return registerPhone
@@ -103,7 +103,7 @@ class RegisterView: UIView {
         registerEmail.translatesAutoresizingMaskIntoConstraints = false
         registerEmail.backgroundColor = .white
         registerEmail.layer.cornerRadius = 8
-        registerEmail.placeholder = "  email"
+        registerEmail.placeholder = "  Digite seu email"
         registerEmail.textColor = UIColor.black
 
         return registerEmail

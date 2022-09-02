@@ -91,8 +91,10 @@
 				2E4C5A5628B99838003712C5 /* AppDelegate.swift */,
 				2E4C5A5828B99838003712C5 /* SceneDelegate.swift */,
 				2E4C5A6E28B99902003712C5 /* Files */,
-				2E4C5A6F28B99C48003712C5 /* Components */,
 				2E4C5A6A28B998B6003712C5 /* Helpers */,
+				2E4C5A6F28B99C48003712C5 /* Components */,
+				912B551C28C1688900BAC0B2 /* Models */,
+				912B551D28C1689D00BAC0B2 /* View */,
 				2E4C5A6D28B998D4003712C5 /* Controllers */,
 			);
 			path = Appetito;
@@ -172,6 +174,20 @@
 				91AC831028BD9D2700EC98DE /* RegisterViewController.swift */,
 			);
 			path = Register;
+			sourceTree = "<group>";
+		};
+		912B551C28C1688900BAC0B2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		912B551D28C1689D00BAC0B2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		9149393328C14595005C7B83 /* MyReservation */ = {
