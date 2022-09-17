@@ -129,13 +129,11 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         }
     }
     
+    
+    
     @objc func didTapSignOut() {
-        //TODO: Implementar SignOut firebase
-        let initialViewController = InitialViewController()
-        self.modalPresentationStyle = .fullScreen
-        self.modalTransitionStyle = .coverVertical
-        navigationController?.setNavigationBarHidden(true, animated: true)
-        self.show(initialViewController, sender: self)
+        self.dismiss(animated: true) {
+        }
     }
 }
 

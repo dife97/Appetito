@@ -17,10 +17,15 @@ class InitialViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.white
+        self.view.backgroundColor = UIColor(named:"mainBackground")
         setupView()
         initialView.delegate = self
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.view.removeFromSuperview()
     }
     
 }
@@ -35,7 +40,7 @@ extension InitialViewController: ViewConfiguration {
             initialView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
             initialView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             initialView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-            initialView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
+            initialView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0)
             
         ])
     }

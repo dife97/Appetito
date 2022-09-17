@@ -16,7 +16,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = UINavigationController(rootViewController: InitialViewController())
+//        window?.rootViewController = UINavigationController(rootViewController: InitialViewController())
+        window?.rootViewController = UINavigationController(rootViewController: RegisterAddressViewController())
         window?.makeKeyAndVisible()
 
         return

@@ -9,6 +9,7 @@ import UIKit
 
 class RegisterAddressView: UIView {
     
+    
     private lazy var titleLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -29,7 +30,7 @@ class RegisterAddressView: UIView {
         return label
     }()
     
-    private lazy var cepTextField: UITextField = {
+    lazy var cepTextField: UITextField = {
         let textfield = UITextField(frame: .zero)
         textfield.translatesAutoresizingMaskIntoConstraints = false
         textfield.backgroundColor = .white
@@ -39,10 +40,42 @@ class RegisterAddressView: UIView {
         return textfield
     }()
     
+    lazy var cidadeTextField: UITextField = {
+        let cidadeTextField = UITextField(frame: .zero)
+        cidadeTextField.backgroundColor = .white
+        cidadeTextField.layer.cornerRadius = 8
+        cidadeTextField.placeholder = ""
+        cidadeTextField.textColor = UIColor.black
+        cidadeTextField.isHidden = true
+        return cidadeTextField
+    }()
+    
+    lazy var bairroTextField: UITextField = {
+        let bairroTextField = UITextField(frame: .zero)
+        bairroTextField.backgroundColor = .white
+        bairroTextField.layer.cornerRadius = 8
+        bairroTextField.placeholder = ""
+        bairroTextField.textColor = UIColor.black
+        bairroTextField.isHidden = true
+        
+        return bairroTextField
+    }()
+    
+    lazy var ufTextField: UITextField = {
+        let ufTextField = UITextField(frame: .zero)
+        ufTextField.backgroundColor = .white
+        ufTextField.layer.cornerRadius = 8
+        ufTextField.placeholder = ""
+        ufTextField.textColor = UIColor.black
+        ufTextField.isHidden = true
+        
+        return ufTextField
+    }()
+    
     lazy var stackView: UIStackView = {
-        let stackView = UIStackView()
+        let stackView = UIStackView(arrangedSubviews: [cidadeTextField, bairroTextField, ufTextField])
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.spacing = 5
+        stackView.spacing = 30
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
         
@@ -69,15 +102,28 @@ class RegisterAddressView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func loadFromCep(cep: CEPModel) {
+        bairroTextField.text = cep.bairro
+        bairroTextField.isHidden = false
+        cidadeTextField.text = cep.localidade
+        cidadeTextField.isHidden = false
+        ufTextField.text = cep.uf
+        ufTextField.isHidden = false
+        
+    }
 }
 
 extension RegisterAddressView: ViewConfiguration {
     
     func buildViewHierarchy() {
         addSubview(titleLabel)
-        
-        stackView.addArrangedSubview(cepLabel)
-        stackView.addArrangedSubview(cepTextField)
+        addSubview(cepTextField)
+        addSubview(cepLabel)
+    
+        stackView.addArrangedSubview(bairroTextField)
+        stackView.addArrangedSubview(ufTextField)
+        stackView.addArrangedSubview(cidadeTextField)
         addSubview(stackView)
         
         addSubview(confirmButton)
@@ -90,12 +136,20 @@ extension RegisterAddressView: ViewConfiguration {
             titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             titleLabel.heightAnchor.constraint(equalToConstant: 50),
             
-            cepTextField.heightAnchor.constraint(equalToConstant: 50),
+            cepLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
+            cepLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 16),
+            cepLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
+            cepLabel.heightAnchor.constraint(equalToConstant: 20),
             
-            stackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 50),
+            cepTextField.topAnchor.constraint(equalTo: cepLabel.bottomAnchor, constant: 20),
+            cepTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 16),
+            cepTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
+            cepTextField.heightAnchor.constraint(equalToConstant: 48),
+            
+            stackView.topAnchor.constraint(equalTo: cepTextField.bottomAnchor, constant: 80),
             stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
-//            stackView.heightAnchor.constraint(equalToConstant: 400),
+            stackView.heightAnchor.constraint(equalToConstant: 200),
             
             confirmButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 100),
             confirmButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -100),
@@ -103,4 +157,5 @@ extension RegisterAddressView: ViewConfiguration {
             confirmButton.heightAnchor.constraint(equalToConstant: 48)
         ])
     }
+    
 }

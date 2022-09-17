@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class RegisterViewController: UIViewController {
     
@@ -14,10 +15,12 @@ class RegisterViewController: UIViewController {
         registerView.translatesAutoresizingMaskIntoConstraints = false
         return registerView
     }()
+    var auth: Auth?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.auth = Auth.auth()
         self.view.backgroundColor = UIColor(named: "mainBackground")
         
         setupView()
@@ -27,9 +30,24 @@ class RegisterViewController: UIViewController {
     
     //MARK: - Actions
     @objc func didTapConfirmButton() {
-        navigationController?.pushViewController(RegisterAddressViewController(), animated: true)
+        
+//        let user = registerView.userTextField.text ?? ""
+        let password = registerView.passwordTextField.text ?? ""
+//        let phone = registerView.phoneTextField.text ?? ""
+        let email = registerView.emailTextField.text ?? ""
+
+        auth?.createUser(withEmail: email, password: password, completion: { [self] result, error in
+            if error != nil {
+                CustomAlert(controller: self).exibe(titulo: "Atenção", mensagem: error?.localizedDescription ?? "")
+                //                print("Erro no cadastro.")
+            } else {
+                navigationController?.pushViewController(RegisterAddressViewController(), animated: true)
+
+            }
+        })
     }
 }
+
 
 extension RegisterViewController: ViewConfiguration {
     func buildViewHierarchy() {
@@ -41,7 +59,7 @@ extension RegisterViewController: ViewConfiguration {
             registerView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
             registerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             registerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-            registerView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
+            registerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0)
         ])
     }
 }

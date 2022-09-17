@@ -15,7 +15,7 @@ class CustomAlert {
         self.controller = controller
     }
         
-    func exibe(titulo: String = "Atencao" , mensagem: String) {
+    func exibe(titulo: String , mensagem: String) {
         let alertController = UIAlertController(
             title: titulo,
             message: mensagem,
@@ -29,5 +29,6 @@ class CustomAlert {
         )
         
         alertController.addAction(okButton)
+        controller.present(alertController, animated: true)
     }
 }

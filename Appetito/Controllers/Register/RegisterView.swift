@@ -64,7 +64,7 @@ class RegisterView: UIView {
     }()
     
     
-    private lazy var userTextField: UITextField = {
+    lazy var userTextField: UITextField = {
         let registerUser = UITextField(frame: .zero)
         registerUser.translatesAutoresizingMaskIntoConstraints = false
         registerUser.backgroundColor = .white
@@ -75,18 +75,19 @@ class RegisterView: UIView {
         return registerUser
     }()
     
-    private lazy var passwordTextField: UITextField = {
+    lazy var passwordTextField: UITextField = {
         let registerPassword = UITextField(frame: .zero)
         registerPassword.translatesAutoresizingMaskIntoConstraints = false
         registerPassword.backgroundColor = .white
         registerPassword.layer.cornerRadius = 8
         registerPassword.placeholder = "  senha"
         registerPassword.textColor = UIColor.black
+        registerPassword.isSecureTextEntry = true
         
         return registerPassword
     }()
     
-    private lazy var phoneTextField: UITextField = {
+    lazy var phoneTextField: UITextField = {
         let registerPhone = UITextField(frame: .zero)
         registerPhone.translatesAutoresizingMaskIntoConstraints = false
         registerPhone.backgroundColor = .white
@@ -97,7 +98,7 @@ class RegisterView: UIView {
         return registerPhone
     }()
     
-    private lazy var emailTextField: UITextField = {
+    lazy var emailTextField: UITextField = {
         let registerEmail = UITextField(frame: .zero)
         registerEmail.translatesAutoresizingMaskIntoConstraints = false
         registerEmail.backgroundColor = .white
@@ -170,3 +171,14 @@ extension RegisterView: ViewConfiguration {
         ])
     }
 }
+
+//
+//lazy var passwordTextField: PPTextField = {
+//        let textfield = PPTextField(
+//            labelText: "Senha",
+//            placeholder: "Mínimo de 6 dígitos"
+//        )
+//        textfield.mainTextfield.isSecureTextEntry = true
+//        textfield.checkerFunction = { self.checkerFunction?() }
+//        return textfield
+//    }()

@@ -9,21 +9,15 @@ import Foundation
 
 struct NetworkManager {
     
-    var cep: String
     let urlSession: URLSession
     
-    init(cep: String, urlSession: URLSession = .shared) {
-        self.cep = cep
+    init(urlSession: URLSession = .shared) {
         self.urlSession = urlSession
     }
     
-    var basePath: String {
-        return "viacep.com.br/ws/\(cep)/json/"
-    }
-    
-    func loadRequest(onComplete: @escaping (Result<CEPModel?, Error>) -> Void) {
+    func loadRequest(cep: String, onComplete: @escaping (Result<CEPModel?, Error>) -> Void) {
         
-        guard let url = URL(string: basePath) else { return }
+        guard let url = URL(string: "https://viacep.com.br/ws/\(cep)/json/") else { return }
         
         urlSession.dataTask(with: url) { data, response, error in
             
