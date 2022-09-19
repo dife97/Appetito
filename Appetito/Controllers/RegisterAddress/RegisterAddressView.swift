@@ -61,6 +61,17 @@ class RegisterAddressView: UIView {
         return bairroTextField
     }()
     
+    lazy var ruaTextField: UITextField = {
+        let ruaTextField = UITextField(frame: .zero)
+        ruaTextField.backgroundColor = .white
+        ruaTextField.layer.cornerRadius = 8
+        ruaTextField.placeholder = ""
+        ruaTextField.textColor = UIColor.black
+        ruaTextField.isHidden = true
+        
+        return ruaTextField
+    }()
+    
     lazy var ufTextField: UITextField = {
         let ufTextField = UITextField(frame: .zero)
         ufTextField.backgroundColor = .white
@@ -110,7 +121,8 @@ class RegisterAddressView: UIView {
         cidadeTextField.isHidden = false
         ufTextField.text = cep.uf
         ufTextField.isHidden = false
-        
+        ruaTextField.text = cep.logradouro
+        ruaTextField.isHidden = false
     }
 }
 
@@ -120,7 +132,8 @@ extension RegisterAddressView: ViewConfiguration {
         addSubview(titleLabel)
         addSubview(cepTextField)
         addSubview(cepLabel)
-    
+        
+        stackView.addArrangedSubview(ruaTextField)
         stackView.addArrangedSubview(bairroTextField)
         stackView.addArrangedSubview(ufTextField)
         stackView.addArrangedSubview(cidadeTextField)
@@ -149,7 +162,7 @@ extension RegisterAddressView: ViewConfiguration {
             stackView.topAnchor.constraint(equalTo: cepTextField.bottomAnchor, constant: 80),
             stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
-            stackView.heightAnchor.constraint(equalToConstant: 200),
+            stackView.heightAnchor.constraint(equalToConstant: 300),
             
             confirmButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 100),
             confirmButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -100),
