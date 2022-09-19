@@ -11,7 +11,7 @@ protocol LoginViewProtocol: AnyObject {
     func tappedLogin()
 }
 
-class LoginView: UIView {
+class LoginView: UIView, UITextFieldDelegate {
     
     weak var delegate: LoginViewProtocol?
     
@@ -37,27 +37,27 @@ class LoginView: UIView {
         return subTitleLabel
     }()
     
-    private lazy var loginTextField: UITextField = {
+    lazy var loginTextField: UITextField = {
         let loginTextField = UITextField(frame: .zero)
         loginTextField.translatesAutoresizingMaskIntoConstraints = false
         loginTextField.backgroundColor = .white
         loginTextField.layer.cornerRadius = 8
         loginTextField.placeholder = "  Digite seu e-mail ou usuario"
         loginTextField.textColor = UIColor.black
-
         return loginTextField
-        }()
+    }()
     
-    private lazy var passwordTextField: UITextField = {
+    lazy var passwordTextField: UITextField = {
         let passwordTextField = UITextField(frame: .zero)
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
         passwordTextField.backgroundColor = .white
         passwordTextField.layer.cornerRadius = 8
         passwordTextField.placeholder = "  Digite sua senha"
         passwordTextField.textColor = UIColor.black
-
+        passwordTextField.isSecureTextEntry = true
+        
         return passwordTextField
-        }()
+    }()
     
     lazy var mainButton: UIButton = {
         let button = UIButton(type: .system)
@@ -91,7 +91,7 @@ class LoginView: UIView {
         )
         return button
     }()
-            
+    
     
     lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [googleButton, appleButton ])
@@ -108,11 +108,15 @@ class LoginView: UIView {
     override init(frame: CGRect) {
         super.init(frame: .zero)
         setupView()
+        loginTextField.delegate = self
+        passwordTextField.delegate = self
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
     
     @objc func tappedLogin(){
         self.delegate?.tappedLogin()
@@ -165,4 +169,30 @@ extension LoginView: ViewConfiguration {
             
         ])
     }
+    
 }
+
+extension LoginView: UITextViewDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == loginTextField {
+            passwordTextField.becomeFirstResponder()
+        } else if textField == passwordTextField {
+            passwordTextField.resignFirstResponder()
+        }
+        return true
+    }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+//        loginTextField.layer.borderColor = .init(red: 0.976, green: 0.718 , blue: 0.169, alpha: 1)
+//        loginTextField.layer.borderWidth = 3
+//        passwordTextField.layer.borderColor = .init(red: 0.976, green: 0.718 , blue: 0.169, alpha: 1)
+//        passwordTextField.layer.borderWidth = 3
+//
+    }
+}
+

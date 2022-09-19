@@ -16,7 +16,6 @@ class RegisterView: UIView {
         titleLabel.font = UIFont(name:"KohinoorDevanagari-Light", size:50)
         titleLabel.text = "Cadastre-se"
         titleLabel.textColor = UIColor(named: "mainYellow")
-        
         return titleLabel
     }()
     
@@ -65,49 +64,50 @@ class RegisterView: UIView {
     }()
     
     
-    private lazy var registerUser: UITextField = {
+    lazy var userTextField: UITextField = {
         let registerUser = UITextField(frame: .zero)
         registerUser.translatesAutoresizingMaskIntoConstraints = false
         registerUser.backgroundColor = .white
         registerUser.layer.cornerRadius = 8
         registerUser.placeholder = "  Digite seu usuario"
         registerUser.textColor = UIColor.black
-
+        
         return registerUser
-        }()
+    }()
     
-    private lazy var registerPassword: UITextField = {
+    lazy var passwordTextField: UITextField = {
         let registerPassword = UITextField(frame: .zero)
         registerPassword.translatesAutoresizingMaskIntoConstraints = false
         registerPassword.backgroundColor = .white
         registerPassword.layer.cornerRadius = 8
         registerPassword.placeholder = "  Digite sua senha"
         registerPassword.textColor = UIColor.black
-
+        registerPassword.isSecureTextEntry = true
+        
         return registerPassword
-        }()
+    }()
     
-    private lazy var registerPhone: UITextField = {
+    lazy var phoneTextField: UITextField = {
         let registerPhone = UITextField(frame: .zero)
         registerPhone.translatesAutoresizingMaskIntoConstraints = false
         registerPhone.backgroundColor = .white
         registerPhone.layer.cornerRadius = 8
         registerPhone.placeholder = " Digite seu telefone"
         registerPhone.textColor = UIColor.black
-
+        
         return registerPhone
-        }()
+    }()
     
-    private lazy var registerEmail: UITextField = {
+    lazy var emailTextField: UITextField = {
         let registerEmail = UITextField(frame: .zero)
         registerEmail.translatesAutoresizingMaskIntoConstraints = false
         registerEmail.backgroundColor = .white
         registerEmail.layer.cornerRadius = 8
         registerEmail.placeholder = "  Digite seu email"
         registerEmail.textColor = UIColor.black
-
+        
         return registerEmail
-        }()
+    }()
     
     lazy var confirmButton: UIButton = {
         let confirmButton = UIButton(type: .system)
@@ -117,12 +117,12 @@ class RegisterView: UIView {
         confirmButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         confirmButton.setTitleColor(.black, for: .normal)
         confirmButton.setTitle("CONFIRMAR", for: .normal)
-//        button.addTarget(self, action: #selector(tappedRegister), for: .touchUpInside)
+        //        button.addTarget(self, action: #selector(tappedRegister), for: .touchUpInside)
         return confirmButton
     }()
     
     lazy var stackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [nameLabel,registerUser,passwordLabel, registerPassword, emailLabel, registerEmail, phoneLabel, registerPhone])
+        let stackView = UIStackView(arrangedSubviews: [nameLabel,userTextField,passwordLabel, passwordTextField, emailLabel, emailTextField, phoneLabel, phoneTextField])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.spacing = 5
         stackView.axis = .vertical
@@ -141,7 +141,9 @@ class RegisterView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
 extension RegisterView: ViewConfiguration {
+    
     func buildViewHierarchy() {
         addSubview(titleLabel)
         addSubview(stackView)
@@ -166,6 +168,17 @@ extension RegisterView: ViewConfiguration {
             confirmButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -80),
             confirmButton.heightAnchor.constraint(equalToConstant: 48)
             
-            ])
+        ])
     }
 }
+
+//
+//lazy var passwordTextField: PPTextField = {
+//        let textfield = PPTextField(
+//            labelText: "Senha",
+//            placeholder: "Mínimo de 6 dígitos"
+//        )
+//        textfield.mainTextfield.isSecureTextEntry = true
+//        textfield.checkerFunction = { self.checkerFunction?() }
+//        return textfield
+//    }()

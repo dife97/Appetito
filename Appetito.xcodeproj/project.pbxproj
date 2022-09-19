@@ -18,21 +18,31 @@
 		3AD7824628BDD2EF00BD679C /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD7824528BDD2EF00BD679C /* CustomCollectionViewCell.swift */; };
 		3AF89B0828C066A000585BFF /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF89B0728C066A000585BFF /* ReservationViewController.swift */; };
 		3AF89B0A28C07D8000585BFF /* ReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF89B0928C07D8000585BFF /* ReservationView.swift */; };
+		4B46482E28D1636A004CE5EE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B46482D28D1636A004CE5EE /* NetworkManager.swift */; };
+		4B46483128D163C5004CE5EE /* CEPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B46483028D163C5004CE5EE /* CEPModel.swift */; };
+		4B46483428D168E6004CE5EE /* RegisterAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B46483328D168E6004CE5EE /* RegisterAddressViewController.swift */; };
+		4B46483628D168F0004CE5EE /* RegisterAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B46483528D168F0004CE5EE /* RegisterAddressView.swift */; };
+		4B46483828D16D87004CE5EE /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B46483728D16D87004CE5EE /* CustomAlert.swift */; };
+		4B46483A28D17137004CE5EE /* RegisterAddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B46483928D17137004CE5EE /* RegisterAddressViewModel.swift */; };
+		9115071828D4A8ED00DDC8E0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9115071728D4A8ED00DDC8E0 /* GoogleService-Info.plist */; };
 		911E792C28BD353C00CF4F1B /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911E792B28BD353C00CF4F1B /* InitialViewController.swift */; };
 		911E792E28BD4BE300CF4F1B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911E792D28BD4BE300CF4F1B /* LoginView.swift */; };
 		9149393528C145B3005C7B83 /* MyReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9149393428C145B3005C7B83 /* MyReservationViewController.swift */; };
 		9149393728C145C4005C7B83 /* MyReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9149393628C145C4005C7B83 /* MyReservationView.swift */; };
+		9172FBE028D3C0DF00F44CB1 /* AppetitoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9172FBDF28D3C0DF00F44CB1 /* AppetitoTextField.swift */; };
 		91AC831128BD9D2700EC98DE /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AC831028BD9D2700EC98DE /* RegisterViewController.swift */; };
 		91AC831328BD9D3700EC98DE /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AC831228BD9D3700EC98DE /* RegisterView.swift */; };
 		91AC831628BDB44D00EC98DE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AC831528BDB44D00EC98DE /* HomeViewController.swift */; };
 		91AC831828BDB46000EC98DE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AC831728BDB46000EC98DE /* HomeView.swift */; };
+		91D18C9528D274350036AFD5 /* PerfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D18C9428D274350036AFD5 /* PerfilView.swift */; };
+		91D18C9728D274660036AFD5 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D18C9628D274660036AFD5 /* PerfilViewController.swift */; };
 		91D78A0628BEAB0F00582AC6 /* InfosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D78A0528BEAB0F00582AC6 /* InfosView.swift */; };
 		91D78A0828BEAB2200582AC6 /* InfosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D78A0728BEAB2200582AC6 /* InfosViewController.swift */; };
 		91D78A0A28BEB3E700582AC6 /* CarouselCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D78A0928BEB3E700582AC6 /* CarouselCollectionViewCell.swift */; };
+		E1610E0314AAB3BC5527EEBD /* Pods_Appetito.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F54A130E146973B55E90AFE /* Pods_Appetito.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2E4C5A5328B99838003712C5 /* Appetito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Appetito.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E4C5A5628B99838003712C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E4C5A5828B99838003712C5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2E4C5A5A28B99838003712C5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -45,17 +55,31 @@
 		3AD7824528BDD2EF00BD679C /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		3AF89B0728C066A000585BFF /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
 		3AF89B0928C07D8000585BFF /* ReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationView.swift; sourceTree = "<group>"; };
+		3F54A130E146973B55E90AFE /* Pods_Appetito.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Appetito.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B46482D28D1636A004CE5EE /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		4B46483028D163C5004CE5EE /* CEPModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CEPModel.swift; sourceTree = "<group>"; };
+		4B46483328D168E6004CE5EE /* RegisterAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAddressViewController.swift; sourceTree = "<group>"; };
+		4B46483528D168F0004CE5EE /* RegisterAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAddressView.swift; sourceTree = "<group>"; };
+		4B46483728D16D87004CE5EE /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
+		4B46483928D17137004CE5EE /* RegisterAddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAddressViewModel.swift; sourceTree = "<group>"; };
+		8ECAEAAA4B9B36E0E30F272B /* Pods-Appetito.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Appetito.release.xcconfig"; path = "Target Support Files/Pods-Appetito/Pods-Appetito.release.xcconfig"; sourceTree = "<group>"; };
+		9115071228D3D11400DDC8E0 /* Appetito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Appetito.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9115071728D4A8ED00DDC8E0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		911E792B28BD353C00CF4F1B /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		911E792D28BD4BE300CF4F1B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		9149393428C145B3005C7B83 /* MyReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReservationViewController.swift; sourceTree = "<group>"; };
 		9149393628C145C4005C7B83 /* MyReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReservationView.swift; sourceTree = "<group>"; };
+		9172FBDF28D3C0DF00F44CB1 /* AppetitoTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetitoTextField.swift; sourceTree = "<group>"; };
 		91AC831028BD9D2700EC98DE /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		91AC831228BD9D3700EC98DE /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		91AC831528BDB44D00EC98DE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		91AC831728BDB46000EC98DE /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		91D18C9428D274350036AFD5 /* PerfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilView.swift; sourceTree = "<group>"; };
+		91D18C9628D274660036AFD5 /* PerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
 		91D78A0528BEAB0F00582AC6 /* InfosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfosView.swift; sourceTree = "<group>"; };
 		91D78A0728BEAB2200582AC6 /* InfosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfosViewController.swift; sourceTree = "<group>"; };
 		91D78A0928BEB3E700582AC6 /* CarouselCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCollectionViewCell.swift; sourceTree = "<group>"; };
+		FCF4B613F44AF0D786D555A3 /* Pods-Appetito.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Appetito.debug.xcconfig"; path = "Target Support Files/Pods-Appetito/Pods-Appetito.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1610E0314AAB3BC5527EEBD /* Pods_Appetito.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,28 +98,23 @@
 			isa = PBXGroup;
 			children = (
 				2E4C5A5528B99838003712C5 /* Appetito */,
-				2E4C5A5428B99838003712C5 /* Products */,
+				9E84DB15DCCE8DEFDDDC7D63 /* Pods */,
+				AD16716E91CAB35FC6583D01 /* Frameworks */,
+				9115071228D3D11400DDC8E0 /* Appetito.app */,
 			);
-			sourceTree = "<group>";
-		};
-		2E4C5A5428B99838003712C5 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				2E4C5A5328B99838003712C5 /* Appetito.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		2E4C5A5528B99838003712C5 /* Appetito */ = {
 			isa = PBXGroup;
 			children = (
+				9115071728D4A8ED00DDC8E0 /* GoogleService-Info.plist */,
 				2E4C5A5628B99838003712C5 /* AppDelegate.swift */,
 				2E4C5A5828B99838003712C5 /* SceneDelegate.swift */,
 				2E4C5A6E28B99902003712C5 /* Files */,
-				2E4C5A6A28B998B6003712C5 /* Helpers */,
+				4B46482C28D16306004CE5EE /* Network */,
 				2E4C5A6F28B99C48003712C5 /* Components */,
-				912B551C28C1688900BAC0B2 /* Models */,
-				912B551D28C1689D00BAC0B2 /* View */,
+				4B46482F28D163BA004CE5EE /* Model */,
+				2E4C5A6A28B998B6003712C5 /* Helpers */,
 				2E4C5A6D28B998D4003712C5 /* Controllers */,
 			);
 			path = Appetito;
@@ -111,13 +131,15 @@
 		2E4C5A6D28B998D4003712C5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				9149393328C14595005C7B83 /* MyReservation */,
-				3AF89B0628C0666800585BFF /* Reservation */,
-				91D78A0428BEAAFA00582AC6 /* Infos */,
-				91AC831428BDB41B00EC98DE /* Home */,
+				91D18C9328D274260036AFD5 /* Perfil */,
 				2E4C5A7428B9AA00003712C5 /* Initial */,
 				911E793028BD603300CF4F1B /* Register */,
+				4B46483228D168C6004CE5EE /* RegisterAddress */,
 				911E792F28BD602600CF4F1B /* Login */,
+				91AC831428BDB41B00EC98DE /* Home */,
+				3AF89B0628C0666800585BFF /* Reservation */,
+				9149393328C14595005C7B83 /* MyReservation */,
+				91D78A0428BEAAFA00582AC6 /* Infos */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -136,6 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				2E4C5A7028B99C6C003712C5 /* AppButton.swift */,
+				4B46483728D16D87004CE5EE /* CustomAlert.swift */,
+				9172FBDF28D3C0DF00F44CB1 /* AppetitoTextField.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -156,6 +180,32 @@
 				3AF89B0728C066A000585BFF /* ReservationViewController.swift */,
 			);
 			path = Reservation;
+			sourceTree = "<group>";
+		};
+		4B46482C28D16306004CE5EE /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				4B46482D28D1636A004CE5EE /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		4B46482F28D163BA004CE5EE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4B46483028D163C5004CE5EE /* CEPModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4B46483228D168C6004CE5EE /* RegisterAddress */ = {
+			isa = PBXGroup;
+			children = (
+				4B46483528D168F0004CE5EE /* RegisterAddressView.swift */,
+				4B46483328D168E6004CE5EE /* RegisterAddressViewController.swift */,
+				4B46483928D17137004CE5EE /* RegisterAddressViewModel.swift */,
+			);
+			path = RegisterAddress;
 			sourceTree = "<group>";
 		};
 		911E792F28BD602600CF4F1B /* Login */ = {
@@ -210,6 +260,15 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		91D18C9328D274260036AFD5 /* Perfil */ = {
+			isa = PBXGroup;
+			children = (
+				91D18C9428D274350036AFD5 /* PerfilView.swift */,
+				91D18C9628D274660036AFD5 /* PerfilViewController.swift */,
+			);
+			path = Perfil;
+			sourceTree = "<group>";
+		};
 		91D78A0428BEAAFA00582AC6 /* Infos */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +278,23 @@
 			path = Infos;
 			sourceTree = "<group>";
 		};
+		9E84DB15DCCE8DEFDDDC7D63 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FCF4B613F44AF0D786D555A3 /* Pods-Appetito.debug.xcconfig */,
+				8ECAEAAA4B9B36E0E30F272B /* Pods-Appetito.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		AD16716E91CAB35FC6583D01 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3F54A130E146973B55E90AFE /* Pods_Appetito.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -226,9 +302,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2E4C5A6728B9983B003712C5 /* Build configuration list for PBXNativeTarget "Appetito" */;
 			buildPhases = (
+				822189B43BCA001926EC6C1A /* [CP] Check Pods Manifest.lock */,
 				2E4C5A4F28B99838003712C5 /* Sources */,
 				2E4C5A5028B99838003712C5 /* Frameworks */,
 				2E4C5A5128B99838003712C5 /* Resources */,
+				39F5B02C65F6501AC26794AF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -236,7 +314,7 @@
 			);
 			name = Appetito;
 			productName = Appetito;
-			productReference = 2E4C5A5328B99838003712C5 /* Appetito.app */;
+			productReference = 9115071228D3D11400DDC8E0 /* Appetito.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -263,7 +341,7 @@
 				Base,
 			);
 			mainGroup = 2E4C5A4A28B99838003712C5;
-			productRefGroup = 2E4C5A5428B99838003712C5 /* Products */;
+			productRefGroup = 2E4C5A4A28B99838003712C5;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -279,10 +357,53 @@
 			files = (
 				2E4C5A6328B9983B003712C5 /* LaunchScreen.storyboard in Resources */,
 				2E4C5A6028B9983B003712C5 /* Assets.xcassets in Resources */,
+				9115071828D4A8ED00DDC8E0 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		39F5B02C65F6501AC26794AF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Appetito/Pods-Appetito-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Appetito/Pods-Appetito-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Appetito/Pods-Appetito-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		822189B43BCA001926EC6C1A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Appetito-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2E4C5A4F28B99838003712C5 /* Sources */ = {
@@ -291,23 +412,32 @@
 			files = (
 				91D78A0A28BEB3E700582AC6 /* CarouselCollectionViewCell.swift in Sources */,
 				3AF89B0A28C07D8000585BFF /* ReservationView.swift in Sources */,
+				4B46483628D168F0004CE5EE /* RegisterAddressView.swift in Sources */,
 				91AC831128BD9D2700EC98DE /* RegisterViewController.swift in Sources */,
+				4B46482E28D1636A004CE5EE /* NetworkManager.swift in Sources */,
 				91AC831328BD9D3700EC98DE /* RegisterView.swift in Sources */,
 				2E4C5A5B28B99838003712C5 /* LoginViewController.swift in Sources */,
 				3AD7824628BDD2EF00BD679C /* CustomCollectionViewCell.swift in Sources */,
 				911E792C28BD353C00CF4F1B /* InitialViewController.swift in Sources */,
+				4B46483828D16D87004CE5EE /* CustomAlert.swift in Sources */,
 				91D78A0828BEAB2200582AC6 /* InfosViewController.swift in Sources */,
 				2E4C5A6C28B998C4003712C5 /* ViewConfiguration.swift in Sources */,
+				4B46483128D163C5004CE5EE /* CEPModel.swift in Sources */,
 				9149393728C145C4005C7B83 /* MyReservationView.swift in Sources */,
 				2E4C5A5728B99838003712C5 /* AppDelegate.swift in Sources */,
 				9149393528C145B3005C7B83 /* MyReservationViewController.swift in Sources */,
 				2E4C5A7628B9AA0E003712C5 /* InitialView.swift in Sources */,
 				91D78A0628BEAB0F00582AC6 /* InfosView.swift in Sources */,
+				9172FBE028D3C0DF00F44CB1 /* AppetitoTextField.swift in Sources */,
+				4B46483428D168E6004CE5EE /* RegisterAddressViewController.swift in Sources */,
 				91AC831628BDB44D00EC98DE /* HomeViewController.swift in Sources */,
+				4B46483A28D17137004CE5EE /* RegisterAddressViewModel.swift in Sources */,
 				911E792E28BD4BE300CF4F1B /* LoginView.swift in Sources */,
 				91AC831828BDB46000EC98DE /* HomeView.swift in Sources */,
 				2E4C5A5928B99838003712C5 /* SceneDelegate.swift in Sources */,
 				2E4C5A7128B99C6C003712C5 /* AppButton.swift in Sources */,
+				91D18C9528D274350036AFD5 /* PerfilView.swift in Sources */,
+				91D18C9728D274660036AFD5 /* PerfilViewController.swift in Sources */,
 				3AF89B0828C066A000585BFF /* ReservationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -442,12 +572,13 @@
 		};
 		2E4C5A6828B9983B003712C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCF4B613F44AF0D786D555A3 /* Pods-Appetito.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ZNV26P4L69;
+				DEVELOPMENT_TEAM = Q928WY62DN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Appetito/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -470,12 +601,13 @@
 		};
 		2E4C5A6928B9983B003712C5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8ECAEAAA4B9B36E0E30F272B /* Pods-Appetito.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ZNV26P4L69;
+				DEVELOPMENT_TEAM = Q928WY62DN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Appetito/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

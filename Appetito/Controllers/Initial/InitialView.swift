@@ -98,34 +98,38 @@ extension InitialView: ViewConfiguration {
     }
     
     func setupContraints() {
-        NSLayoutConstraint.activate([
+            let buttonHeight: CGFloat = 48
+            let subtitleHeight: CGFloat = 30
+            let titleHeight: CGFloat = 90
             
-            imageViewBackGround.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
-            imageViewBackGround.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
-            imageViewBackGround.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0),
-            imageViewBackGround.heightAnchor.constraint(equalToConstant: 434),
-            
-            titleLabel.topAnchor.constraint(equalTo: imageViewBackGround.bottomAnchor, constant: 0),
-            titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 37),
-            titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -37),
-            titleLabel.heightAnchor.constraint(equalToConstant: 90),
-            
-            subTitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
-            subTitleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 37),
-            subTitleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -37),
-            subTitleLabel.heightAnchor.constraint(equalToConstant: 30),
-            
-            mainButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
-            mainButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
-            mainButton.bottomAnchor.constraint(equalTo: registerButton.topAnchor, constant: -16),
-            mainButton.heightAnchor.constraint(equalToConstant: 48),
-            
-            registerButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
-            registerButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
-            registerButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -100),
-            registerButton.heightAnchor.constraint(equalToConstant: 48)
-            
-        ])
+            NSLayoutConstraint.activate([
+                
+                registerButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
+                registerButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
+                registerButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -60),
+                registerButton.heightAnchor.constraint(equalToConstant: buttonHeight),
+                
+                mainButton.leadingAnchor.constraint(equalTo: registerButton.leadingAnchor),
+                mainButton.trailingAnchor.constraint(equalTo: registerButton.trailingAnchor),
+                mainButton.bottomAnchor.constraint(equalTo: registerButton.topAnchor, constant: -16),
+                mainButton.heightAnchor.constraint(equalToConstant: buttonHeight),
+                
+                subTitleLabel.bottomAnchor.constraint(equalTo: mainButton.topAnchor, constant: -50),
+                subTitleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 37),
+                subTitleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -37),
+                subTitleLabel.heightAnchor.constraint(equalToConstant: subtitleHeight),
+
+                titleLabel.bottomAnchor.constraint(equalTo: subTitleLabel.topAnchor, constant: 8),
+                titleLabel.leadingAnchor.constraint(equalTo: subTitleLabel.leadingAnchor),
+                titleLabel.trailingAnchor.constraint(equalTo: subTitleLabel.trailingAnchor),
+                titleLabel.heightAnchor.constraint(equalToConstant: titleHeight),
+                
+                imageViewBackGround.bottomAnchor.constraint(equalTo: titleLabel.topAnchor, constant: 16),
+                imageViewBackGround.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+                imageViewBackGround.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+                imageViewBackGround.topAnchor.constraint(equalTo: self.topAnchor)
+                
+            ])
     }
     func setupAdditionalConfiguration() {
         self.backgroundColor = UIColor(named: "mainBackground")
