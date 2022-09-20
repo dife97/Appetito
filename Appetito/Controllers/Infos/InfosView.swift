@@ -19,7 +19,7 @@ class InfosView: UIView {
         let restaurantImageView = UIImageView()
         restaurantImageView.translatesAutoresizingMaskIntoConstraints = false
         restaurantImageView.contentMode = .scaleAspectFit
-        restaurantImageView.image = UIImage(named: "fogoChaoBanner")
+//        restaurantImageView.image = UIImage(named: "fogoChaoBanner")
         restaurantImageView.layer.cornerRadius = 8
         restaurantImageView.backgroundColor = .black
         
@@ -33,7 +33,7 @@ class InfosView: UIView {
         infosLabel.font = UIFont(name:"KohinoorDevanagari-Light", size: 16)
         infosLabel.textColor = .white
         infosLabel.textAlignment = .center
-        infosLabel.text = "Fogo de Chão é o nome e o símbolo deste famoso rodízio. Faz referência aos primórdios do churrasco, quando os gaúchos aprenderam que, assando partes do boi em espetos de madeira dispostos ao redor de uma fogueira, convertiam um simples pedaço de carne, em uma iguaria. O animal, o corte e a perícia do assador são os três elementos fundamentais para a preparação de um bom churrasco e no Fogo de Chão, a carne é de Angus, os churrasqueiros são \"experts\" e o serviço é absolutamente perfeito. (Última atualização: setembro 2020)."
+//        infosLabel.text = "Fogo de Chão é o nome e o símbolo deste famoso rodízio. Faz referência aos primórdios do churrasco, quando os gaúchos aprenderam que, assando partes do boi em espetos de madeira dispostos ao redor de uma fogueira, convertiam um simples pedaço de carne, em uma iguaria. O animal, o corte e a perícia do assador são os três elementos fundamentais para a preparação de um bom churrasco e no Fogo de Chão, a carne é de Angus, os churrasqueiros são \"experts\" e o serviço é absolutamente perfeito. (Última atualização: setembro 2020)."
         
         
         return infosLabel
@@ -63,15 +63,22 @@ class InfosView: UIView {
         
         return button
     }()
+    var restaurantes: Restaurant?
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
         setupView()
+        configuraInfos()
         
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configuraInfos(){
+        restaurantImageView.image = UIImage(named: restaurantes?.imageRestaurantInfos ?? "")
+        infosLabel.text = restaurantes?.infos
     }
     
     @objc func tappedConfirm() {

@@ -15,7 +15,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
         restaurantLogo.translatesAutoresizingMaskIntoConstraints = false
         restaurantLogo.layer.borderWidth = 2
         restaurantLogo.layer.borderColor = UIColor.black.cgColor
-        restaurantLogo.image = UIImage(named: "fogoDeChaoImage")
+//        restaurantLogo.image = UIImage(named: "fogoDeChaoImage")
         restaurantLogo.layer.masksToBounds = false
         restaurantLogo.clipsToBounds = true
         restaurantLogo.layer.cornerRadius = 50
@@ -66,9 +66,18 @@ class CustomCollectionViewCell: UICollectionViewCell {
         setupView()
         contentView.backgroundColor = UIColor(named: "mainBackground")
     }
-        required init?(coder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
-        }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    func configuraCell(_ restaurant: Restaurant?){
+        restaurantLogo.image = UIImage(named: restaurant?.imagemRestaurant ?? "")
+        nameLabel.text = restaurant?.nameRestaurant
+        notaLabel.text = restaurant?.note
+        starImageView.image = UIImage(named:restaurant?.imageNote ?? "")
+
+    }
 }
 
 extension CustomCollectionViewCell: ViewConfiguration {

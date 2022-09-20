@@ -30,6 +30,8 @@
 		9149393528C145B3005C7B83 /* MyReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9149393428C145B3005C7B83 /* MyReservationViewController.swift */; };
 		9149393728C145C4005C7B83 /* MyReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9149393628C145C4005C7B83 /* MyReservationView.swift */; };
 		9172FBE028D3C0DF00F44CB1 /* AppetitoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9172FBDF28D3C0DF00F44CB1 /* AppetitoTextField.swift */; };
+		9197817C28DA100D00766228 /* RestaurantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9197817B28DA100D00766228 /* RestaurantModel.swift */; };
+		9197818428DA339D00766228 /* server-response.json in Resources */ = {isa = PBXBuildFile; fileRef = 9197817A28DA0FBC00766228 /* server-response.json */; };
 		91AC831128BD9D2700EC98DE /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AC831028BD9D2700EC98DE /* RegisterViewController.swift */; };
 		91AC831328BD9D3700EC98DE /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AC831228BD9D3700EC98DE /* RegisterView.swift */; };
 		91AC831628BDB44D00EC98DE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AC831528BDB44D00EC98DE /* HomeViewController.swift */; };
@@ -70,6 +72,8 @@
 		9149393428C145B3005C7B83 /* MyReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReservationViewController.swift; sourceTree = "<group>"; };
 		9149393628C145C4005C7B83 /* MyReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReservationView.swift; sourceTree = "<group>"; };
 		9172FBDF28D3C0DF00F44CB1 /* AppetitoTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetitoTextField.swift; sourceTree = "<group>"; };
+		9197817A28DA0FBC00766228 /* server-response.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "server-response.json"; sourceTree = "<group>"; };
+		9197817B28DA100D00766228 /* RestaurantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantModel.swift; sourceTree = "<group>"; };
 		91AC831028BD9D2700EC98DE /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		91AC831228BD9D3700EC98DE /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		91AC831528BDB44D00EC98DE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -111,10 +115,11 @@
 				2E4C5A5628B99838003712C5 /* AppDelegate.swift */,
 				2E4C5A5828B99838003712C5 /* SceneDelegate.swift */,
 				2E4C5A6E28B99902003712C5 /* Files */,
+				2E4C5A6A28B998B6003712C5 /* Helpers */,
 				4B46482C28D16306004CE5EE /* Network */,
 				2E4C5A6F28B99C48003712C5 /* Components */,
 				4B46482F28D163BA004CE5EE /* Model */,
-				2E4C5A6A28B998B6003712C5 /* Helpers */,
+				9197817D28DA140700766228 /* ViewModel */,
 				2E4C5A6D28B998D4003712C5 /* Controllers */,
 			);
 			path = Appetito;
@@ -140,6 +145,7 @@
 				3AF89B0628C0666800585BFF /* Reservation */,
 				9149393328C14595005C7B83 /* MyReservation */,
 				91D78A0428BEAAFA00582AC6 /* Infos */,
+				9197817928DA0F8A00766228 /* Mock */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -194,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				4B46483028D163C5004CE5EE /* CEPModel.swift */,
+				9197817B28DA100D00766228 /* RestaurantModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -233,6 +240,21 @@
 				9149393428C145B3005C7B83 /* MyReservationViewController.swift */,
 			);
 			path = MyReservation;
+			sourceTree = "<group>";
+		};
+		9197817928DA0F8A00766228 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				9197817A28DA0FBC00766228 /* server-response.json */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		9197817D28DA140700766228 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		91AC831428BDB41B00EC98DE /* Home */ = {
@@ -344,6 +366,7 @@
 				2E4C5A6328B9983B003712C5 /* LaunchScreen.storyboard in Resources */,
 				2E4C5A6028B9983B003712C5 /* Assets.xcassets in Resources */,
 				9115071828D4A8ED00DDC8E0 /* GoogleService-Info.plist in Resources */,
+				9197818428DA339D00766228 /* server-response.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +423,7 @@
 				3AF89B0A28C07D8000585BFF /* ReservationView.swift in Sources */,
 				4B46483628D168F0004CE5EE /* RegisterAddressView.swift in Sources */,
 				91AC831128BD9D2700EC98DE /* RegisterViewController.swift in Sources */,
+				9197817C28DA100D00766228 /* RestaurantModel.swift in Sources */,
 				4B46482E28D1636A004CE5EE /* NetworkManager.swift in Sources */,
 				91AC831328BD9D3700EC98DE /* RegisterView.swift in Sources */,
 				2E4C5A5B28B99838003712C5 /* LoginViewController.swift in Sources */,
