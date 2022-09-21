@@ -44,8 +44,11 @@ class HomeViewController: UIViewController {
         return carouselFlowCollectionView
     }()
     
+    var restaurantes: [Restaurant] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadJson()
         setupView()
         categoryCollectionView.delegate = self
         categoryCollectionView.dataSource = self
@@ -53,11 +56,24 @@ class HomeViewController: UIViewController {
         carouselCollectionView.dataSource = self
         self.view.backgroundColor = UIColor(named: "mainBackground")
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    func loadJson(){
+        guard let jsonURL = Bundle.main.url(forResource: "server-response", withExtension: "json") else {
+            return
+        }
+        
+        do {
+            let data = try Data(contentsOf: jsonURL)
+            let decoder = JSONDecoder()
+            restaurantes = try decoder.decode([Restaurant].self, from: data)
+        } catch {
+            print(error)
+        }
     }
 }
 extension HomeViewController: ViewConfiguration {
@@ -99,7 +115,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.categoryCollectionView {
-            return 20
+            return restaurantes.count
         }
         return 10
     }
@@ -109,7 +125,9 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCollectionViewCell", for: indexPath) as? CustomCollectionViewCell else {
                 return UICollectionViewCell()
             }
+            cell.configuraCell(restaurantes[indexPath.row])
             return cell
+            
         } else {
             guard let carouCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CarouselCollectionViewCell", for: indexPath) as? CarouselCollectionViewCell else {
                 return UICollectionViewCell()
@@ -120,11 +138,9 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == self.categoryCollectionView {
-            print("index path: \(indexPath)")
-            
+            let resturanteSelecionada = restaurantes[indexPath.section]
             let infosViewController = InfosViewController()
             let navigationController = UINavigationController(rootViewController: infosViewController)
-            
             self.present(navigationController, animated: true)
         }
     }
