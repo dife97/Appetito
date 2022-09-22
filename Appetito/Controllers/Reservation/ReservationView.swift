@@ -90,7 +90,7 @@ class ReservationView: UIView {
         occasionLabel.translatesAutoresizingMaskIntoConstraints = false
         occasionLabel.numberOfLines = 0
         occasionLabel.font = UIFont(name:"KohinoorDevanagari-Light", size:16)
-        occasionLabel.text = "Digite a ocasião (opcional)"
+        occasionLabel.text = "Digite a ocasião"
         occasionLabel.textColor = .white
         
         return occasionLabel
