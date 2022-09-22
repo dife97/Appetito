@@ -48,37 +48,38 @@ extension LoginViewController: ViewConfiguration {
 
 extension LoginViewController: LoginViewProtocol {
     func tappedLogin() {
-        
-        let email = loginView.loginTextField.text ?? ""
         let password = loginView.passwordTextField.text ?? ""
-        
-        auth?.signIn(withEmail: email, password: password, completion: { [self] user, error in
-            if error != nil {
-                CustomAlert(controller: self).exibe(titulo: "Atenção", mensagem: error?.localizedDescription ?? "")
-            } else {
-                if user == nil {
-                    CustomAlert(controller: self).exibe(titulo: "error", mensagem: error?.localizedDescription ?? "")
+        let email = loginView.loginTextField.text ?? ""
+        if password.valid(.password) && email.valid(.email) {
+            auth?.signIn(withEmail: email, password: password, completion: { [self] user, error in
+                if error != nil {
+                    CustomAlert(controller: self).exibe(titulo: "Atenção", mensagem: error?.localizedDescription ?? "")
                 } else {
-                    let homeViewController = HomeViewController()
-                    let myReservationController = MyReservationViewController()
-                    myReservationController.tabBarItem = UITabBarItem(title: "Reservas", image: UIImage(systemName: "folder"), selectedImage: UIImage(systemName: "folder.fill"))
-                    myReservationController.tabBarItem.tag = 1
-                    let tabbar = UITabBarController()
-                    homeViewController.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), selectedImage: UIImage(systemName: "house.fill"))
-                    homeViewController.tabBarItem.tag = 0
-                    let navigationController = UINavigationController(rootViewController: homeViewController)
-                    tabbar.viewControllers = [navigationController, myReservationController]
-                    tabbar.modalPresentationStyle = .fullScreen
-                    tabbar.view.backgroundColor = UIColor(named: "mainBackground")
-                    tabbar.tabBar.isTranslucent = false
-                    tabbar.view.tintColor = UIColor.white
-                    present(tabbar, animated: true)
-                    
+                    if user == nil {
+                        CustomAlert(controller: self).exibe(titulo: "error", mensagem: error?.localizedDescription ?? "")
+                    } else {
+                        let homeViewController = HomeViewController()
+                        let myReservationController = MyReservationViewController()
+                        myReservationController.tabBarItem = UITabBarItem(title: "Reservas", image: UIImage(systemName: "folder"), selectedImage: UIImage(systemName: "folder.fill"))
+                        myReservationController.tabBarItem.tag = 1
+                        let tabbar = UITabBarController()
+                        homeViewController.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), selectedImage: UIImage(systemName: "house.fill"))
+                        homeViewController.tabBarItem.tag = 0
+                        let navigationController = UINavigationController(rootViewController: homeViewController)
+                        tabbar.viewControllers = [navigationController, myReservationController]
+                        tabbar.modalPresentationStyle = .fullScreen
+                        tabbar.view.backgroundColor = UIColor(named: "mainBackground")
+                        tabbar.tabBar.isTranslucent = false
+                        tabbar.view.tintColor = UIColor.white
+                        present(tabbar, animated: true)
+                    }
                 }
-            }
-        })
+            })
+        } else {
+            CustomAlert(controller: self).exibe(titulo: "Atenção", mensagem: "E-mail Invalido")
+        }
+        
     }
-    
 }
 
 

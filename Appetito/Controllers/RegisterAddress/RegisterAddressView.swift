@@ -7,8 +7,13 @@
 
 import UIKit
 
+protocol RegisterAdressProtocol: AnyObject {
+    func tappedLogin()
+}
+
 class RegisterAddressView: UIView {
     
+    weak var delegate: RegisterAdressProtocol?
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel(frame: .zero)
@@ -25,7 +30,7 @@ class RegisterAddressView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         label.font = UIFont(name:"KohinoorDevanagari-Light", size:15)
-        label.text = "CEP:"
+        label.text = "CEP:  "
         label.textColor = .white
         return label
     }()
@@ -37,6 +42,7 @@ class RegisterAddressView: UIView {
         textfield.layer.cornerRadius = 8
         textfield.placeholder = "Ex.: 01234-000" //TODO: regex for typing only numbers
         textfield.textColor = UIColor.black
+        textfield.delegate = self
         return textfield
     }()
     
@@ -44,9 +50,10 @@ class RegisterAddressView: UIView {
         let cidadeTextField = UITextField(frame: .zero)
         cidadeTextField.backgroundColor = .white
         cidadeTextField.layer.cornerRadius = 8
-        cidadeTextField.placeholder = ""
+        cidadeTextField.placeholder = "  "
         cidadeTextField.textColor = UIColor.black
         cidadeTextField.isHidden = true
+        cidadeTextField.delegate = self
         return cidadeTextField
     }()
     
@@ -54,7 +61,7 @@ class RegisterAddressView: UIView {
         let bairroTextField = UITextField(frame: .zero)
         bairroTextField.backgroundColor = .white
         bairroTextField.layer.cornerRadius = 8
-        bairroTextField.placeholder = ""
+        bairroTextField.placeholder = "  "
         bairroTextField.textColor = UIColor.black
         bairroTextField.isHidden = true
         
@@ -65,7 +72,7 @@ class RegisterAddressView: UIView {
         let ruaTextField = UITextField(frame: .zero)
         ruaTextField.backgroundColor = .white
         ruaTextField.layer.cornerRadius = 8
-        ruaTextField.placeholder = ""
+        ruaTextField.placeholder = "  "
         ruaTextField.textColor = UIColor.black
         ruaTextField.isHidden = true
         
@@ -76,7 +83,7 @@ class RegisterAddressView: UIView {
         let ufTextField = UITextField(frame: .zero)
         ufTextField.backgroundColor = .white
         ufTextField.layer.cornerRadius = 8
-        ufTextField.placeholder = ""
+        ufTextField.placeholder = "  "
         ufTextField.textColor = UIColor.black
         ufTextField.isHidden = true
         
@@ -93,6 +100,17 @@ class RegisterAddressView: UIView {
         return stackView
     }()
     
+    lazy var confirmCep: UIButton = {
+        let confirmCep = UIButton(type: .system)
+        confirmCep.translatesAutoresizingMaskIntoConstraints = false
+        confirmCep.layer.cornerRadius = 8
+        confirmCep.backgroundColor = UIColor(named: "mainYellow")
+        confirmCep.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        confirmCep.setTitleColor(.black, for: .normal)
+        confirmCep.setTitle("CEP", for: .normal)
+        return confirmCep
+    }()
+    
     lazy var confirmButton: UIButton = {
         let confirmButton = UIButton(type: .system)
         confirmButton.translatesAutoresizingMaskIntoConstraints = false
@@ -101,6 +119,8 @@ class RegisterAddressView: UIView {
         confirmButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         confirmButton.setTitleColor(.black, for: .normal)
         confirmButton.setTitle("CONFIRMAR", for: .normal)
+        confirmButton.addTarget(self, action: #selector(tappedLogin), for: .touchUpInside)
+        
         return confirmButton
     }()
     
@@ -124,6 +144,10 @@ class RegisterAddressView: UIView {
         ruaTextField.text = cep.logradouro
         ruaTextField.isHidden = false
     }
+    
+    @objc func tappedLogin(){
+        self.delegate?.tappedLogin()
+    }
 }
 
 extension RegisterAddressView: ViewConfiguration {
@@ -138,7 +162,7 @@ extension RegisterAddressView: ViewConfiguration {
         stackView.addArrangedSubview(ufTextField)
         stackView.addArrangedSubview(cidadeTextField)
         addSubview(stackView)
-        
+        addSubview(confirmCep)
         addSubview(confirmButton)
     }
     
@@ -166,9 +190,47 @@ extension RegisterAddressView: ViewConfiguration {
             
             confirmButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 100),
             confirmButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -100),
-            confirmButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -80),
-            confirmButton.heightAnchor.constraint(equalToConstant: 48)
+            confirmButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -30),
+            confirmButton.heightAnchor.constraint(equalToConstant: 48),
+            
+            confirmCep.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 100),
+            confirmCep.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -100),
+            confirmCep.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -100),
+            confirmCep.heightAnchor.constraint(equalToConstant: 48)
+            
+            
         ])
     }
     
+}
+
+extension RegisterAddressView: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if textField.placeholder == "Digite seu CEP" {
+            cepTextField.becomeFirstResponder()
+        } else {
+            cepTextField.endEditing(true)
+        }
+        
+        return true
+    }
+
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        return true
+    }
+
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.layer.borderColor = CGColor(red: 0.976, green: 0.718, blue: 0.169, alpha: 1)
+        textField.layer.borderWidth = 2
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.layer.borderColor = UIColor.systemGray.cgColor
+        textField.layer.borderWidth = 0
+    }
 }

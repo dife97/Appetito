@@ -7,7 +7,9 @@
 
 import UIKit
 
+
 class RegisterView: UIView {
+    
     
     private lazy var titleLabel: UILabel = {
         let titleLabel = UILabel(frame: .zero)
@@ -68,6 +70,7 @@ class RegisterView: UIView {
         let registerUser = UITextField(frame: .zero)
         registerUser.translatesAutoresizingMaskIntoConstraints = false
         registerUser.backgroundColor = .white
+        registerUser.delegate = self
         registerUser.layer.cornerRadius = 8
         registerUser.placeholder = "  Digite seu usuario"
         registerUser.textColor = UIColor.black
@@ -79,10 +82,14 @@ class RegisterView: UIView {
         let registerPassword = UITextField(frame: .zero)
         registerPassword.translatesAutoresizingMaskIntoConstraints = false
         registerPassword.backgroundColor = .white
+        registerPassword.delegate = self
         registerPassword.layer.cornerRadius = 8
         registerPassword.placeholder = "  Digite sua senha"
         registerPassword.textColor = UIColor.black
         registerPassword.isSecureTextEntry = true
+        registerPassword.autocorrectionType = .no
+        registerPassword.returnKeyType = .done
+        registerPassword.textContentType = .oneTimeCode
         
         return registerPassword
     }()
@@ -91,6 +98,7 @@ class RegisterView: UIView {
         let registerPhone = UITextField(frame: .zero)
         registerPhone.translatesAutoresizingMaskIntoConstraints = false
         registerPhone.backgroundColor = .white
+        registerPhone.delegate = self
         registerPhone.layer.cornerRadius = 8
         registerPhone.placeholder = " Digite seu telefone"
         registerPhone.textColor = UIColor.black
@@ -101,8 +109,13 @@ class RegisterView: UIView {
     lazy var emailTextField: UITextField = {
         let registerEmail = UITextField(frame: .zero)
         registerEmail.translatesAutoresizingMaskIntoConstraints = false
+        registerEmail.delegate = self
         registerEmail.backgroundColor = .white
         registerEmail.layer.cornerRadius = 8
+        registerEmail.placeholder = "  email"
+        registerEmail.keyboardType = .emailAddress
+        registerEmail.autocapitalizationType = .none
+        registerEmail.returnKeyType = .next
         registerEmail.placeholder = "  Digite seu email"
         registerEmail.textColor = UIColor.black
         
@@ -117,7 +130,6 @@ class RegisterView: UIView {
         confirmButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         confirmButton.setTitleColor(.black, for: .normal)
         confirmButton.setTitle("CONFIRMAR", for: .normal)
-        //        button.addTarget(self, action: #selector(tappedRegister), for: .touchUpInside)
         return confirmButton
     }()
     
@@ -171,14 +183,34 @@ extension RegisterView: ViewConfiguration {
         ])
     }
 }
+extension RegisterView: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if textField.placeholder == "Digite Seu E-mail" {
+            passwordTextField.becomeFirstResponder()
+        } else {
+            emailTextField.endEditing(true)
+            passwordTextField.endEditing(true)
+        }
+        
+        return true
+    }
 
-//
-//lazy var passwordTextField: PPTextField = {
-//        let textfield = PPTextField(
-//            labelText: "Senha",
-//            placeholder: "Mínimo de 6 dígitos"
-//        )
-//        textfield.mainTextfield.isSecureTextEntry = true
-//        textfield.checkerFunction = { self.checkerFunction?() }
-//        return textfield
-//    }()
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        return true
+    }
+
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+       
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.layer.borderColor = CGColor(red: 0.976, green: 0.718, blue: 0.169, alpha: 1)
+        textField.layer.borderWidth = 2
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.layer.borderColor = UIColor.systemGray.cgColor
+        textField.layer.borderWidth = 0
+    }
+}

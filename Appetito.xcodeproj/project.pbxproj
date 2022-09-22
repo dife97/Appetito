@@ -29,6 +29,7 @@
 		911E792E28BD4BE300CF4F1B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911E792D28BD4BE300CF4F1B /* LoginView.swift */; };
 		9149393528C145B3005C7B83 /* MyReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9149393428C145B3005C7B83 /* MyReservationViewController.swift */; };
 		9149393728C145C4005C7B83 /* MyReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9149393628C145C4005C7B83 /* MyReservationView.swift */; };
+		916D8F4D28DBBDBA00805C8E /* ExtensionRagex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916D8F4C28DBBDBA00805C8E /* ExtensionRagex.swift */; };
 		9172FBE028D3C0DF00F44CB1 /* AppetitoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9172FBDF28D3C0DF00F44CB1 /* AppetitoTextField.swift */; };
 		9197817C28DA100D00766228 /* RestaurantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9197817B28DA100D00766228 /* RestaurantModel.swift */; };
 		9197818428DA339D00766228 /* server-response.json in Resources */ = {isa = PBXBuildFile; fileRef = 9197817A28DA0FBC00766228 /* server-response.json */; };
@@ -71,6 +72,7 @@
 		911E792D28BD4BE300CF4F1B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		9149393428C145B3005C7B83 /* MyReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReservationViewController.swift; sourceTree = "<group>"; };
 		9149393628C145C4005C7B83 /* MyReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReservationView.swift; sourceTree = "<group>"; };
+		916D8F4C28DBBDBA00805C8E /* ExtensionRagex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionRagex.swift; sourceTree = "<group>"; };
 		9172FBDF28D3C0DF00F44CB1 /* AppetitoTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetitoTextField.swift; sourceTree = "<group>"; };
 		9197817A28DA0FBC00766228 /* server-response.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "server-response.json"; sourceTree = "<group>"; };
 		9197817B28DA100D00766228 /* RestaurantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantModel.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				2E4C5A7028B99C6C003712C5 /* AppButton.swift */,
 				4B46483728D16D87004CE5EE /* CustomAlert.swift */,
 				9172FBDF28D3C0DF00F44CB1 /* AppetitoTextField.swift */,
+				916D8F4C28DBBDBA00805C8E /* ExtensionRagex.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 				2E4C5A6C28B998C4003712C5 /* ViewConfiguration.swift in Sources */,
 				4B46483128D163C5004CE5EE /* CEPModel.swift in Sources */,
 				9149393728C145C4005C7B83 /* MyReservationView.swift in Sources */,
+				916D8F4D28DBBDBA00805C8E /* ExtensionRagex.swift in Sources */,
 				2E4C5A5728B99838003712C5 /* AppDelegate.swift in Sources */,
 				9149393528C145B3005C7B83 /* MyReservationViewController.swift in Sources */,
 				2E4C5A7628B9AA0E003712C5 /* InitialView.swift in Sources */,

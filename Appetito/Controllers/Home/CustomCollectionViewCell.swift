@@ -15,7 +15,6 @@ class CustomCollectionViewCell: UICollectionViewCell {
         restaurantLogo.translatesAutoresizingMaskIntoConstraints = false
         restaurantLogo.layer.borderWidth = 2
         restaurantLogo.layer.borderColor = UIColor.black.cgColor
-//        restaurantLogo.image = UIImage(named: "fogoDeChaoImage")
         restaurantLogo.layer.masksToBounds = false
         restaurantLogo.clipsToBounds = true
         restaurantLogo.layer.cornerRadius = 50

@@ -117,7 +117,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         if collectionView == self.categoryCollectionView {
             return restaurantes.count
         }
-        return 10
+        return restaurantes.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -132,6 +132,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             guard let carouCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CarouselCollectionViewCell", for: indexPath) as? CarouselCollectionViewCell else {
                 return UICollectionViewCell()
             }
+            carouCell.configuraCarrouCell(restaurantes[indexPath.row])
             return carouCell
         }
     }

@@ -171,10 +171,9 @@ extension LoginView: ViewConfiguration {
     }
     
 }
-
 extension LoginView: UITextViewDelegate {
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
         if textField == loginTextField {
             passwordTextField.becomeFirstResponder()
         } else if textField == passwordTextField {
@@ -186,13 +185,18 @@ extension LoginView: UITextViewDelegate {
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         return true
     }
+
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+       
+    }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-//        loginTextField.layer.borderColor = .init(red: 0.976, green: 0.718 , blue: 0.169, alpha: 1)
-//        loginTextField.layer.borderWidth = 3
-//        passwordTextField.layer.borderColor = .init(red: 0.976, green: 0.718 , blue: 0.169, alpha: 1)
-//        passwordTextField.layer.borderWidth = 3
-//
+        textField.layer.borderColor = CGColor(red: 0.976, green: 0.718, blue: 0.169, alpha: 1)
+        textField.layer.borderWidth = 2
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.layer.borderColor = UIColor.systemGray.cgColor
+        textField.layer.borderWidth = 0
     }
 }
-
