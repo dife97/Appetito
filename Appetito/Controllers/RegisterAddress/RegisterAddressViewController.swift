@@ -19,7 +19,7 @@ class RegisterAddressViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(named: "mainBackground")
-        
+        registerAddressView.delegate = self
         configureView()
     }
     
@@ -36,7 +36,6 @@ class RegisterAddressViewController: UIViewController {
                 DispatchQueue.main.async {
                     guard let cep = cep else { return }
                     self.registerAddressView.loadFromCep(cep: cep)
-                    
                 }
             case .failure(let error):
                 print(error.localizedDescription)
@@ -44,10 +43,9 @@ class RegisterAddressViewController: UIViewController {
         }
     }
 }
-extension RegisterViewController: RegisterAdressProtocol {
+extension RegisterAddressViewController: RegisterAdressProtocol {
     func tappedLogin() {
-        let LoginViewController = LoginViewController()
-        let navigationController = UINavigationController(rootViewController: LoginViewController)
-        navigationController.pushViewController(LoginViewController, animated: true)
+        self.navigationController?.popToRootViewController(animated: true)
     }
 }
+

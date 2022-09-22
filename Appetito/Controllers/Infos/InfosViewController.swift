@@ -15,15 +15,15 @@ class InfosViewController: UIViewController {
         return infosView
     }()
     
-    var restaurantes: [Restaurant] = []
+    var restaurante: Restaurant?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let restaurante = restaurante {
+            infosView.restaurante = restaurante
+            setupView()
+        }
         infosView.delegate = self
-        setupView()
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(didTapDismiss))
-        navigationController?.navigationBar.tintColor = UIColor(named: "mainYellow")
-        
     }
     
     @objc func didTapDismiss() {
@@ -48,6 +48,8 @@ extension InfosViewController: ViewConfiguration {
     }
     
     func setupAdditionalConfiguration() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(didTapDismiss))
+        navigationController?.navigationBar.tintColor = UIColor(named: "mainYellow")
         
     }
 }
