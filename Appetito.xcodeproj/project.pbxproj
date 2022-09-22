@@ -236,6 +236,20 @@
 			path = Register;
 			sourceTree = "<group>";
 		};
+		912B551C28C1688900BAC0B2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		912B551D28C1689D00BAC0B2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		9149393328C14595005C7B83 /* MyReservation */ = {
 			isa = PBXGroup;
 			children = (
