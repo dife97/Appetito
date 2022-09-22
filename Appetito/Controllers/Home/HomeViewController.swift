@@ -30,7 +30,8 @@ class HomeViewController: UIViewController {
     private let searchBar: UISearchController = {
         let search = UISearchController(searchResultsController: nil)
         search.searchBar.placeholder = "Procure um restaurante"
-        
+        search.searchBar.tintColor = UIColor(named: "mainYellow")
+        search.searchBar.setValue("Cancelar", forKey: "cancelButtonText")
         return search
     }()
     
@@ -142,9 +143,10 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             
             let restaurante = restaurantes[indexPath.item]
             let infosViewController = InfosViewController()
-            infosViewController.restaurante = restaurante
+            infosViewController.update(restaurant: restaurante)
             let navigationController = UINavigationController(rootViewController: infosViewController)
             self.present(navigationController, animated: true)
+            
         }
     }
     @objc func didTapSignOut() {
