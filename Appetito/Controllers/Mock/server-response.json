@@ -21,7 +21,7 @@
     },
     {
         "id": 3,
-        "category": "Churrascaria",
+        "category": "Comida Arabe",
         "imagemRestaurant": "pobreJuanLogo",
         "nameRestaurant": "Pobre Juan",
         "imageNote" : "star",
@@ -41,7 +41,7 @@
     },
     {
         "id": 5,
-        "category": "Churrascaria",
+        "category": "Comida Italiana",
         "imagemRestaurant": "barDoJuarezLogo",
         "nameRestaurant": "Bar do Juarez",
         "imageNote" : "star",
@@ -51,7 +51,7 @@
     },
     {
         "id": 6,
-        "category": "Churrascaria",
+        "category": "Comida Japonesa",
         "imagemRestaurant": "lEntrecôtedeParisLogo",
         "nameRestaurant": "L’Entrecôte de Paris",
         "imageNote" : "star",

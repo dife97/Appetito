@@ -15,6 +15,8 @@ class InfosViewController: UIViewController {
         return infosView
     }()
     
+    var restaurantes: [Restaurant] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         infosView.delegate = self

@@ -24,16 +24,15 @@ class RegisterAddressViewController: UIViewController {
     }
     
     private func configureView() {
-        registerAddressView.confirmButton.addTarget(self, action: #selector(didTapConfirmButton), for: .touchUpInside)
+        registerAddressView.confirmCep.addTarget(self, action: #selector(didTapConfirmButton), for: .touchUpInside)
+        
     }
     
     //MARK: - Actions
     @objc func didTapConfirmButton() {
-        
         service.loadRequest(cep: registerAddressView.cepTextField.text ?? "") { result in
             switch result {
             case .success(let cep):
-                
                 DispatchQueue.main.async {
                     guard let cep = cep else { return }
                     self.registerAddressView.loadFromCep(cep: cep)
@@ -43,21 +42,12 @@ class RegisterAddressViewController: UIViewController {
                 print(error.localizedDescription)
             }
         }
-        
-        
-        
-//        let alertController = UIAlertController(
-//            title: "Cadastrado",
-//            message: "",
-//            preferredStyle: .alert
-//        )
-//        let okButton = UIAlertAction(title: "Ok",
-//                                     style: .cancel) { alert in
-//            self.present(HomeViewController(), animated: true)
-//        }
-//
-//        alertController.addAction(okButton)
-//
-//        self.present(alertController, animated: true)
+    }
+}
+extension RegisterViewController: RegisterAdressProtocol {
+    func tappedLogin() {
+        let LoginViewController = LoginViewController()
+        let navigationController = UINavigationController(rootViewController: LoginViewController)
+        navigationController.pushViewController(LoginViewController, animated: true)
     }
 }
