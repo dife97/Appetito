@@ -63,11 +63,12 @@ class InfosView: UIView {
         
         return button
     }()
-    var restaurantes: Restaurant?
+    var restaurante: Restaurant?
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
         setupView()
+        configuraInfos()
         
     }
     
@@ -76,8 +77,8 @@ class InfosView: UIView {
     }
     
     func configuraInfos(){
-        restaurantImageView.image = UIImage(named: restaurantes?.imageRestaurantInfos ?? "")
-        infosLabel.text = restaurantes?.infos
+        restaurantImageView.image = UIImage(named: restaurante?.imageRestaurantInfos ?? "")
+        infosLabel.text = restaurante?.infos
     }
     
     @objc func tappedConfirm() {

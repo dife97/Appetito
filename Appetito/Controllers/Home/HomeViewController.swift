@@ -139,15 +139,14 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == self.categoryCollectionView {
-            let resturanteSelecionada = restaurantes[indexPath.section]
+            
+            let restaurante = restaurantes[indexPath.item]
             let infosViewController = InfosViewController()
+            infosViewController.restaurante = restaurante
             let navigationController = UINavigationController(rootViewController: infosViewController)
             self.present(navigationController, animated: true)
         }
     }
-    
-    
-    
     @objc func didTapSignOut() {
         self.dismiss(animated: true) {
         }
