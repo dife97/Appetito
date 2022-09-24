@@ -18,13 +18,13 @@
 		3AD7824628BDD2EF00BD679C /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD7824528BDD2EF00BD679C /* CustomCollectionViewCell.swift */; };
 		3AF89B0828C066A000585BFF /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF89B0728C066A000585BFF /* ReservationViewController.swift */; };
 		3AF89B0A28C07D8000585BFF /* ReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF89B0928C07D8000585BFF /* ReservationView.swift */; };
+		3F59310028DFB1A70073A427 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F5930FF28DFB1A70073A427 /* GoogleService-Info.plist */; };
 		4B46482E28D1636A004CE5EE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B46482D28D1636A004CE5EE /* NetworkManager.swift */; };
 		4B46483128D163C5004CE5EE /* CEPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B46483028D163C5004CE5EE /* CEPModel.swift */; };
 		4B46483428D168E6004CE5EE /* RegisterAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B46483328D168E6004CE5EE /* RegisterAddressViewController.swift */; };
 		4B46483628D168F0004CE5EE /* RegisterAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B46483528D168F0004CE5EE /* RegisterAddressView.swift */; };
 		4B46483828D16D87004CE5EE /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B46483728D16D87004CE5EE /* CustomAlert.swift */; };
 		4B46483A28D17137004CE5EE /* RegisterAddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B46483928D17137004CE5EE /* RegisterAddressViewModel.swift */; };
-		9115071828D4A8ED00DDC8E0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9115071728D4A8ED00DDC8E0 /* GoogleService-Info.plist */; };
 		911E792C28BD353C00CF4F1B /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911E792B28BD353C00CF4F1B /* InitialViewController.swift */; };
 		911E792E28BD4BE300CF4F1B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911E792D28BD4BE300CF4F1B /* LoginView.swift */; };
 		9149393528C145B3005C7B83 /* MyReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9149393428C145B3005C7B83 /* MyReservationViewController.swift */; };
@@ -59,6 +59,7 @@
 		3AF89B0728C066A000585BFF /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
 		3AF89B0928C07D8000585BFF /* ReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationView.swift; sourceTree = "<group>"; };
 		3F54A130E146973B55E90AFE /* Pods_Appetito.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Appetito.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F5930FF28DFB1A70073A427 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4B46482D28D1636A004CE5EE /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		4B46483028D163C5004CE5EE /* CEPModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CEPModel.swift; sourceTree = "<group>"; };
 		4B46483328D168E6004CE5EE /* RegisterAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAddressViewController.swift; sourceTree = "<group>"; };
@@ -67,7 +68,6 @@
 		4B46483928D17137004CE5EE /* RegisterAddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAddressViewModel.swift; sourceTree = "<group>"; };
 		8ECAEAAA4B9B36E0E30F272B /* Pods-Appetito.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Appetito.release.xcconfig"; path = "Target Support Files/Pods-Appetito/Pods-Appetito.release.xcconfig"; sourceTree = "<group>"; };
 		9115071228D3D11400DDC8E0 /* Appetito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Appetito.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9115071728D4A8ED00DDC8E0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		911E792B28BD353C00CF4F1B /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		911E792D28BD4BE300CF4F1B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		9149393428C145B3005C7B83 /* MyReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReservationViewController.swift; sourceTree = "<group>"; };
@@ -113,7 +113,7 @@
 		2E4C5A5528B99838003712C5 /* Appetito */ = {
 			isa = PBXGroup;
 			children = (
-				9115071728D4A8ED00DDC8E0 /* GoogleService-Info.plist */,
+				3F5930FF28DFB1A70073A427 /* GoogleService-Info.plist */,
 				2E4C5A5628B99838003712C5 /* AppDelegate.swift */,
 				2E4C5A5828B99838003712C5 /* SceneDelegate.swift */,
 				2E4C5A6E28B99902003712C5 /* Files */,
@@ -121,7 +121,6 @@
 				4B46482C28D16306004CE5EE /* Network */,
 				2E4C5A6F28B99C48003712C5 /* Components */,
 				4B46482F28D163BA004CE5EE /* Model */,
-				9197817D28DA140700766228 /* ViewModel */,
 				2E4C5A6D28B998D4003712C5 /* Controllers */,
 			);
 			path = Appetito;
@@ -236,20 +235,6 @@
 			path = Register;
 			sourceTree = "<group>";
 		};
-		912B551C28C1688900BAC0B2 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		912B551D28C1689D00BAC0B2 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		9149393328C14595005C7B83 /* MyReservation */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,13 +250,6 @@
 				9197817A28DA0FBC00766228 /* server-response.json */,
 			);
 			path = Mock;
-			sourceTree = "<group>";
-		};
-		9197817D28DA140700766228 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		91AC831428BDB41B00EC98DE /* Home */ = {
@@ -382,7 +360,7 @@
 			files = (
 				2E4C5A6328B9983B003712C5 /* LaunchScreen.storyboard in Resources */,
 				2E4C5A6028B9983B003712C5 /* Assets.xcassets in Resources */,
-				9115071828D4A8ED00DDC8E0 /* GoogleService-Info.plist in Resources */,
+				3F59310028DFB1A70073A427 /* GoogleService-Info.plist in Resources */,
 				9197818428DA339D00766228 /* server-response.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
