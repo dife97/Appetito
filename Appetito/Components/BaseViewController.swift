@@ -6,8 +6,12 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 class BaseViewController: UIViewController {
+    
+    //MARK: - Firestore
+    let db = Firestore.firestore()
     
     //MARK: - LifeCycles
     override func viewDidAppear(_ animated: Bool) {
