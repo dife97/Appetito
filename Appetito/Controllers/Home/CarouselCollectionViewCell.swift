@@ -15,7 +15,7 @@ class CarouselCollectionViewCell: UICollectionViewCell {
         let churrascariaLabel = UILabel()
 //        churrascariaLabel.text = "Churrascaria"
         churrascariaLabel.translatesAutoresizingMaskIntoConstraints = false
-        churrascariaLabel.textColor = .lightGray
+        churrascariaLabel.textColor = .white
         churrascariaLabel.textAlignment = .center
         churrascariaLabel.font = UIFont(name:"", size:10)
         churrascariaLabel.numberOfLines = 0

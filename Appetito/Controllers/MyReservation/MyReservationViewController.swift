@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MyReservationViewController: UIViewController {
+class MyReservationViewController: BaseViewController {
 
     
     private let myReservationView: MyReservationView = {
@@ -21,6 +21,9 @@ class MyReservationViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         view.backgroundColor = UIColor(named: "mainBackground")
+    }
+    @objc func didTapDismiss() {
+        dismiss(animated: true)
     }
 }
 
@@ -38,6 +41,9 @@ extension MyReservationViewController: ViewConfiguration {
         ])
     }
     
-    
+    func setupAdditionalConfiguration() {
+        
+        
+    }
     
 }

@@ -59,16 +59,28 @@ class ReservationView: UIView {
         amountPeopleLabel.translatesAutoresizingMaskIntoConstraints = false
         amountPeopleLabel.numberOfLines = 0
         amountPeopleLabel.font = UIFont(name:"KohinoorDevanagari-Light", size:16)
-        amountPeopleLabel.text = "Quantidade de pessoas"
+        amountPeopleLabel.text = "Quantidade de pessoas: "
         amountPeopleLabel.textColor = .white
         
         return amountPeopleLabel
+    }()
+    
+    private lazy var quantidadeLabel: UILabel = {
+        let quantidadeLabel = UILabel(frame: .zero)
+        quantidadeLabel.translatesAutoresizingMaskIntoConstraints = false
+        quantidadeLabel.numberOfLines = 0
+        quantidadeLabel.font = UIFont(name:"KohinoorDevanagari-Light", size:16)
+        quantidadeLabel.text = "1"
+        quantidadeLabel.textColor = .white
+        
+        return quantidadeLabel
     }()
     
     private lazy var addPeople: UIStepper = {
         let addPeople = UIStepper()
         addPeople.translatesAutoresizingMaskIntoConstraints = false
         addPeople.layer.cornerRadius = 8
+        addPeople.addTarget(self, action: #selector(adicionarPeople), for: .valueChanged)
         
         return addPeople
     }()
@@ -92,7 +104,7 @@ class ReservationView: UIView {
         occasionTextField.backgroundColor = .white
         occasionTextField.textColor = UIColor.black
         
-       return occasionTextField
+        return occasionTextField
     }()
     
     private lazy var confirmButton: UIButton = {
@@ -107,10 +119,10 @@ class ReservationView: UIView {
         
         return button
     }()
-
+    
     override init(frame: CGRect) {
         super.init(frame: .zero)
-       setupView()
+        setupView()
     }
     
     
@@ -134,7 +146,7 @@ class ReservationView: UIView {
     
     @objc func exibeData(sender:UIDatePicker) {
         let formate = DateFormatter()
-        formate.dateFormat = "dd/MM/yyyy"
+        formate.dateFormat = "MM/dd/yyyy hh:mm a"
         let date = UIDatePicker()
         self.dateTextField.text = formate.string(from: date.date)
     }
@@ -154,14 +166,18 @@ class ReservationView: UIView {
     @objc func doneButtonAction() {
         self.endEditing(true)
     }
+    
+    @objc func adicionarPeople() {
+        quantidadeLabel.text = "\(addPeople.value)"
+    }
 }
-
 extension ReservationView: ViewConfiguration {
     func buildViewHierarchy() {
         addSubview(restaurantImageView)
         addSubview(informationLabel)
         addSubview(dateTextField)
         addSubview(amountPeopleLabel)
+        addSubview(quantidadeLabel)
         addSubview(addPeople)
         addSubview(occasionLabel)
         addSubview(occasionTextField)
@@ -191,7 +207,12 @@ extension ReservationView: ViewConfiguration {
             amountPeopleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             amountPeopleLabel.heightAnchor.constraint(equalToConstant: 35),
             
-            addPeople.topAnchor.constraint(equalTo: amountPeopleLabel.bottomAnchor, constant: 20),
+            quantidadeLabel.topAnchor.constraint(equalTo: amountPeopleLabel.bottomAnchor, constant: 5),
+            quantidadeLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 36),
+            quantidadeLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
+            quantidadeLabel.heightAnchor.constraint(equalToConstant: 20),
+            
+            addPeople.topAnchor.constraint(equalTo: quantidadeLabel.bottomAnchor, constant: 5),
             addPeople.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             addPeople.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             addPeople.heightAnchor.constraint(equalToConstant: 40),

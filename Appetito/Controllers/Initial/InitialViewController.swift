@@ -7,7 +7,7 @@
 
 import UIKit
 
-class InitialViewController: UIViewController {
+class InitialViewController: BaseViewController {
     
     private let initialView: InitialView = {
         let initialView = InitialView()

@@ -109,11 +109,11 @@ extension CustomCollectionViewCell: ViewConfiguration {
             nameLabel.trailingAnchor.constraint(equalTo: cellBackground.trailingAnchor, constant: -16),
             nameLabel.heightAnchor.constraint(equalToConstant: 22),
             
-            notaLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor,constant: 5),
+            notaLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor,constant: 20),
             notaLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
             notaLabel.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor),
             
-            starImageView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor,constant: 5),
+            starImageView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor,constant: 18),
             starImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
             starImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 80),
             starImageView.heightAnchor.constraint(equalToConstant: 20)

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RegisterAddressViewController: UIViewController {
+class RegisterAddressViewController: BaseViewController {
     
     let registerAddressView = RegisterAddressView()
     let service = NetworkManager()
