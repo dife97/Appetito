@@ -9,6 +9,8 @@ import UIKit
 
 class InfosViewController: UIViewController {
     
+    var restaurantes: [Restaurant] = []
+    
     private let infosView: InfosView = {
         let infosView = InfosView()
         infosView.translatesAutoresizingMaskIntoConstraints = false
