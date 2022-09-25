@@ -19,13 +19,13 @@
 		3AD7824628BDD2EF00BD679C /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD7824528BDD2EF00BD679C /* CustomCollectionViewCell.swift */; };
 		3AF89B0828C066A000585BFF /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF89B0728C066A000585BFF /* ReservationViewController.swift */; };
 		3AF89B0A28C07D8000585BFF /* ReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF89B0928C07D8000585BFF /* ReservationView.swift */; };
-		3F59310028DFB1A70073A427 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F5930FF28DFB1A70073A427 /* GoogleService-Info.plist */; };
 		4B46482E28D1636A004CE5EE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B46482D28D1636A004CE5EE /* NetworkManager.swift */; };
 		4B46483128D163C5004CE5EE /* CEPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B46483028D163C5004CE5EE /* CEPModel.swift */; };
 		4B46483428D168E6004CE5EE /* RegisterAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B46483328D168E6004CE5EE /* RegisterAddressViewController.swift */; };
 		4B46483628D168F0004CE5EE /* RegisterAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B46483528D168F0004CE5EE /* RegisterAddressView.swift */; };
 		4B46483828D16D87004CE5EE /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B46483728D16D87004CE5EE /* CustomAlert.swift */; };
 		4B46483A28D17137004CE5EE /* RegisterAddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B46483928D17137004CE5EE /* RegisterAddressViewModel.swift */; };
+		9106A1BD28E0C3EB00AD0270 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9106A1BC28E0C3EB00AD0270 /* GoogleService-Info.plist */; };
 		911E792C28BD353C00CF4F1B /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911E792B28BD353C00CF4F1B /* InitialViewController.swift */; };
 		911E792E28BD4BE300CF4F1B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911E792D28BD4BE300CF4F1B /* LoginView.swift */; };
 		9149393528C145B3005C7B83 /* MyReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9149393428C145B3005C7B83 /* MyReservationViewController.swift */; };
@@ -61,7 +61,6 @@
 		3AF89B0728C066A000585BFF /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
 		3AF89B0928C07D8000585BFF /* ReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationView.swift; sourceTree = "<group>"; };
 		3F54A130E146973B55E90AFE /* Pods_Appetito.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Appetito.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3F5930FF28DFB1A70073A427 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4B46482D28D1636A004CE5EE /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		4B46483028D163C5004CE5EE /* CEPModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CEPModel.swift; sourceTree = "<group>"; };
 		4B46483328D168E6004CE5EE /* RegisterAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAddressViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +68,7 @@
 		4B46483728D16D87004CE5EE /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 		4B46483928D17137004CE5EE /* RegisterAddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAddressViewModel.swift; sourceTree = "<group>"; };
 		8ECAEAAA4B9B36E0E30F272B /* Pods-Appetito.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Appetito.release.xcconfig"; path = "Target Support Files/Pods-Appetito/Pods-Appetito.release.xcconfig"; sourceTree = "<group>"; };
+		9106A1BC28E0C3EB00AD0270 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9115071228D3D11400DDC8E0 /* Appetito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Appetito.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		911E792B28BD353C00CF4F1B /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		911E792D28BD4BE300CF4F1B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -166,8 +166,8 @@
 			children = (
 				2E4C5A5F28B9983B003712C5 /* Assets.xcassets */,
 				2E4C5A6128B9983B003712C5 /* LaunchScreen.storyboard */,
+				9106A1BC28E0C3EB00AD0270 /* GoogleService-Info.plist */,
 				2E4C5A6428B9983B003712C5 /* Info.plist */,
-				3F5930FF28DFB1A70073A427 /* GoogleService-Info.plist */,
 			);
 			name = Files;
 			sourceTree = "<group>";
@@ -370,8 +370,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E4C5A6328B9983B003712C5 /* LaunchScreen.storyboard in Resources */,
+				9106A1BD28E0C3EB00AD0270 /* GoogleService-Info.plist in Resources */,
 				2E4C5A6028B9983B003712C5 /* Assets.xcassets in Resources */,
-				3F59310028DFB1A70073A427 /* GoogleService-Info.plist in Resources */,
 				9197818428DA339D00766228 /* server-response.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -603,7 +603,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -632,7 +632,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
