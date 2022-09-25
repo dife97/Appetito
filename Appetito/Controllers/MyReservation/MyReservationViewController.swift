@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MyReservationViewController: UIViewController {
+class MyReservationViewController: BaseViewController {
 
     
     private let myReservationView: MyReservationView = {

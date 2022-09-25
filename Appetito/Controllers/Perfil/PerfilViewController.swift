@@ -7,7 +7,7 @@
 import UIKit
 
 
-class PerfilViewController: UIViewController {
+class PerfilViewController: BaseViewController {
     
     private let perfilView: PerfilView = {
         let perfilView = PerfilView()

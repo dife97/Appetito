@@ -7,7 +7,7 @@
 
 import UIKit
 
-class InfosViewController: UIViewController {
+class InfosViewController: BaseViewController {
     
     private let infosView: InfosView = {
         let infosView = InfosView()
