@@ -8,6 +8,7 @@
 import Foundation
 
 struct Restaurant: Codable {
+    
     var id: Int
     var category: String
     var imagemRestaurant: String

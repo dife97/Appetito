@@ -16,7 +16,7 @@
 		2E4C5A6C28B998C4003712C5 /* ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4C5A6B28B998C4003712C5 /* ViewConfiguration.swift */; };
 		2E4C5A7128B99C6C003712C5 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4C5A7028B99C6C003712C5 /* AppButton.swift */; };
 		2E4C5A7628B9AA0E003712C5 /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4C5A7528B9AA0E003712C5 /* InitialView.swift */; };
-		3AD7824628BDD2EF00BD679C /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD7824528BDD2EF00BD679C /* CustomCollectionViewCell.swift */; };
+		3AD7824628BDD2EF00BD679C /* RestaurantCollectionViewCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD7824528BDD2EF00BD679C /* RestaurantCollectionViewCellCollectionViewCell.swift */; };
 		3AF89B0828C066A000585BFF /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF89B0728C066A000585BFF /* ReservationViewController.swift */; };
 		3AF89B0A28C07D8000585BFF /* ReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF89B0928C07D8000585BFF /* ReservationView.swift */; };
 		4B46482E28D1636A004CE5EE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B46482D28D1636A004CE5EE /* NetworkManager.swift */; };
@@ -48,6 +48,8 @@
 
 /* Begin PBXFileReference section */
 		2E1FFD5728E0B1BC00B8E260 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		2E3121EA28E0D40400D012BF /* Appetito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Appetito.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E3121EC28E0D44900D012BF /* Appetito.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = Appetito.app; path = "../../../Library/Developer/Xcode/DerivedData/Appetito-alqgrzhxkcwvptfthorwpnorwckk/Build/Products/Debug-iphonesimulator/Appetito.app"; sourceTree = "<group>"; };
 		2E4C5A5628B99838003712C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E4C5A5828B99838003712C5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2E4C5A5A28B99838003712C5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -57,7 +59,7 @@
 		2E4C5A6B28B998C4003712C5 /* ViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfiguration.swift; sourceTree = "<group>"; };
 		2E4C5A7028B99C6C003712C5 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
 		2E4C5A7528B9AA0E003712C5 /* InitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialView.swift; sourceTree = "<group>"; };
-		3AD7824528BDD2EF00BD679C /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		3AD7824528BDD2EF00BD679C /* RestaurantCollectionViewCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCollectionViewCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		3AF89B0728C066A000585BFF /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
 		3AF89B0928C07D8000585BFF /* ReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationView.swift; sourceTree = "<group>"; };
 		3F54A130E146973B55E90AFE /* Pods_Appetito.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Appetito.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,7 +71,6 @@
 		4B46483928D17137004CE5EE /* RegisterAddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAddressViewModel.swift; sourceTree = "<group>"; };
 		8ECAEAAA4B9B36E0E30F272B /* Pods-Appetito.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Appetito.release.xcconfig"; path = "Target Support Files/Pods-Appetito/Pods-Appetito.release.xcconfig"; sourceTree = "<group>"; };
 		9106A1BC28E0C3EB00AD0270 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		9115071228D3D11400DDC8E0 /* Appetito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Appetito.app; path = "/Users/diegorodrigues/Documents/projects/Appetito/build/Debug-iphoneos/Appetito.app"; sourceTree = "<absolute>"; };
 		911E792B28BD353C00CF4F1B /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		911E792D28BD4BE300CF4F1B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		9149393428C145B3005C7B83 /* MyReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReservationViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +117,7 @@
 				2E4C5A5528B99838003712C5 /* Appetito */,
 				9E84DB15DCCE8DEFDDDC7D63 /* Pods */,
 				AD16716E91CAB35FC6583D01 /* Frameworks */,
+				2E3121EA28E0D40400D012BF /* Appetito.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,15 +149,13 @@
 			isa = PBXGroup;
 			children = (
 				2E4C5A7428B9AA00003712C5 /* Initial */,
-				911E793028BD603300CF4F1B /* Register */,
-				91D18C9328D274260036AFD5 /* Perfil */,
-				4B46483228D168C6004CE5EE /* RegisterAddress */,
 				911E792F28BD602600CF4F1B /* Login */,
+				911E793028BD603300CF4F1B /* Register */,
 				91AC831428BDB41B00EC98DE /* Home */,
+				91D18C9328D274260036AFD5 /* Perfil */,
 				3AF89B0628C0666800585BFF /* Reservation */,
 				9149393328C14595005C7B83 /* MyReservation */,
 				91D78A0428BEAAFA00582AC6 /* Infos */,
-				9197817928DA0F8A00766228 /* Mock */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -211,6 +211,7 @@
 		4B46482F28D163BA004CE5EE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9197817928DA0F8A00766228 /* Mock */,
 				4B46483028D163C5004CE5EE /* CEPModel.swift */,
 				9197817B28DA100D00766228 /* RestaurantModel.swift */,
 			);
@@ -239,6 +240,7 @@
 		911E793028BD603300CF4F1B /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				4B46483228D168C6004CE5EE /* RegisterAddress */,
 				91AC831228BD9D3700EC98DE /* RegisterView.swift */,
 				91AC831028BD9D2700EC98DE /* RegisterViewController.swift */,
 			);
@@ -267,7 +269,7 @@
 			children = (
 				91AC831728BDB46000EC98DE /* HomeView.swift */,
 				91AC831528BDB44D00EC98DE /* HomeViewController.swift */,
-				3AD7824528BDD2EF00BD679C /* CustomCollectionViewCell.swift */,
+				3AD7824528BDD2EF00BD679C /* RestaurantCollectionViewCellCollectionViewCell.swift */,
 				91D78A0928BEB3E700582AC6 /* CarouselCollectionViewCell.swift */,
 			);
 			path = Home;
@@ -303,6 +305,7 @@
 		AD16716E91CAB35FC6583D01 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2E3121EC28E0D44900D012BF /* Appetito.app */,
 				3F54A130E146973B55E90AFE /* Pods_Appetito.framework */,
 			);
 			name = Frameworks;
@@ -327,7 +330,7 @@
 			);
 			name = Appetito;
 			productName = Appetito;
-			productReference = 9115071228D3D11400DDC8E0 /* Appetito.app */;
+			productReference = 2E3121EA28E0D40400D012BF /* Appetito.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -432,7 +435,7 @@
 				4B46482E28D1636A004CE5EE /* NetworkManager.swift in Sources */,
 				91AC831328BD9D3700EC98DE /* RegisterView.swift in Sources */,
 				2E4C5A5B28B99838003712C5 /* LoginViewController.swift in Sources */,
-				3AD7824628BDD2EF00BD679C /* CustomCollectionViewCell.swift in Sources */,
+				3AD7824628BDD2EF00BD679C /* RestaurantCollectionViewCellCollectionViewCell.swift in Sources */,
 				911E792C28BD353C00CF4F1B /* InitialViewController.swift in Sources */,
 				4B46483828D16D87004CE5EE /* CustomAlert.swift in Sources */,
 				91D78A0828BEAB2200582AC6 /* InfosViewController.swift in Sources */,

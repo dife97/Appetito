@@ -1,5 +1,5 @@
 //
-//  CustomCollectionViewCell.swift
+//  RestaurantCollectionViewCell.swift
 //  Appetito
 //
 //  Created by Flavio Dobler on 2022-08-30.
@@ -7,8 +7,7 @@
 
 import UIKit
 
-class CustomCollectionViewCell: UICollectionViewCell {
-    
+class RestaurantCollectionViewCell: UICollectionViewCell {
     
     lazy var restaurantLogo: UIImageView = {
         let restaurantLogo = UIImageView()
@@ -70,16 +69,16 @@ class CustomCollectionViewCell: UICollectionViewCell {
     }
     
     
-    func configuraCell(_ restaurant: Restaurant?){
+    func configuraCell(_ restaurant: Restaurant?) {
+        
         restaurantLogo.image = UIImage(named: restaurant?.imagemRestaurant ?? "")
         nameLabel.text = restaurant?.nameRestaurant
         notaLabel.text = restaurant?.note
         starImageView.image = UIImage(named:restaurant?.imageNote ?? "")
-
     }
 }
 
-extension CustomCollectionViewCell: ViewConfiguration {
+extension RestaurantCollectionViewCell: ViewConfiguration {
     
     func buildViewHierarchy() {
         contentView.addSubview(cellBackground)
@@ -119,7 +118,4 @@ extension CustomCollectionViewCell: ViewConfiguration {
             starImageView.heightAnchor.constraint(equalToConstant: 20)
         ])
     }
-    
-    
 }
-

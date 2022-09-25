@@ -9,11 +9,11 @@ import UIKit
 
 class CarouselCollectionViewCell: UICollectionViewCell {
     
-
+    
     
     lazy var churrascariaLabel: UILabel = {
         let churrascariaLabel = UILabel()
-//        churrascariaLabel.text = "Churrascaria"
+        //        churrascariaLabel.text = "Churrascaria"
         churrascariaLabel.translatesAutoresizingMaskIntoConstraints = false
         churrascariaLabel.textColor = .white
         churrascariaLabel.textAlignment = .center
@@ -23,28 +23,25 @@ class CarouselCollectionViewCell: UICollectionViewCell {
         return churrascariaLabel
     }()
     
-  
-    
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        setupView()
         
-       
+        setupView()
     }
-        required init?(coder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
-        }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     func configuraCarrouCell(_ restaurant: Restaurant?){
         churrascariaLabel.text = restaurant?.category
-
+        
     }
 }
-    
+
 
 extension CarouselCollectionViewCell: ViewConfiguration {
     func buildViewHierarchy() {
         contentView.addSubview(churrascariaLabel)
-
+        
     }
     
     func setupContraints() {
