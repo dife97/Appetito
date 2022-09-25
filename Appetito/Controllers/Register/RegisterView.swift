@@ -72,7 +72,7 @@ class RegisterView: UIView {
         registerUser.backgroundColor = .white
         registerUser.delegate = self
         registerUser.layer.cornerRadius = 8
-        registerUser.placeholder = "  usuario"
+        registerUser.placeholder = "  Digite seu usuario"
         registerUser.textColor = UIColor.black
         
         return registerUser
@@ -84,7 +84,7 @@ class RegisterView: UIView {
         registerPassword.backgroundColor = .white
         registerPassword.delegate = self
         registerPassword.layer.cornerRadius = 8
-        registerPassword.placeholder = "  senha"
+        registerPassword.placeholder = "  Digite sua senha"
         registerPassword.textColor = UIColor.black
         registerPassword.isSecureTextEntry = true
         registerPassword.autocorrectionType = .no
@@ -100,7 +100,7 @@ class RegisterView: UIView {
         registerPhone.backgroundColor = .white
         registerPhone.delegate = self
         registerPhone.layer.cornerRadius = 8
-        registerPhone.placeholder = "  telefone"
+        registerPhone.placeholder = " Digite seu telefone"
         registerPhone.textColor = UIColor.black
         
         return registerPhone
@@ -116,6 +116,7 @@ class RegisterView: UIView {
         registerEmail.keyboardType = .emailAddress
         registerEmail.autocapitalizationType = .none
         registerEmail.returnKeyType = .next
+        registerEmail.placeholder = "  Digite seu email"
         registerEmail.textColor = UIColor.black
         
         return registerEmail

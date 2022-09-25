@@ -8,14 +8,15 @@
 import UIKit
 import FirebaseAuth
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: BaseViewController {
+    
+    var auth: Auth?
     
     private let registerView: RegisterView = {
         let registerView = RegisterView()
         registerView.translatesAutoresizingMaskIntoConstraints = false
         return registerView
     }()
-    var auth: Auth?
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -42,7 +42,7 @@ class LoginView: UIView, UITextFieldDelegate {
         loginTextField.translatesAutoresizingMaskIntoConstraints = false
         loginTextField.backgroundColor = .white
         loginTextField.layer.cornerRadius = 8
-        loginTextField.placeholder = "  e-mail"
+        loginTextField.placeholder = "  Digite seu e-mail ou usuario"
         loginTextField.textColor = UIColor.black
         return loginTextField
     }()
@@ -52,7 +52,7 @@ class LoginView: UIView, UITextFieldDelegate {
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
         passwordTextField.backgroundColor = .white
         passwordTextField.layer.cornerRadius = 8
-        passwordTextField.placeholder = "  senha"
+        passwordTextField.placeholder = "  Digite sua senha"
         passwordTextField.textColor = UIColor.black
         passwordTextField.isSecureTextEntry = true
         

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class InfosViewController: UIViewController {
+class InfosViewController: BaseViewController {
     
     var restaurantes: [Restaurant] = []
     
