@@ -58,7 +58,7 @@ extension InfosViewController: ViewConfiguration {
 extension InfosViewController: InfosViewProtocol {
    
     func tappedConfirm() {
-        let reservationViewController = ReservationViewController()
+        let reservationViewController = ReservationViewController(restauranteName: "oi")
         self.modalPresentationStyle = .fullScreen
         navigationController?.show(reservationViewController, sender: .none)
         

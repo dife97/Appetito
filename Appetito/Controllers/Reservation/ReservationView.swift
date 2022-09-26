@@ -22,6 +22,28 @@ class ReservationView: UIView {
     
     weak var delegate: ReservationViewProtocol?
     
+    var date: String {
+        
+        if dateTextField.text?.isEmpty == false {
+            return dateTextField.text!
+        } else {
+            return ""
+        }
+    }
+    
+    var amountOfPeople: Int {
+        Int(quantidadeLabel.text!)!
+    }
+    
+    var occasion: String {
+        
+        if occasionTextField.text?.isEmpty == false {
+            return occasionTextField.text!
+        } else {
+            return ""
+        }
+    }
+    
     private lazy var restaurantImageView: UIImageView = {
         let restaurantImageView = UIImageView()
         restaurantImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -122,7 +144,7 @@ class ReservationView: UIView {
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         button.setTitleColor(.black, for: .normal)
         button.setTitle("CONFIRMAR", for: .normal)
-        button.addTarget(self, action: #selector(tappedConfirm), for: .touchUpInside)
+        button.addTarget(self, action: #selector(didTapConfirmButton), for: .touchUpInside)
         
         return button
     }()
@@ -138,7 +160,7 @@ class ReservationView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    @objc func tappedConfirm() {
+    @objc func didTapConfirmButton() {
         
         self.delegate?.tappedConfirm()
     }
