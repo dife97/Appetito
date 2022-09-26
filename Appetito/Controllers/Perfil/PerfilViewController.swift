@@ -20,8 +20,10 @@ class PerfilViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        self.view.backgroundColor = UIColor(named: "mainBackground")
 
     }
+
 }
 
 extension PerfilViewController: ViewConfiguration {
