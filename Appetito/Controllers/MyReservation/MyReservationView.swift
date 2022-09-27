@@ -9,7 +9,6 @@ import UIKit
 
 class MyReservationView: UIView {
 
-
     private lazy var titleLabel: UILabel = {
         let informationLabel = UILabel(frame: .zero)
         informationLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -29,7 +28,6 @@ class MyReservationView: UIView {
         informationLabel.font = UIFont(name:"KohinoorDevanagari-Light", size:20)
         informationLabel.text = "Reservas novas: "
         informationLabel.textColor = .white
-
 
         return informationLabel
     }()

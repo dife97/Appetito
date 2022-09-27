@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import FirebaseAuth
 
 class PerfilViewController: BaseViewController {
     
@@ -19,11 +19,13 @@ class PerfilViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupView()
+        
         self.view.backgroundColor = UIColor(named: "mainBackground")
-
+        
+        perfilView.delegate = self
     }
-
 }
 
 extension PerfilViewController: ViewConfiguration {
@@ -42,4 +44,23 @@ extension PerfilViewController: ViewConfiguration {
         ])
     }
     
+}
+
+extension PerfilViewController: PerfilViewDelegate {
+    
+    func didTapSignOut() {
+        
+        let firebaseAuth = Auth.auth()
+        
+        do {
+            try firebaseAuth.signOut()
+            
+            let navigationController = UINavigationController(rootViewController: InitialViewController())
+            navigationController.modalPresentationStyle = .fullScreen
+            
+            show(navigationController, sender: self)
+        } catch let error as NSError {
+            print("[PerfilViewController] Error to sign out: \(error.localizedDescription)")
+        }
+    }
 }
