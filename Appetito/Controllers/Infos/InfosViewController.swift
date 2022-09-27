@@ -9,7 +9,7 @@ import UIKit
 
 class InfosViewController: BaseViewController {
     
-    var restaurantes: [Restaurant] = []
+    var restaurante: Restaurant?
     
     private let infosView: InfosView = {
         let infosView = InfosView()
@@ -25,6 +25,7 @@ class InfosViewController: BaseViewController {
     
     func update(restaurant: Restaurant){
         infosView.setupInfos(restaurant)
+        self.restaurante = restaurant
     }
     
     @objc func didTapDismiss() {
@@ -60,14 +61,14 @@ extension InfosViewController: InfosViewProtocol {
    
     func tappedConfirm() {
         
-        let reservationViewController = ReservationViewController(restauranteName: "oi")
-        self.modalPresentationStyle = .fullScreen
-        
-        let backItem = UIBarButtonItem()
-        backItem.title = "Voltar"
-        navigationItem.backBarButtonItem = backItem
-        
-        navigationController?.pushViewController(reservationViewController, animated: true)
+        if let restaurante = restaurante {
+            let reservationViewController = ReservationViewController(restauranteName: restaurante.nameRestaurant)
+            reservationViewController.reservationView.setupInfos(restaurante)
+            let backItem = UIBarButtonItem()
+            backItem.title = "Voltar"
+            navigationItem.backBarButtonItem = backItem
+            
+            navigationController?.pushViewController(reservationViewController, animated: true)
+        }
     }
-       
 }

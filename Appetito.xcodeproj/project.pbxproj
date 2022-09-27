@@ -43,6 +43,7 @@
 		91D78A0628BEAB0F00582AC6 /* InfosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D78A0528BEAB0F00582AC6 /* InfosView.swift */; };
 		91D78A0828BEAB2200582AC6 /* InfosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D78A0728BEAB2200582AC6 /* InfosViewController.swift */; };
 		91D78A0A28BEB3E700582AC6 /* CarouselCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D78A0928BEB3E700582AC6 /* CarouselCollectionViewCell.swift */; };
+		91F43D4C28E28F5F00F42AFA /* MyReservationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F43D4B28E28F5F00F42AFA /* MyReservationTableViewCell.swift */; };
 		E1610E0314AAB3BC5527EEBD /* Pods_Appetito.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F54A130E146973B55E90AFE /* Pods_Appetito.framework */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +89,7 @@
 		91D78A0528BEAB0F00582AC6 /* InfosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfosView.swift; sourceTree = "<group>"; };
 		91D78A0728BEAB2200582AC6 /* InfosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfosViewController.swift; sourceTree = "<group>"; };
 		91D78A0928BEB3E700582AC6 /* CarouselCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCollectionViewCell.swift; sourceTree = "<group>"; };
+		91F43D4B28E28F5F00F42AFA /* MyReservationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReservationTableViewCell.swift; sourceTree = "<group>"; };
 		FCF4B613F44AF0D786D555A3 /* Pods-Appetito.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Appetito.debug.xcconfig"; path = "Target Support Files/Pods-Appetito/Pods-Appetito.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -252,6 +254,7 @@
 			children = (
 				9149393628C145C4005C7B83 /* MyReservationView.swift */,
 				9149393428C145B3005C7B83 /* MyReservationViewController.swift */,
+				91F43D4B28E28F5F00F42AFA /* MyReservationTableViewCell.swift */,
 			);
 			path = MyReservation;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 				3AD7824628BDD2EF00BD679C /* RestaurantCollectionViewCellCollectionViewCell.swift in Sources */,
 				911E792C28BD353C00CF4F1B /* InitialViewController.swift in Sources */,
 				4B46483828D16D87004CE5EE /* CustomAlert.swift in Sources */,
+				91F43D4C28E28F5F00F42AFA /* MyReservationTableViewCell.swift in Sources */,
 				91D78A0828BEAB2200582AC6 /* InfosViewController.swift in Sources */,
 				2E4C5A6C28B998C4003712C5 /* ViewConfiguration.swift in Sources */,
 				4B46483128D163C5004CE5EE /* CEPModel.swift in Sources */,

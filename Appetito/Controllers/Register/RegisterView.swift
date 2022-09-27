@@ -74,7 +74,7 @@ class RegisterView: UIView {
         registerUser.layer.cornerRadius = 8
         registerUser.placeholder = "  Digite seu usuario"
         registerUser.textColor = UIColor.black
-        
+        registerUser.clearButtonMode = .whileEditing
         return registerUser
     }()
     
@@ -90,7 +90,7 @@ class RegisterView: UIView {
         registerPassword.autocorrectionType = .no
         registerPassword.returnKeyType = .done
         registerPassword.textContentType = .oneTimeCode
-        
+        registerPassword.clearButtonMode = .whileEditing
         return registerPassword
     }()
     
@@ -102,7 +102,7 @@ class RegisterView: UIView {
         registerPhone.layer.cornerRadius = 8
         registerPhone.placeholder = " Digite seu telefone"
         registerPhone.textColor = UIColor.black
-        
+        registerPhone.clearButtonMode = .whileEditing
         return registerPhone
     }()
     
@@ -118,7 +118,7 @@ class RegisterView: UIView {
         registerEmail.returnKeyType = .next
         registerEmail.placeholder = "  Digite seu email"
         registerEmail.textColor = UIColor.black
-        
+        registerEmail.clearButtonMode = .whileEditing
         return registerEmail
     }()
     

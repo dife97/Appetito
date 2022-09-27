@@ -26,7 +26,7 @@ class ReservationViewController: BaseViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private let reservationView: ReservationView = {
+        let reservationView: ReservationView = {
         let reservationView = ReservationView()
         reservationView.translatesAutoresizingMaskIntoConstraints = false
         return reservationView

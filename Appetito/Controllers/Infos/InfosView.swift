@@ -22,7 +22,7 @@ class InfosView: UIView {
         restaurantImageView.layer.cornerRadius = 20
         restaurantImageView.layer.masksToBounds = false
         restaurantImageView.clipsToBounds = true
-        restaurantImageView.backgroundColor = .black
+        restaurantImageView.backgroundColor = UIColor(named: "")
         
         
         return restaurantImageView
@@ -46,7 +46,6 @@ class InfosView: UIView {
         menuButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         menuButton.setTitleColor(.black, for: .normal)
         menuButton.setTitle("CARDÁPIO", for: .normal)
-        //        button.addTarget(self, action: #selector(tappedLogin), for: .touchUpInside)
         
         return menuButton
     }()
@@ -73,6 +72,10 @@ class InfosView: UIView {
     @objc func tappedConfirm() {
         self.delegate?.tappedConfirm()
     }
+    
+    func setupAdditionalConfiguration() {
+        backgroundColor = UIColor(named: "mainBackground")
+    }
 }
 extension InfosView: ViewConfiguration {
     func buildViewHierarchy() {
@@ -93,25 +96,16 @@ extension InfosView: ViewConfiguration {
             infosLabel.topAnchor.constraint(equalTo: restaurantImageView.bottomAnchor, constant: 24),
             infosLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             infosLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
-//            infosLabel.bottomAnchor.constraint(equalTo: confirmButton.topAnchor, constant: -16),
-//            infosLabel.bottomAnchor.constraint(equalToConstant: 300),
-            
-            
-//            confirmButton.topAnchor.constraint(equalTo: menuButton.bottomAnchor, constant: 50),
+
             confirmButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             confirmButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             confirmButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -16),
             confirmButton.heightAnchor.constraint(equalToConstant: 48),
             
-//            menuButton.topAnchor.constraint(equalTo: infosLabel.bottomAnchor, constant: 50),
             menuButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             menuButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             menuButton.bottomAnchor.constraint(equalTo: confirmButton.topAnchor, constant: -16),
             menuButton.heightAnchor.constraint(equalToConstant: 48),
         ])
-    }
-    
-    func setupAdditionalConfiguration() {
-        backgroundColor = UIColor(named: "mainBackground")
     }
 }

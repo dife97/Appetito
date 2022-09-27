@@ -7,14 +7,14 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UISearchControllerDelegate {
     
     var restaurantes: [Restaurant] = []
+    var searchActive = true
+    
     
     private let homeView: HomeView = {
-        
         let homeView = HomeView()
-        
         homeView.translatesAutoresizingMaskIntoConstraints = false
         
         return homeView
@@ -25,6 +25,7 @@ class HomeViewController: UIViewController {
         search.searchBar.placeholder = "Procure um restaurante"
         search.searchBar.tintColor = UIColor(named: "mainYellow")
         search.searchBar.setValue("Cancelar", forKey: "cancelButtonText")
+        
         return search
     }()
     
@@ -92,8 +93,22 @@ class HomeViewController: UIViewController {
         
         categoryCollectionView.delegate = self
         categoryCollectionView.dataSource = self
+        
+        searchBar.delegate = self
     }
+    
+//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)
+//    {
+//        Array_Busca = searchText.isEmpty ? Array_Nome : Array_Nome.filter { (item: String) -> Bool in
+//
+//            return item.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+//        }
+//
+//        restaurantsCollectionView.reloadData()
+//    }
+
 }
+
 
 
 extension HomeViewController: ViewConfiguration {
@@ -113,7 +128,7 @@ extension HomeViewController: ViewConfiguration {
             homeView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
             homeView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
             
-            categoryCollectionView.topAnchor.constraint(equalTo: homeView.topAnchor, constant: 140),
+            categoryCollectionView.topAnchor.constraint(equalTo: homeView.topAnchor, constant: 120),
             categoryCollectionView.leadingAnchor.constraint(equalTo: homeView.leadingAnchor, constant: 0),
             categoryCollectionView.trailingAnchor.constraint(equalTo: homeView.trailingAnchor, constant: 0),
             categoryCollectionView.heightAnchor.constraint(equalToConstant: 50),
@@ -164,16 +179,16 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        
         if collectionView == restaurantsCollectionView {
             
             let restaurante = restaurantes[indexPath.item]
-
+            
             let infosViewController = InfosViewController()
             infosViewController.update(restaurant: restaurante)
-
+            
             let navigationController = UINavigationController(rootViewController: infosViewController)
-
+            
             self.present(navigationController, animated: true)
         }
     }
@@ -210,4 +225,24 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         return UIEdgeInsets(top: 0, left: 8, bottom: 8, right: 8)
     }
 }
+extension HomeViewController: UISearchBarDelegate{
+    
+    
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = true
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchActive = false
+    }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
+        searchBar.text = ""
+        searchBar.resignFirstResponder()
+    }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchActive = false
+    }
 
+}

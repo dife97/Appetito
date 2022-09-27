@@ -47,10 +47,11 @@ class ReservationView: UIView {
     private lazy var restaurantImageView: UIImageView = {
         let restaurantImageView = UIImageView()
         restaurantImageView.translatesAutoresizingMaskIntoConstraints = false
-        restaurantImageView.contentMode = .scaleAspectFit
-        restaurantImageView.image = UIImage(named: "fogoChaoBanner")
-        restaurantImageView.layer.cornerRadius = 8
-        restaurantImageView.backgroundColor = .black
+        restaurantImageView.contentMode = .scaleToFill
+        restaurantImageView.layer.cornerRadius = 20
+        restaurantImageView.layer.masksToBounds = false
+        restaurantImageView.clipsToBounds = true
+        restaurantImageView.backgroundColor = UIColor(named: "mainBackground")
         
         return restaurantImageView
     }()
@@ -160,6 +161,10 @@ class ReservationView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setupInfos(_ restaurante: Restaurant){
+        restaurantImageView.image = UIImage(named: restaurante.imageRestaurantInfos)
+    }
+    
     @objc func didTapConfirmButton() {
         
         self.delegate?.tappedConfirm()
@@ -175,7 +180,7 @@ class ReservationView: UIView {
         doneToolbar.barStyle = .default
         
         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        let done: UIBarButtonItem = UIBarButtonItem(title: "ok", style: .done, target: self, action:#selector(doneButtonAction))
+        let done: UIBarButtonItem = UIBarButtonItem(title: "Confirmar", style: .done, target: self, action:#selector(doneButtonAction))
         
         let itens = [flexSpace, done]
         doneToolbar.items = itens
