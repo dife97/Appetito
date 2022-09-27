@@ -58,10 +58,15 @@ extension InfosViewController: ViewConfiguration {
 extension InfosViewController: InfosViewProtocol {
    
     func tappedConfirm() {
+        
         let reservationViewController = ReservationViewController(restauranteName: "oi")
         self.modalPresentationStyle = .fullScreen
-        navigationController?.show(reservationViewController, sender: .none)
         
+        let backItem = UIBarButtonItem()
+        backItem.title = "Voltar"
+        navigationItem.backBarButtonItem = backItem
+        
+        navigationController?.pushViewController(reservationViewController, animated: true)
     }
        
 }
