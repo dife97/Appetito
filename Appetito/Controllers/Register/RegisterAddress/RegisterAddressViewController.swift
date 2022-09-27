@@ -20,30 +20,30 @@ class RegisterAddressViewController: BaseViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(named: "mainBackground")
         registerAddressView.delegate = self
-        configureView()
     }
+}
+
+extension RegisterAddressViewController: RegisterAdressProtocol {
     
-    private func configureView() {
-        registerAddressView.confirmCep.addTarget(self, action: #selector(didTapConfirmButton), for: .touchUpInside)
+    func tappedCEP() {
         
-    }
-    
-    //MARK: - Actions
-    @objc func didTapConfirmButton() {
         service.loadRequest(cep: registerAddressView.cepTextField.text ?? "") { result in
             switch result {
             case .success(let cep):
                 DispatchQueue.main.async {
                     guard let cep = cep else { return }
                     self.registerAddressView.loadFromCep(cep: cep)
+                    
+                    self.registerAddressView.confirmButton.isHidden = false
+                    self.registerAddressView.confirmCep.isHidden = true
                 }
+                
             case .failure(let error):
                 print(error.localizedDescription)
             }
         }
     }
-}
-extension RegisterAddressViewController: RegisterAdressProtocol {
+    
     func tappedLogin() {
         self.navigationController?.popToRootViewController(animated: true)
     }

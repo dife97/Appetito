@@ -8,12 +8,16 @@
 import UIKit
 
 protocol RegisterAdressProtocol: AnyObject {
+    
+    func tappedCEP()
     func tappedLogin()
 }
 
 class RegisterAddressView: UIView {
     
     weak var delegate: RegisterAdressProtocol?
+    
+    var tappedCEP: (() -> Void)?
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel(frame: .zero)
@@ -108,6 +112,7 @@ class RegisterAddressView: UIView {
         confirmCep.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         confirmCep.setTitleColor(.black, for: .normal)
         confirmCep.setTitle("CEP", for: .normal)
+        confirmCep.addTarget(self, action: #selector(didTapCEP), for: .touchUpInside)
         return confirmCep
     }()
     
@@ -120,6 +125,7 @@ class RegisterAddressView: UIView {
         confirmButton.setTitleColor(.black, for: .normal)
         confirmButton.setTitle("CONFIRMAR", for: .normal)
         confirmButton.addTarget(self, action: #selector(tappedLogin), for: .touchUpInside)
+        confirmButton.isHidden = true
         
         return confirmButton
     }()
@@ -143,6 +149,10 @@ class RegisterAddressView: UIView {
         ufTextField.isHidden = false
         ruaTextField.text = cep.logradouro
         ruaTextField.isHidden = false
+    }
+    
+    @objc func didTapCEP() {
+        self.delegate?.tappedCEP()
     }
     
     @objc func tappedLogin(){

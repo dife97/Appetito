@@ -44,6 +44,8 @@ class LoginView: UIView, UITextFieldDelegate {
         loginTextField.layer.cornerRadius = 8
         loginTextField.placeholder = "  Digite seu e-mail ou usuario"
         loginTextField.textColor = UIColor.black
+        
+        loginTextField.text = "appetito@appetito.com"
         return loginTextField
     }()
     
@@ -56,6 +58,7 @@ class LoginView: UIView, UITextFieldDelegate {
         passwordTextField.textColor = UIColor.black
         passwordTextField.isSecureTextEntry = true
         
+        passwordTextField.text = "12345678"
         return passwordTextField
     }()
     

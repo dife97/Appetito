@@ -10,8 +10,17 @@
 
 import UIKit
 
+protocol PerfilViewDelegate: AnyObject {
+    
+    func didTapSignOut()
+}
+
 class PerfilView: UIView, UITextFieldDelegate {
     
+    //MARK: - Properties
+    weak var delegate: PerfilViewDelegate?
+    
+    //MARK: - UI
     lazy var perfilImage: UIImageView = {
         let perfilImage = UIImageView()
         perfilImage.translatesAutoresizingMaskIntoConstraints = false
@@ -135,6 +144,7 @@ class PerfilView: UIView, UITextFieldDelegate {
         exitButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         exitButton.setTitleColor(.white, for: .normal)
         exitButton.setTitle("Sair da Conta", for: .normal)
+        exitButton.addTarget(self, action: #selector(didTapSignOutButton), for: .touchUpInside)
         
         return exitButton
     }()
@@ -160,6 +170,12 @@ class PerfilView: UIView, UITextFieldDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: - Actions
+    
+    @objc func didTapSignOutButton() {
+        
+        delegate?.didTapSignOut()
+    }
 }
 
 extension PerfilView: ViewConfiguration{

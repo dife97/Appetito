@@ -99,6 +99,11 @@ extension ReservationViewController: ViewConfiguration {
             reservationView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
         ])
     }
+    
+    func setupAdditionalConfiguration() {
+        
+        navigationController?.navigationItem.backButtonTitle = "Voltar"
+    }
 }
 
 extension ReservationViewController: ReservationViewProtocol {

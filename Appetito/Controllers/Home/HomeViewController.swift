@@ -128,14 +128,8 @@ extension HomeViewController: ViewConfiguration {
     func setupAdditionalConfiguration() {
         
         navigationItem.setHidesBackButton(true, animated: true)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sair", style: .plain, target: self, action: #selector(didTapSignOut))
-        navigationItem.rightBarButtonItem?.tintColor = UIColor(named: "mainYellow")
-        navigationItem.searchController = searchBar
-    }
-    
-    @objc func didTapSignOut() {
         
-        dismiss(animated: true) //TODO: implement signout firebase method
+        navigationItem.searchController = searchBar
     }
 }
 
