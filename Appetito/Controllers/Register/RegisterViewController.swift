@@ -32,6 +32,7 @@ class RegisterViewController: BaseViewController {
         
         let password = registerView.passwordTextField.text ?? ""
         let email = registerView.emailTextField.text ?? ""
+        
         if password.valid(.password) && email.valid(.email){
             auth?.createUser(withEmail: email, password: password, completion: { [self] result, error in
                 if error != nil {

@@ -61,13 +61,16 @@ extension LoginViewController: LoginViewProtocol {
                         let homeViewController = HomeViewController()
                         let myReservationController = MyReservationViewController()
                         let perfilViewController = PerfilViewController()
+                        
                         myReservationController.tabBarItem = UITabBarItem(title: "Reservas", image: UIImage(systemName: "folder"), selectedImage: UIImage(systemName: "folder.fill"))
                         myReservationController.tabBarItem.tag = 1
+                        
                         let tabbar = UITabBarController()
                         homeViewController.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), selectedImage: UIImage(systemName: "house.fill"))
                         homeViewController.tabBarItem.tag = 0
                         perfilViewController.tabBarItem = UITabBarItem(title: "Perfil", image: UIImage(systemName: "person"), selectedImage: UIImage(systemName: "person.fill"))
                         perfilViewController.tabBarItem.tag = 2
+                        
                         let navigationController = UINavigationController(rootViewController: homeViewController)
                         tabbar.viewControllers = [navigationController, myReservationController, perfilViewController]
                         tabbar.modalPresentationStyle = .fullScreen
