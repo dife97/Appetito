@@ -50,6 +50,15 @@ class PerfilViewController: BaseViewController {
         perfilView.cellTextField.text = user.phoneNumber
         perfilView.emailTextField.text = user.email
     }
+    
+    private func uncacheUser() {
+        
+        guard let user = user else { return }
+        
+        CoreDataManager.shared.persistencContainer.viewContext.delete(user)
+        
+        CoreDataManager.shared.save()
+    }
 }
 
 extension PerfilViewController: ViewConfiguration {
@@ -90,12 +99,47 @@ extension PerfilViewController: PerfilViewDelegate {
     
     func didTapSaveButton() {
         
-//        guard let user = user else { return }
+        //        guard let user = user else { return }
         
         user?.username = perfilView.userTextField.text
         user?.phoneNumber = perfilView.cellTextField.text
         user?.email = perfilView.emailTextField.text
         
         CoreDataManager.shared.save()
+    }
+    
+    func didTapDeleteAccountButton() {
+        
+        let user = Auth.auth().currentUser
+        
+        user?.delete { error in
+            if let error = error {
+                print("Erro = \(error.localizedDescription)")
+            } else {
+                
+                DispatchQueue.main.async {
+                    
+                    let alert = CustomAlert(controller: self)
+                    
+                    alert.handlerFunction = { [weak self] in
+                        
+                        self?.uncacheUser()
+                        
+                        let initialController = InitialViewController()
+                        
+                        let navigationController = UINavigationController(rootViewController: initialController)
+                        
+                        navigationController.modalPresentationStyle = .fullScreen
+                        
+                        self?.show(navigationController, sender: self)
+                    }
+                    
+                    alert.exibe(
+                        titulo: "Usuário deletado com sucesso",
+                        mensagem: "Até a próxima :)"
+                    )
+                }
+            }
+        }
     }
 }

@@ -14,6 +14,7 @@ protocol PerfilViewDelegate: AnyObject {
     
     func didTapSignOut()
     func didTapSaveButton()
+    func didTapDeleteAccountButton()
 }
 
 class PerfilView: UIView, UITextFieldDelegate {
@@ -129,13 +130,14 @@ class PerfilView: UIView, UITextFieldDelegate {
         return saveButton
     }()
     
-    lazy var redefinirButton: UIButton = {
+    lazy var deleteAccountButton: UIButton = {
         let redefinirButton = UIButton(type: .system)
         redefinirButton.translatesAutoresizingMaskIntoConstraints = false
         redefinirButton.layer.cornerRadius = 8
         redefinirButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         redefinirButton.setTitleColor(.white, for: .normal)
-        redefinirButton.setTitle("Redefinir Senha", for: .normal)
+        redefinirButton.setTitle("Excluir Usuário", for: .normal)
+        redefinirButton.addTarget(self, action: #selector(didTapDeleteAccountButton), for: .touchUpInside)
         return redefinirButton
     }()
     
@@ -183,6 +185,11 @@ class PerfilView: UIView, UITextFieldDelegate {
         
         delegate?.didTapSaveButton()
     }
+    
+    @objc func didTapDeleteAccountButton() {
+        
+        delegate?.didTapDeleteAccountButton()
+    }
 }
 
 extension PerfilView: ViewConfiguration{
@@ -197,7 +204,7 @@ extension PerfilView: ViewConfiguration{
         stackView.addArrangedSubview(emailLabel)
         stackView.addArrangedSubview(emailTextField)
         addSubview(saveButton)
-        addSubview(redefinirButton)
+        addSubview(deleteAccountButton)
         addSubview(exitButton)
 
     }
@@ -218,17 +225,16 @@ extension PerfilView: ViewConfiguration{
             saveButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             saveButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             saveButton.heightAnchor.constraint(equalToConstant: 48),
-
-            redefinirButton.topAnchor.constraint(equalTo: saveButton.bottomAnchor, constant: 30),
-            redefinirButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
-            redefinirButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -200),
-            redefinirButton.heightAnchor.constraint(equalToConstant: 48),
             
-            exitButton.topAnchor.constraint(equalTo: redefinirButton.bottomAnchor, constant: 16),
+            exitButton.topAnchor.constraint(equalTo: saveButton.bottomAnchor, constant: 16),
             exitButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
             exitButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -200),
             exitButton.heightAnchor.constraint(equalToConstant: 48),
-            exitButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16)
+            
+            deleteAccountButton.topAnchor.constraint(equalTo: exitButton.bottomAnchor, constant: 30),
+            deleteAccountButton.leadingAnchor.constraint(equalTo: exitButton.leadingAnchor),
+            deleteAccountButton.trailingAnchor.constraint(equalTo: exitButton.trailingAnchor),
+            deleteAccountButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16),
         ])
     }
 }

@@ -30,18 +30,20 @@ class RegisterViewController: BaseViewController {
     //MARK: - Actions
     @objc func didTapConfirmButton() {
         
-        saveUserToCoreData()
-        
         let password = registerView.passwordTextField.text ?? ""
         let email = registerView.emailTextField.text ?? ""
         
         if password.valid(.password) && email.valid(.email){
-            auth?.createUser(withEmail: email, password: password, completion: { [self] result, error in
+            auth?.createUser(withEmail: email, password: password, completion: { [weak self] result, error in
+                
+                guard let self = self else { return }
+                
                 if error != nil {
                     CustomAlert(controller: self).exibe(titulo: "Atenção", mensagem: error?.localizedDescription ?? "")
                 } else {
-                    navigationController?.pushViewController(RegisterAddressViewController(), animated: true)
+                    self.saveUserToCoreData()
                     
+                    self.navigationController?.pushViewController(RegisterAddressViewController(), animated: true)
                 }
             })
         } else {
