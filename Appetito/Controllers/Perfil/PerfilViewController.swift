@@ -26,6 +26,21 @@ class PerfilViewController: BaseViewController {
         
         perfilView.delegate = self
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        getCachedUser()
+    }
+    
+    private func getCachedUser() {
+        
+        guard let user = CoreDataManager.shared.fetchUser() else { return }
+        
+        perfilView.userTextField.text = user.username
+        perfilView.cellTextField.text = user.phoneNumber
+        perfilView.emailTextField.text = user.email
+    }
 }
 
 extension PerfilViewController: ViewConfiguration {

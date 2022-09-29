@@ -30,6 +30,8 @@ class RegisterViewController: BaseViewController {
     //MARK: - Actions
     @objc func didTapConfirmButton() {
         
+        saveUserToCoreData()
+        
         let password = registerView.passwordTextField.text ?? ""
         let email = registerView.emailTextField.text ?? ""
         
@@ -45,6 +47,20 @@ class RegisterViewController: BaseViewController {
         } else {
             CustomAlert(controller: self).exibe(titulo: "Atenção", mensagem: "Dados invalidos")
         }
+    }
+    
+    private func saveUserToCoreData() {
+        
+        guard let usersname = registerView.userTextField.text else { return }
+        guard let email = registerView.emailTextField.text else { return }
+        guard let phoneNumber = registerView.phoneTextField.text else { return }
+        
+        let userCoreData = User(context: CoreDataManager.shared.context)
+        userCoreData.username = usersname
+        userCoreData.email = email
+        userCoreData.phoneNumber = phoneNumber
+        
+        CoreDataManager.shared.save()
     }
 }
 
