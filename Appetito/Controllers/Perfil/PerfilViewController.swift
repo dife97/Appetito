@@ -10,6 +10,8 @@ import FirebaseAuth
 
 class PerfilViewController: BaseViewController {
     
+    var user: User?
+    
     private let perfilView: PerfilView = {
         let perfilView = PerfilView()
         perfilView.translatesAutoresizingMaskIntoConstraints = false
@@ -35,7 +37,14 @@ class PerfilViewController: BaseViewController {
     
     private func getCachedUser() {
         
-        guard let user = CoreDataManager.shared.fetchUser() else { return }
+        user = CoreDataManager.shared.fetchUser()
+        
+        didGetCachedUser(user: user)
+    }
+    
+    private func didGetCachedUser(user: User?) {
+        
+        guard let user = user else { return }
         
         perfilView.userTextField.text = user.username
         perfilView.cellTextField.text = user.phoneNumber
@@ -77,5 +86,16 @@ extension PerfilViewController: PerfilViewDelegate {
         } catch let error as NSError {
             print("[PerfilViewController] Error to sign out: \(error.localizedDescription)")
         }
+    }
+    
+    func didTapSaveButton() {
+        
+//        guard let user = user else { return }
+        
+        user?.username = perfilView.userTextField.text
+        user?.phoneNumber = perfilView.cellTextField.text
+        user?.email = perfilView.emailTextField.text
+        
+        CoreDataManager.shared.save()
     }
 }

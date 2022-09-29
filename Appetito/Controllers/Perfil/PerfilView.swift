@@ -13,6 +13,7 @@ import UIKit
 protocol PerfilViewDelegate: AnyObject {
     
     func didTapSignOut()
+    func didTapSaveButton()
 }
 
 class PerfilView: UIView, UITextFieldDelegate {
@@ -123,6 +124,7 @@ class PerfilView: UIView, UITextFieldDelegate {
         saveButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         saveButton.setTitleColor(.black, for: .normal)
         saveButton.setTitle("Salvar", for: .normal)
+        saveButton.addTarget(self, action: #selector(didTapSaveButton), for: .touchUpInside)
         
         return saveButton
     }()
@@ -175,6 +177,11 @@ class PerfilView: UIView, UITextFieldDelegate {
     @objc func didTapSignOutButton() {
         
         delegate?.didTapSignOut()
+    }
+    
+    @objc func didTapSaveButton() {
+        
+        delegate?.didTapSaveButton()
     }
 }
 
