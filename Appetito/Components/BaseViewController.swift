@@ -43,8 +43,9 @@ class BaseViewController: UIViewController {
     
     @objc func hideKeyboard() {
         
+        afterHideKeyboard?()
+        
         view.endEditing(true)
         
-        afterHideKeyboard?()
     }
 }

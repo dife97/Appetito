@@ -25,7 +25,7 @@ class RegisterViewController: BaseViewController {
         setupView()
         registerView.confirmButton.addTarget(self, action: #selector(didTapConfirmButton), for: .touchUpInside)
     }
-    
+
     
     //MARK: - Actions
     @objc func didTapConfirmButton() {

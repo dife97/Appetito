@@ -105,8 +105,11 @@ extension HomeViewController: ViewConfiguration {
     func buildViewHierarchy() {
         
         view.addSubview(homeView)
+        view.addSubview(searchBar.searchBar)
+        navigationItem.searchController = searchBar
         view.addSubview(restaurantsCollectionView)
-        view.addSubview(categoryCollectionView)
+        
+//        view.addSubview(categoryCollectionView)
     }
     
     func setupContraints() {
@@ -118,12 +121,12 @@ extension HomeViewController: ViewConfiguration {
             homeView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
             homeView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
             
-            categoryCollectionView.topAnchor.constraint(equalTo: homeView.topAnchor, constant: 125),
-            categoryCollectionView.leadingAnchor.constraint(equalTo: homeView.leadingAnchor, constant: 0),
-            categoryCollectionView.trailingAnchor.constraint(equalTo: homeView.trailingAnchor, constant: 0),
-            categoryCollectionView.heightAnchor.constraint(equalToConstant: 30),
+//            categoryCollectionView.topAnchor.constraint(equalTo: homeView.topAnchor, constant: 125),
+//            categoryCollectionView.leadingAnchor.constraint(equalTo: homeView.leadingAnchor, constant: 0),
+//            categoryCollectionView.trailingAnchor.constraint(equalTo: homeView.trailingAnchor, constant: 0),
+//            categoryCollectionView.heightAnchor.constraint(equalToConstant: 30),
             
-            restaurantsCollectionView.topAnchor.constraint(equalTo: categoryCollectionView.bottomAnchor, constant: 10),
+            restaurantsCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
             restaurantsCollectionView.leadingAnchor.constraint(equalTo: homeView.leadingAnchor, constant: 8),
             restaurantsCollectionView.trailingAnchor.constraint(equalTo: homeView.trailingAnchor, constant: -8),
             restaurantsCollectionView.bottomAnchor.constraint(equalTo: homeView.bottomAnchor, constant: 0)
@@ -133,8 +136,8 @@ extension HomeViewController: ViewConfiguration {
     func setupAdditionalConfiguration() {
         
         navigationItem.setHidesBackButton(true, animated: true)
-        
-        navigationItem.searchController = searchBar
+        title = "Inicio"
+        self.navigationController?.navigationBar.tintColor = UIColor(named: "mainYellow")
     }
 }
 

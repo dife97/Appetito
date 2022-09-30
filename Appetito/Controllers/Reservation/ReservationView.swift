@@ -126,7 +126,7 @@ class ReservationView: UIView {
         return occasionLabel
     }()
     
-    private lazy var occasionTextField: UITextField = {
+        lazy var occasionTextField: UITextField = {
         let occasionTextField = UITextField(frame: .zero)
         occasionTextField.translatesAutoresizingMaskIntoConstraints = false
         occasionTextField.layer.cornerRadius = 8

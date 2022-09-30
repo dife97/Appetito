@@ -54,8 +54,26 @@ class ReservationViewController: BaseViewController {
         setupView()
         
         reservationView.delegate = self
-        
         view.backgroundColor = UIColor(named: "mainBackground")
+        
+        afterShowKeyboard = { height in
+            self.keyboardDidApear(height: height)
+        }
+        
+        afterHideKeyboard = {
+            self.keyboardDidDisapear()
+
+        }
+    }
+    
+    func keyboardDidApear(height: CGFloat) {
+        if reservationView.occasionTextField.isFirstResponder {
+            self.view.frame.origin.y = -height
+        } 
+    }
+    
+    func keyboardDidDisapear(){
+        self.view.frame.origin.y = 0
     }
     
     private func getUserID() -> String? {
