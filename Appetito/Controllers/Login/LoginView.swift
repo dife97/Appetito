@@ -37,17 +37,34 @@ class LoginView: UIView, UITextFieldDelegate {
         return subTitleLabel
     }()
     
-    lazy var loginTextField: UITextField = {
-        let loginTextField = UITextField(frame: .zero)
-        loginTextField.translatesAutoresizingMaskIntoConstraints = false
-        loginTextField.backgroundColor = .white
-        loginTextField.layer.cornerRadius = 8
-        loginTextField.placeholder = "  Digite seu e-mail ou usuario"
-        loginTextField.textColor = UIColor.black
-        loginTextField.clearButtonMode = .whileEditing
-        loginTextField.text = "appetito@appetito.com"
-        return loginTextField
+    lazy var loginTextField: AppetitoTextField = {
+        let textfield = AppetitoTextField(
+            labelText: "Usuário",
+            placeholder: "Digite seu e-mail ou usuário",
+            keyboardType: .emailAddress
+        )
+        
+        textfield.didTapReturnKeyboard = { self.passwordTextField.becomeFirstResponder() }
+        
+        textfield.didChangeSelection = {
+            
+            //TODO: insert regex here
+        }
+        
+        return textfield
     }()
+    
+//    lazy var loginTextField: UITextField = {
+//        let loginTextField = UITextField(frame: .zero)
+//        loginTextField.translatesAutoresizingMaskIntoConstraints = false
+//        loginTextField.backgroundColor = .white
+//        loginTextField.layer.cornerRadius = 8
+//        loginTextField.placeholder = "  Digite seu e-mail ou usuario"
+//        loginTextField.textColor = UIColor.black
+//        loginTextField.clearButtonMode = .whileEditing
+////        loginTextField.text = "appetito@appetito.com"
+//        return loginTextField
+//    }()
     
     lazy var passwordTextField: UITextField = {
         let passwordTextField = UITextField(frame: .zero)
@@ -58,7 +75,7 @@ class LoginView: UIView, UITextFieldDelegate {
         passwordTextField.textColor = UIColor.black
         passwordTextField.isSecureTextEntry = true
         passwordTextField.clearButtonMode = .whileEditing
-        passwordTextField.text = "12345678"
+//        passwordTextField.text = "12345678"
         return passwordTextField
     }()
     
@@ -120,7 +137,7 @@ class LoginView: UIView, UITextFieldDelegate {
     override init(frame: CGRect) {
         super.init(frame: .zero)
         setupView()
-        loginTextField.delegate = self
+//        loginTextField.delegate = self
         passwordTextField.delegate = self
     }
     
@@ -162,7 +179,7 @@ extension LoginView: ViewConfiguration {
             loginTextField.topAnchor.constraint(equalTo: subTitleLabel.bottomAnchor, constant: 50),
             loginTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             loginTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
-            loginTextField.heightAnchor.constraint(equalToConstant: 48),
+//            loginTextField.heightAnchor.constraint(equalToConstant: 48),
             
             passwordTextField.topAnchor.constraint(equalTo: loginTextField.bottomAnchor, constant: 15),
             passwordTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),

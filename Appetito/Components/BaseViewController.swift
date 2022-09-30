@@ -19,17 +19,17 @@ class BaseViewController: UIViewController {
         
         configureToDismissKeyboard()
     }
-    
-    
+
     //MARK: - DismissKeyboard
     var afterHideKeyboard: (() -> Void)?
+    
     var afterShowKeyboard: ((_ heightKeyboard: CGFloat) -> Void)?
     
     func configureToDismissKeyboard() {
         
         let _: NSObjectProtocol = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification,
                                                                          object: nil,
-                                                                         queue: nil) {  notification in
+                                                                         queue: nil) { notification in
             
             guard let value = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
             

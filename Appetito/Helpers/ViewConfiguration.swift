@@ -7,6 +7,7 @@
 import Foundation
 
 protocol ViewConfiguration {
+    
     func buildViewHierarchy()
     func setupContraints()
     func setupAdditionalConfiguration()
@@ -14,7 +15,9 @@ protocol ViewConfiguration {
 }
 
 extension ViewConfiguration {
+    
     func setupView() {
+        
         buildViewHierarchy()
         setupContraints()
         setupAdditionalConfiguration()
