@@ -13,7 +13,7 @@ class MyReservationTableViewCell: UITableViewCell {
     
     lazy var restaurantLabel: UILabel = {
         let restaurantLabel = UILabel()
-        restaurantLabel.text = "Fogo de Chão"
+        
         restaurantLabel.textColor = .white
         restaurantLabel.textAlignment = .center
         restaurantLabel.font = UIFont(name:"", size:18)
@@ -24,7 +24,7 @@ class MyReservationTableViewCell: UITableViewCell {
     
     lazy var dataLabel: UILabel = {
         let dataLabel = UILabel()
-        dataLabel.text = "28/09/2022"
+        
         dataLabel.textColor = .white
         dataLabel.textAlignment = .center
         dataLabel.font = UIFont(name:"", size:18)
@@ -35,6 +35,7 @@ class MyReservationTableViewCell: UITableViewCell {
     
     private lazy var stackView: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [restaurantLabel, dataLabel])
+        
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.distribution = .fillEqually
         stack.axis = .horizontal
@@ -45,23 +46,31 @@ class MyReservationTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
         setupView()
-        contentView.backgroundColor = UIColor(named: "mainBackground")
     }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
+    func configure(with reservation: ReservationModel) {
+        
+        restaurantLabel.text = reservation.restaurant
+        dataLabel.text = reservation.data
+    }
 }
 
 extension MyReservationTableViewCell: ViewConfiguration {
+    
     func buildViewHierarchy() {
+        
         contentView.addSubview(stackView)
     }
     
     func setupContraints() {
+        
         NSLayoutConstraint.activate([
-            
             stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
             stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
             stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
@@ -72,5 +81,6 @@ extension MyReservationTableViewCell: ViewConfiguration {
     
     func setupAdditionalConfiguration() {
         
+        contentView.backgroundColor = UIColor(named: "mainBackground")
     }
 }

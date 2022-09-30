@@ -10,11 +10,25 @@ import FirebaseAuth
 
 class ReservationViewController: BaseViewController {
     
+    var reservation: ReservationModel?
+    
     var restauranteName: String
     var date: String = ""
     var amountOfPeople: Int = 1
     var occasion: String = ""
     var userID: String = ""
+    
+    init(reservation: ReservationModel? = nil) {
+        self.reservation = reservation
+        
+        if let reservation = reservation {
+            self.restauranteName = reservation.restaurant!
+        } else {
+            self.restauranteName = ""
+        }
+        
+        super.init(nibName: nil, bundle: nil)
+    }
     
     init(restauranteName: String) {
         self.restauranteName = restauranteName
@@ -26,9 +40,11 @@ class ReservationViewController: BaseViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-        let reservationView: ReservationView = {
+    let reservationView: ReservationView = {
         let reservationView = ReservationView()
+        
         reservationView.translatesAutoresizingMaskIntoConstraints = false
+        
         return reservationView
     }()
     
@@ -49,17 +65,19 @@ class ReservationViewController: BaseViewController {
             
             return nil
         }
-            
+        
         return currentUser.uid
     }
     
     private func saveReservationData() {
         
         db.collection("reservations").addDocument(data: [
+            "restaurant": restauranteName,
+            "isActive": true,
             "date": date,
-            "number_of_people": amountOfPeople,
+            "numberOfPeople": amountOfPeople,
             "occasion": occasion,
-            "user_id": userID
+            "userID": userID
         ]) { error in
             
             if let error = error {

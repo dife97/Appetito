@@ -224,7 +224,6 @@ extension ReservationView: ViewConfiguration {
     func setupContraints() {
         
         NSLayoutConstraint.activate([
-            
             restaurantImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 10),
             restaurantImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             restaurantImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
@@ -271,7 +270,6 @@ extension ReservationView: ViewConfiguration {
             confirmButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             confirmButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -16),
             confirmButton.heightAnchor.constraint(equalToConstant: 48)
-            
         ])
     }
     

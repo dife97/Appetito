@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2E1FFD5828E0B1BC00B8E260 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1FFD5728E0B1BC00B8E260 /* BaseViewController.swift */; };
 		2E34CF2428E722F70020AA8E /* AppetitoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E34CF2328E722F70020AA8E /* AppetitoTextField.swift */; };
+		2E495B9C28E77308001B0EBD /* ReservationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E495B9B28E77308001B0EBD /* ReservationModel.swift */; };
 		2E4C5A5728B99838003712C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4C5A5628B99838003712C5 /* AppDelegate.swift */; };
 		2E4C5A5928B99838003712C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4C5A5828B99838003712C5 /* SceneDelegate.swift */; };
 		2E4C5A5B28B99838003712C5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4C5A5A28B99838003712C5 /* LoginViewController.swift */; };
@@ -56,6 +57,7 @@
 		2E3121EA28E0D40400D012BF /* Appetito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Appetito.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E3121EC28E0D44900D012BF /* Appetito.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = Appetito.app; path = "../../../Library/Developer/Xcode/DerivedData/Appetito-alqgrzhxkcwvptfthorwpnorwckk/Build/Products/Debug-iphonesimulator/Appetito.app"; sourceTree = "<group>"; };
 		2E34CF2328E722F70020AA8E /* AppetitoTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetitoTextField.swift; sourceTree = "<group>"; };
+		2E495B9B28E77308001B0EBD /* ReservationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationModel.swift; sourceTree = "<group>"; };
 		2E4C5A5628B99838003712C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E4C5A5828B99838003712C5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2E4C5A5A28B99838003712C5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 				9197817928DA0F8A00766228 /* Mock */,
 				4B46483028D163C5004CE5EE /* CEPModel.swift */,
 				9197817B28DA100D00766228 /* RestaurantModel.swift */,
+				2E495B9B28E77308001B0EBD /* ReservationModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -482,6 +485,7 @@
 				2EC8EE9228E52F0300CA4422 /* User+CoreDataProperties.swift in Sources */,
 				2E4C5A7628B9AA0E003712C5 /* InitialView.swift in Sources */,
 				91D78A0628BEAB0F00582AC6 /* InfosView.swift in Sources */,
+				2E495B9C28E77308001B0EBD /* ReservationModel.swift in Sources */,
 				2EC8EE6828E526F000CA4422 /* AppetitoCoreData.xcdatamodeld in Sources */,
 				4B46483428D168E6004CE5EE /* RegisterAddressViewController.swift in Sources */,
 				91AC831628BDB44D00EC98DE /* HomeViewController.swift in Sources */,
