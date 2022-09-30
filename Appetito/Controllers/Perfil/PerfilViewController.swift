@@ -90,22 +90,25 @@ extension PerfilViewController: PerfilViewDelegate {
             
             let navigationController = UINavigationController(rootViewController: InitialViewController())
             navigationController.modalPresentationStyle = .fullScreen
-            
             show(navigationController, sender: self)
+            
         } catch let error as NSError {
             print("[PerfilViewController] Error to sign out: \(error.localizedDescription)")
         }
     }
     
     func didTapSaveButton() {
-        
-        //        guard let user = user else { return }
-        
+            
         user?.username = perfilView.userTextField.text
         user?.phoneNumber = perfilView.cellTextField.text
         user?.email = perfilView.emailTextField.text
         
         CoreDataManager.shared.save()
+        
+        CustomAlert(controller: self).exibe(
+            titulo: "Salvo",
+            mensagem: "Alterações salvas com sucesso"
+        )
     }
     
     func didTapDeleteAccountButton() {

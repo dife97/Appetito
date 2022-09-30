@@ -41,9 +41,9 @@ class PerfilView: UIView, UITextFieldDelegate {
         let nameLabel = UILabel(frame: .zero)
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.numberOfLines = 0
-        nameLabel.font = UIFont(name:"KohinoorDevanagari-Light", size:40)
+        nameLabel.font = UIFont(name:"KohinoorDevanagari-Light", size:25)
         nameLabel.text = "Meu Perfil "
-        nameLabel.textColor = .white
+        nameLabel.textColor = UIColor(named: "mainYellow")
         
         return nameLabel
     }()
@@ -212,7 +212,7 @@ extension PerfilView: ViewConfiguration{
     func setupContraints() {
         NSLayoutConstraint.activate([
         
-            perfilImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 50),
+            perfilImage.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
             perfilImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 100),
             perfilImage.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -100),
             perfilImage.heightAnchor.constraint(equalToConstant: 100),
@@ -220,21 +220,21 @@ extension PerfilView: ViewConfiguration{
             stackView.topAnchor.constraint(equalTo: perfilImage.bottomAnchor, constant: 16),
             stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
-            stackView.heightAnchor.constraint(equalToConstant: 350),
-
+            stackView.heightAnchor.constraint(equalToConstant: 300),
+            
+            saveButton.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 20),
             saveButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             saveButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             saveButton.heightAnchor.constraint(equalToConstant: 48),
             
-            exitButton.topAnchor.constraint(equalTo: saveButton.bottomAnchor, constant: 16),
-            exitButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
-            exitButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -200),
-            exitButton.heightAnchor.constraint(equalToConstant: 48),
-            
-            deleteAccountButton.topAnchor.constraint(equalTo: exitButton.bottomAnchor, constant: 30),
             deleteAccountButton.leadingAnchor.constraint(equalTo: exitButton.leadingAnchor),
             deleteAccountButton.trailingAnchor.constraint(equalTo: exitButton.trailingAnchor),
-            deleteAccountButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16),
+            deleteAccountButton.bottomAnchor.constraint(equalTo: exitButton.topAnchor, constant: -16),
+            
+            exitButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
+            exitButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -200),
+            exitButton.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -16),
+            exitButton.heightAnchor.constraint(equalToConstant: 28),
         ])
     }
 }

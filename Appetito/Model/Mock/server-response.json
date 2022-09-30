@@ -7,7 +7,7 @@
     "imageNote" : "star",
     "note": "4.6",
     "imageRestaurantInfos": "fogoChaoBanner",
-    "infos": "Fogo de Chão é o nome e o símbolo deste famoso rodízio. Faz referência aos primórdios do churrasco, quando os gaúchos aprenderam que, assando partes do boi em espetos de madeira dispostos ao redor de uma fogueira, convertiam um simples pedaço de carne, em uma iguaria. O animal, o corte e a perícia do assador são os três elementos fundamentais para a preparação de um bom churrasco e no Fogo de Chão, a carne é de Angus, os churrasqueiros são \"experts\" e o serviço é absolutamente perfeito. (Última atualização: setembro 2020).",
+    "infos": "Fogo de Chão é o nome e o símbolo deste famoso rodízio. Faz referência aos primórdios do churrasco, quando os gaúchos aprenderam que, assando partes do boi em espetos de madeira dispostos ao redor de uma fogueira, convertiam um simples pedaço de carne, em uma iguaria.",
     },
     {
         "id": 2,
@@ -17,7 +17,7 @@
         "imageNote" : "star",
         "note": "4.0",
         "imageRestaurantInfos": "abbraccioLogo",
-        "infos": "O Abbraccio é um restaurante que une a intensidade do aroma e dos sabores característicos da culinária da Itália em uma experiência sensorial única. A herança italiana encontrada no restaurante ganha um toque moderno, bem diferente, o que faz com que os pratos surpreendam deliciosamente os paladares. E a casa carrega também em sua trajetória a alegria e a cordialidade em cada gesto, pois desde a sua inauguração, a marca traz como verdadeira essência o carinho na relação com os clientes, porque acredita que os melhores momentos da vida merecem um Abbraccio.",
+        "infos": "O Abbraccio é um restaurante que une a intensidade do aroma e dos sabores característicos da culinária da Itália em uma experiência sensorial única. A herança italiana encontrada no restaurante ganha um toque moderno, bem diferente, o que faz com que os pratos surpreendam deliciosamente os paladares.",
     },
     {
         "id": 3,
@@ -137,7 +137,7 @@
         "imageNote" : "star",
         "note": "3.9",
         "imageRestaurantInfos": "almanaraLogo",
-        "infos": "O Almanara é um restaurante tradicional de culinária árabe que possui diversas Casas nas cidades de São Paulo, Campinas e Alphaville. Fundado em 1950 no centro de São Paulo, o Almanara foi um dos primeiros restaurantes a apresentar ao brasileiro algumas comidas árabes típicas, como o Kibe e a Sfiha, hoje totalmente incorporados à nossa cultura. É um dos restaurantes árabes mais premiados do Brasil, considerado o melhor restaurante árabe pela Revista GoWhere Gastronomia[1] e avaliado pelo público como o melhor árabe da cidade na pesquisa do Datafolha [2]em 2017.",
+        "infos": "O Almanara é um restaurante tradicional de culinária árabe que possui diversas Casas nas cidades de São Paulo, Campinas e Alphaville. Fundado em 1950 no centro de São Paulo, o Almanara foi um dos primeiros restaurantes a apresentar ao brasileiro algumas comidas árabes típicas, como o Kibe e a Sfiha, hoje totalmente incorporados à nossa cultura. É um dos restaurantes árabes mais premiados do Brasil.",
     },
     {
         "id": 15,
@@ -147,7 +147,7 @@
         "imageNote" : "star",
         "note": "3.9",
         "imageRestaurantInfos": "almanaraLogo",
-        "infos": "O Almanara é um restaurante tradicional de culinária árabe que possui diversas Casas nas cidades de São Paulo, Campinas e Alphaville. Fundado em 1950 no centro de São Paulo, o Almanara foi um dos primeiros restaurantes a apresentar ao brasileiro algumas comidas árabes típicas, como o Kibe e a Sfiha, hoje totalmente incorporados à nossa cultura. É um dos restaurantes árabes mais premiados do Brasil, considerado o melhor restaurante árabe pela Revista GoWhere Gastronomia[1] e avaliado pelo público como o melhor árabe da cidade na pesquisa do Datafolha [2]em 2017.",
+        "infos": "O Almanara é um restaurante tradicional de culinária árabe que possui diversas Casas nas cidades de São Paulo, Campinas e Alphaville. Fundado em 1950 no centro de São Paulo, o Almanara foi um dos primeiros restaurantes a apresentar ao brasileiro algumas comidas árabes típicas, como o Kibe e a Sfiha, hoje totalmente incorporados à nossa cultura.",
     },
     {
         "id": 16,
@@ -167,7 +167,7 @@
         "imageNote" : "star",
         "note": "3.9",
         "imageRestaurantInfos": "pecorinoLogo",
-        "infos": "Com o simples propósito de oferecer uma refeição italiana inspirada nas clássicas cantinas, a primeira unidade do grupo foi inaugurada no bairro dos Jardins, em São Paulo no ano de 2010. A história do Pecorino, no entanto, começa bem antes da abertura dessa primeira casa. Zito Silveira, sócio-fundador, tem ascendência italiana e trabalha no ramo de bares e restaurantes desde 1992, quando tinha 19 anos de idade. Sempre alimentou a ideia de abrir uma cantina com um visual repaginado e com a verdadeira comida italiana.",
+        "infos": "Com o simples propósito de oferecer uma refeição italiana inspirada nas clássicas cantinas, a primeira unidade do grupo foi inaugurada no bairro dos Jardins, em São Paulo no ano de 2010. A história do Pecorino, no entanto, começa bem antes da abertura dessa primeira casa. Zito Silveira, sócio-fundador, tem ascendência italiana e trabalha no ramo de bares e restaurantes desde 1992, quando tinha 19 anos de idade.",
     },
     {
         "id": 18,

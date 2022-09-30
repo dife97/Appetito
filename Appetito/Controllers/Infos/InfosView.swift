@@ -32,7 +32,7 @@ class InfosView: UIView {
         let infosLabel = UILabel(frame: .zero)
         infosLabel.translatesAutoresizingMaskIntoConstraints = false
         infosLabel.numberOfLines = 0
-        infosLabel.font = UIFont(name:"KohinoorDevanagari-Light", size: 16)
+        infosLabel.font = UIFont(name:"KohinoorDevanagari-Light", size: 14)
         infosLabel.textColor = .white
         infosLabel.textAlignment = .center
         
@@ -87,15 +87,16 @@ extension InfosView: ViewConfiguration {
     
     func setupContraints() {
         NSLayoutConstraint.activate([
-            restaurantImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 24),
+            restaurantImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16),
             restaurantImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             restaurantImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             restaurantImageView.heightAnchor.constraint(equalToConstant: 200),
             restaurantImageView.widthAnchor.constraint(equalToConstant: 200),
             
-            infosLabel.topAnchor.constraint(equalTo: restaurantImageView.bottomAnchor, constant: 24),
+            infosLabel.topAnchor.constraint(equalTo: restaurantImageView.bottomAnchor, constant: 16),
             infosLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             infosLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
+            infosLabel.heightAnchor.constraint(equalToConstant: 200),
 
             confirmButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             confirmButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),

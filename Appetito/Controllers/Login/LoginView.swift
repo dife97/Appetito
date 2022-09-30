@@ -179,14 +179,13 @@ extension LoginView: ViewConfiguration {
             loginTextField.topAnchor.constraint(equalTo: subTitleLabel.bottomAnchor, constant: 50),
             loginTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             loginTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
-//            loginTextField.heightAnchor.constraint(equalToConstant: 48),
             
             passwordTextField.topAnchor.constraint(equalTo: loginTextField.bottomAnchor, constant: 15),
             passwordTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             passwordTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             passwordTextField.heightAnchor.constraint(equalToConstant: 48),
             
-            lostPasswordButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 15),
+            lostPasswordButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 16),
             lostPasswordButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             lostPasswordButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             lostPasswordButton.heightAnchor.constraint(equalToConstant: 46),
@@ -197,7 +196,7 @@ extension LoginView: ViewConfiguration {
             mainButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -100),
             mainButton.heightAnchor.constraint(equalToConstant: 48),
             
-            stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -100),
+            stackView.bottomAnchor.constraint(equalTo:  self.safeAreaLayoutGuide.bottomAnchor, constant: -16),
             stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             stackView.heightAnchor.constraint(equalToConstant: 111)

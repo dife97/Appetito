@@ -170,14 +170,14 @@ extension RegisterView: ViewConfiguration {
             titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             titleLabel.heightAnchor.constraint(equalToConstant: 50),
             
-            stackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 50),
+            stackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 30),
             stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
-            stackView.heightAnchor.constraint(equalToConstant: 400),
+            stackView.heightAnchor.constraint(equalToConstant: 380),
             
             confirmButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 100),
             confirmButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -100),
-            confirmButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -80),
+            confirmButton.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -16),
             confirmButton.heightAnchor.constraint(equalToConstant: 48)
             
         ])

@@ -25,7 +25,7 @@ class HomeViewController: UIViewController, UISearchControllerDelegate {
         search.searchBar.placeholder = "Procure um restaurante"
         search.searchBar.tintColor = UIColor(named: "mainYellow")
         search.searchBar.setValue("Cancelar", forKey: "cancelButtonText")
-        
+        search.searchBar.translatesAutoresizingMaskIntoConstraints = false
         return search
     }()
     
@@ -96,17 +96,6 @@ class HomeViewController: UIViewController, UISearchControllerDelegate {
         
         searchBar.delegate = self
     }
-    
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)
-//    {
-//        Array_Busca = searchText.isEmpty ? Array_Nome : Array_Nome.filter { (item: String) -> Bool in
-//
-//            return item.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
-//        }
-//
-//        restaurantsCollectionView.reloadData()
-//    }
-
 }
 
 
@@ -123,19 +112,20 @@ extension HomeViewController: ViewConfiguration {
     func setupContraints() {
         
         NSLayoutConstraint.activate([
+            
             homeView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
             homeView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             homeView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
             homeView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
             
-            categoryCollectionView.topAnchor.constraint(equalTo: homeView.topAnchor, constant: 120),
+            categoryCollectionView.topAnchor.constraint(equalTo: homeView.topAnchor, constant: 125),
             categoryCollectionView.leadingAnchor.constraint(equalTo: homeView.leadingAnchor, constant: 0),
             categoryCollectionView.trailingAnchor.constraint(equalTo: homeView.trailingAnchor, constant: 0),
-            categoryCollectionView.heightAnchor.constraint(equalToConstant: 50),
+            categoryCollectionView.heightAnchor.constraint(equalToConstant: 30),
             
             restaurantsCollectionView.topAnchor.constraint(equalTo: categoryCollectionView.bottomAnchor, constant: 10),
-            restaurantsCollectionView.leadingAnchor.constraint(equalTo: homeView.leadingAnchor, constant: 10),
-            restaurantsCollectionView.trailingAnchor.constraint(equalTo: homeView.trailingAnchor, constant: -10),
+            restaurantsCollectionView.leadingAnchor.constraint(equalTo: homeView.leadingAnchor, constant: 8),
+            restaurantsCollectionView.trailingAnchor.constraint(equalTo: homeView.trailingAnchor, constant: -8),
             restaurantsCollectionView.bottomAnchor.constraint(equalTo: homeView.bottomAnchor, constant: 0)
         ])
     }
@@ -158,7 +148,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         
         return restaurantes.count
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if collectionView == restaurantsCollectionView {
@@ -244,5 +234,5 @@ extension HomeViewController: UISearchBarDelegate{
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchActive = false
     }
-
+    
 }

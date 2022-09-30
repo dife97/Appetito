@@ -193,19 +193,19 @@ extension RegisterAddressView: ViewConfiguration {
             cepTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             cepTextField.heightAnchor.constraint(equalToConstant: 48),
             
-            stackView.topAnchor.constraint(equalTo: cepTextField.bottomAnchor, constant: 80),
+            stackView.topAnchor.constraint(equalTo: cepTextField.bottomAnchor, constant: 40),
             stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
-            stackView.heightAnchor.constraint(equalToConstant: 300),
+            stackView.heightAnchor.constraint(equalToConstant: 280),
             
-            confirmButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 100),
-            confirmButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -100),
-            confirmButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -30),
+            confirmButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
+            confirmButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
+            confirmButton.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -16),
             confirmButton.heightAnchor.constraint(equalToConstant: 48),
             
-            confirmCep.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 100),
-            confirmCep.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -100),
-            confirmCep.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -100),
+            confirmCep.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
+            confirmCep.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
+            confirmCep.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant:  -16),
             confirmCep.heightAnchor.constraint(equalToConstant: 48)
             
             

@@ -225,7 +225,7 @@ extension ReservationView: ViewConfiguration {
         
         NSLayoutConstraint.activate([
             
-            restaurantImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 24),
+            restaurantImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 10),
             restaurantImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             restaurantImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             restaurantImageView.heightAnchor.constraint(equalToConstant: 200),
@@ -241,7 +241,7 @@ extension ReservationView: ViewConfiguration {
             dateTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             dateTextField.heightAnchor.constraint(equalToConstant: 40),
             
-            amountPeopleLabel.topAnchor.constraint(equalTo: dateTextField.bottomAnchor, constant: 20),
+            amountPeopleLabel.topAnchor.constraint(equalTo: dateTextField.bottomAnchor, constant: 16),
             amountPeopleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             amountPeopleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             amountPeopleLabel.heightAnchor.constraint(equalToConstant: 35),
@@ -256,14 +256,15 @@ extension ReservationView: ViewConfiguration {
             addPeople.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             addPeople.heightAnchor.constraint(equalToConstant: 40),
             
-            occasionLabel.topAnchor.constraint(equalTo: addPeople.bottomAnchor, constant: 20),
+            occasionLabel.topAnchor.constraint(equalTo: addPeople.bottomAnchor, constant: 16),
             occasionLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             occasionLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             occasionLabel.heightAnchor.constraint(equalToConstant: 35),
             
-            occasionTextField.topAnchor.constraint(equalTo: occasionLabel.bottomAnchor, constant: 20),
+            occasionTextField.topAnchor.constraint(equalTo: occasionLabel.bottomAnchor, constant: 16),
             occasionTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             occasionTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
+            occasionTextField.bottomAnchor.constraint(equalTo: confirmButton.topAnchor, constant: -20),
             occasionTextField.heightAnchor.constraint(equalToConstant: 40),
             
             confirmButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
