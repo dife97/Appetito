@@ -37,15 +37,34 @@ class LoginView: UIView, UITextFieldDelegate {
         return subTitleLabel
     }()
     
-    lazy var loginTextField: UITextField = {
-        let loginTextField = UITextField(frame: .zero)
-        loginTextField.translatesAutoresizingMaskIntoConstraints = false
-        loginTextField.backgroundColor = .white
-        loginTextField.layer.cornerRadius = 8
-        loginTextField.placeholder = "  Digite seu e-mail ou usuario"
-        loginTextField.textColor = UIColor.black
-        return loginTextField
+    lazy var loginTextField: AppetitoTextField = {
+        let textfield = AppetitoTextField(
+            labelText: "Usuário",
+            placeholder: "Digite seu e-mail ou usuário",
+            keyboardType: .emailAddress
+        )
+        
+        textfield.didTapReturnKeyboard = { self.passwordTextField.becomeFirstResponder() }
+        
+        textfield.didChangeSelection = {
+            
+            //TODO: insert regex here
+        }
+        
+        return textfield
     }()
+    
+//    lazy var loginTextField: UITextField = {
+//        let loginTextField = UITextField(frame: .zero)
+//        loginTextField.translatesAutoresizingMaskIntoConstraints = false
+//        loginTextField.backgroundColor = .white
+//        loginTextField.layer.cornerRadius = 8
+//        loginTextField.placeholder = "  Digite seu e-mail ou usuario"
+//        loginTextField.textColor = UIColor.black
+//        loginTextField.clearButtonMode = .whileEditing
+////        loginTextField.text = "appetito@appetito.com"
+//        return loginTextField
+//    }()
     
     lazy var passwordTextField: UITextField = {
         let passwordTextField = UITextField(frame: .zero)
@@ -55,8 +74,18 @@ class LoginView: UIView, UITextFieldDelegate {
         passwordTextField.placeholder = "  Digite sua senha"
         passwordTextField.textColor = UIColor.black
         passwordTextField.isSecureTextEntry = true
-        
+        passwordTextField.clearButtonMode = .whileEditing
+//        passwordTextField.text = "12345678"
         return passwordTextField
+    }()
+    
+    lazy var lostPasswordButton: UIButton = {
+        let lostPasswordButton = UIButton(type: .system)
+        lostPasswordButton.translatesAutoresizingMaskIntoConstraints = false
+        lostPasswordButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        lostPasswordButton.setTitleColor(.white, for: .normal)
+        lostPasswordButton.setTitle("Esqueci minha senha", for: .normal)
+        return lostPasswordButton
     }()
     
     lazy var mainButton: UIButton = {
@@ -108,7 +137,7 @@ class LoginView: UIView, UITextFieldDelegate {
     override init(frame: CGRect) {
         super.init(frame: .zero)
         setupView()
-        loginTextField.delegate = self
+//        loginTextField.delegate = self
         passwordTextField.delegate = self
     }
     
@@ -127,10 +156,11 @@ extension LoginView: ViewConfiguration {
     func buildViewHierarchy() {
         addSubview(titleLabel)
         addSubview(subTitleLabel)
-        addSubview(stackView)
         addSubview(loginTextField)
         addSubview(passwordTextField)
+        addSubview(lostPasswordButton)
         addSubview(mainButton)
+        addSubview(stackView)
     }
     
     func setupContraints() {
@@ -149,20 +179,24 @@ extension LoginView: ViewConfiguration {
             loginTextField.topAnchor.constraint(equalTo: subTitleLabel.bottomAnchor, constant: 50),
             loginTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             loginTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
-            loginTextField.heightAnchor.constraint(equalToConstant: 48),
             
             passwordTextField.topAnchor.constraint(equalTo: loginTextField.bottomAnchor, constant: 15),
             passwordTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             passwordTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             passwordTextField.heightAnchor.constraint(equalToConstant: 48),
             
+            lostPasswordButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 16),
+            lostPasswordButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
+            lostPasswordButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
+            lostPasswordButton.heightAnchor.constraint(equalToConstant: 46),
             
-            mainButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 26),
+            
+            mainButton.topAnchor.constraint(equalTo: lostPasswordButton.bottomAnchor, constant: 16),
             mainButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 100),
             mainButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -100),
             mainButton.heightAnchor.constraint(equalToConstant: 48),
             
-            stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -100),
+            stackView.bottomAnchor.constraint(equalTo:  self.safeAreaLayoutGuide.bottomAnchor, constant: -16),
             stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             stackView.heightAnchor.constraint(equalToConstant: 111)

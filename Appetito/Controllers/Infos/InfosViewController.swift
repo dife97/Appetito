@@ -9,7 +9,7 @@ import UIKit
 
 class InfosViewController: BaseViewController {
     
-    var restaurantes: [Restaurant] = []
+    var restaurante: Restaurant?
     
     private let infosView: InfosView = {
         let infosView = InfosView()
@@ -25,6 +25,7 @@ class InfosViewController: BaseViewController {
     
     func update(restaurant: Restaurant){
         infosView.setupInfos(restaurant)
+        self.restaurante = restaurant
     }
     
     @objc func didTapDismiss() {
@@ -34,9 +35,10 @@ class InfosViewController: BaseViewController {
 
 
 extension InfosViewController: ViewConfiguration {
+    
     func buildViewHierarchy() {
-        view.addSubview(infosView)
         
+        view.addSubview(infosView)
     }
     
     func setupContraints() {
@@ -49,19 +51,24 @@ extension InfosViewController: ViewConfiguration {
     }
     
     func setupAdditionalConfiguration() {
+        
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Voltar", style: .done, target: self, action: #selector(didTapDismiss))
         navigationController?.navigationBar.tintColor = UIColor(named: "mainYellow")
-        
     }
 }
 
 extension InfosViewController: InfosViewProtocol {
    
     func tappedConfirm() {
-        let reservationViewController = ReservationViewController()
-        self.modalPresentationStyle = .fullScreen
-        navigationController?.show(reservationViewController, sender: .none)
         
+        if let restaurante = restaurante {
+            let reservationViewController = ReservationViewController(restauranteName: restaurante.nameRestaurant)
+            reservationViewController.reservationView.setupInfos(restaurante)
+            let backItem = UIBarButtonItem()
+            backItem.title = "Voltar"
+            navigationItem.backBarButtonItem = backItem
+            
+            navigationController?.pushViewController(reservationViewController, animated: true)
+        }
     }
-       
 }

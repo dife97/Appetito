@@ -11,11 +11,14 @@ class CustomAlert {
     
     let controller: UIViewController
     
+    var handlerFunction: (() -> Void)? = nil
+    
     init(controller: UIViewController) {
         self.controller = controller
     }
         
     func exibe(titulo: String , mensagem: String) {
+        
         let alertController = UIAlertController(
             title: titulo,
             message: mensagem,
@@ -25,7 +28,10 @@ class CustomAlert {
         let okButton = UIAlertAction(
             title: "Ok",
             style: .cancel,
-            handler: nil
+            handler: { _ in
+                
+                self.handlerFunction?()
+            }
         )
         
         alertController.addAction(okButton)

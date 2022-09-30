@@ -26,12 +26,14 @@ struct NetworkManager {
                 
                 guard let data = data else {
                     onComplete(.failure(NSError()))
+                    
                     return
                 }
                 
                 if response.statusCode == 200 {
                     do {
                         let parsedData = try JSONDecoder().decode(CEPModel.self, from: data)
+                        
                         onComplete(.success(parsedData))
                     } catch {
                         onComplete(.success(nil))

@@ -8,10 +8,13 @@
 import UIKit
 
 protocol ReservationViewProtocol: AnyObject {
+
     func tappedDateTextField()
     func tappedConfirm()
 }
-extension ReservationViewProtocol{
+
+extension ReservationViewProtocol {
+
     func tappedDateTextField(){}
 }
 
@@ -19,13 +22,36 @@ class ReservationView: UIView {
     
     weak var delegate: ReservationViewProtocol?
     
+    var date: String {
+        
+        if dateTextField.text?.isEmpty == false {
+            return dateTextField.text!
+        } else {
+            return ""
+        }
+    }
+    
+    var amountOfPeople: Int {
+        Int(quantidadeLabel.text!)!
+    }
+    
+    var occasion: String {
+        
+        if occasionTextField.text?.isEmpty == false {
+            return occasionTextField.text!
+        } else {
+            return ""
+        }
+    }
+    
     private lazy var restaurantImageView: UIImageView = {
         let restaurantImageView = UIImageView()
         restaurantImageView.translatesAutoresizingMaskIntoConstraints = false
-        restaurantImageView.contentMode = .scaleAspectFit
-        restaurantImageView.image = UIImage(named: "fogoChaoBanner")
-        restaurantImageView.layer.cornerRadius = 8
-        restaurantImageView.backgroundColor = .black
+        restaurantImageView.contentMode = .scaleToFill
+        restaurantImageView.layer.cornerRadius = 20
+        restaurantImageView.layer.masksToBounds = false
+        restaurantImageView.clipsToBounds = true
+        restaurantImageView.backgroundColor = UIColor(named: "mainBackground")
         
         return restaurantImageView
     }()
@@ -49,9 +75,12 @@ class ReservationView: UIView {
         dateTextField.layer.cornerRadius = 8
         dateTextField.placeholder = "  Escolha uma data"
         dateTextField.textColor = UIColor.black
-        dateTextField.addTarget(self, action: #selector(tappedDate), for: .touchUpInside)
         
         return dateTextField
+    }()
+    
+    lazy var datePicker: UIDatePicker = {
+        return UIDatePicker()
     }()
     
     private lazy var amountPeopleLabel: UILabel = {
@@ -80,6 +109,7 @@ class ReservationView: UIView {
         let addPeople = UIStepper()
         addPeople.translatesAutoresizingMaskIntoConstraints = false
         addPeople.layer.cornerRadius = 8
+        addPeople.value = 1
         addPeople.addTarget(self, action: #selector(adicionarPeople), for: .valueChanged)
         
         return addPeople
@@ -96,7 +126,7 @@ class ReservationView: UIView {
         return occasionLabel
     }()
     
-    private lazy var occasionTextField: UITextField = {
+        lazy var occasionTextField: UITextField = {
         let occasionTextField = UITextField(frame: .zero)
         occasionTextField.translatesAutoresizingMaskIntoConstraints = false
         occasionTextField.layer.cornerRadius = 8
@@ -115,13 +145,14 @@ class ReservationView: UIView {
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         button.setTitleColor(.black, for: .normal)
         button.setTitle("CONFIRMAR", for: .normal)
-        button.addTarget(self, action: #selector(tappedConfirm), for: .touchUpInside)
+        button.addTarget(self, action: #selector(didTapConfirmButton), for: .touchUpInside)
         
         return button
     }()
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
+        
         setupView()
     }
     
@@ -130,32 +161,27 @@ class ReservationView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    @objc func tappedConfirm(){
+    func setupInfos(_ restaurante: Restaurant){
+        restaurantImageView.image = UIImage(named: restaurante.imageRestaurantInfos)
+    }
+    
+    @objc func didTapConfirmButton() {
+        
         self.delegate?.tappedConfirm()
     }
     
-    
-    @objc func tappedDate(){
-        let datePicker = UIDatePicker()
-        datePicker.datePickerMode = .date
-        datePicker.locale = NSLocale.init(localeIdentifier: "pt-br") as Locale
-        datePicker.preferredDatePickerStyle = .wheels
-        dateTextField.inputView = datePicker
-        datePicker.addTarget(self, action: #selector(self.exibeData), for: .valueChanged)
-    }
-    
-    @objc func exibeData(sender:UIDatePicker) {
-        let formate = DateFormatter()
-        formate.dateFormat = "MM/dd/yyyy hh:mm a"
-        let date = UIDatePicker()
-        self.dateTextField.text = formate.string(from: date.date)
-    }
-    
     @objc func addDoneButton() -> UIToolbar{
-        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
+        
+        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect.init(x: 0,
+                                                                  y: 0,
+                                                                  width: UIScreen.main.bounds.width,
+                                                                  height: 50))
+        
         doneToolbar.barStyle = .default
+        
         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        let done: UIBarButtonItem = UIBarButtonItem(title: "ok", style: .done, target: self, action:#selector(addDoneButton))
+        let done: UIBarButtonItem = UIBarButtonItem(title: "Confirmar", style: .done, target: self, action:#selector(doneButtonAction))
+        
         let itens = [flexSpace, done]
         doneToolbar.items = itens
         doneToolbar.sizeToFit()
@@ -164,15 +190,26 @@ class ReservationView: UIView {
     }
 
     @objc func doneButtonAction() {
-        self.endEditing(true)
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .short
+        
+        dateTextField.text = dateFormatter.string(from: datePicker.date)
+        
+        endEditing(true)
     }
     
     @objc func adicionarPeople() {
-        quantidadeLabel.text = "\(addPeople.value)"
+        
+        quantidadeLabel.text = "\(Int(addPeople.value))"
     }
 }
+
 extension ReservationView: ViewConfiguration {
+    
     func buildViewHierarchy() {
+        
         addSubview(restaurantImageView)
         addSubview(informationLabel)
         addSubview(dateTextField)
@@ -185,8 +222,9 @@ extension ReservationView: ViewConfiguration {
     }
     
     func setupContraints() {
+        
         NSLayoutConstraint.activate([
-            restaurantImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 24),
+            restaurantImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 10),
             restaurantImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             restaurantImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             restaurantImageView.heightAnchor.constraint(equalToConstant: 200),
@@ -202,7 +240,7 @@ extension ReservationView: ViewConfiguration {
             dateTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             dateTextField.heightAnchor.constraint(equalToConstant: 40),
             
-            amountPeopleLabel.topAnchor.constraint(equalTo: dateTextField.bottomAnchor, constant: 20),
+            amountPeopleLabel.topAnchor.constraint(equalTo: dateTextField.bottomAnchor, constant: 16),
             amountPeopleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             amountPeopleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             amountPeopleLabel.heightAnchor.constraint(equalToConstant: 35),
@@ -217,25 +255,36 @@ extension ReservationView: ViewConfiguration {
             addPeople.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             addPeople.heightAnchor.constraint(equalToConstant: 40),
             
-            occasionLabel.topAnchor.constraint(equalTo: addPeople.bottomAnchor, constant: 20),
+            occasionLabel.topAnchor.constraint(equalTo: addPeople.bottomAnchor, constant: 16),
             occasionLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             occasionLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             occasionLabel.heightAnchor.constraint(equalToConstant: 35),
             
-            occasionTextField.topAnchor.constraint(equalTo: occasionLabel.bottomAnchor, constant: 20),
+            occasionTextField.topAnchor.constraint(equalTo: occasionLabel.bottomAnchor, constant: 16),
             occasionTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             occasionTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
+            occasionTextField.bottomAnchor.constraint(equalTo: confirmButton.topAnchor, constant: -20),
             occasionTextField.heightAnchor.constraint(equalToConstant: 40),
             
             confirmButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             confirmButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             confirmButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -16),
             confirmButton.heightAnchor.constraint(equalToConstant: 48)
-            
         ])
     }
+    
     func setupAdditionalConfiguration() {
-        self.dateTextField.inputAccessoryView = self.addDoneButton()
+        
+        inputDatePickerView()
     }
-
+    
+    private func inputDatePickerView() {
+        
+        datePicker.datePickerMode = .dateAndTime
+        datePicker.locale = NSLocale.init(localeIdentifier: "pt-br") as Locale
+        datePicker.preferredDatePickerStyle = .wheels
+        
+        dateTextField.inputView = datePicker
+        dateTextField.inputAccessoryView = self.addDoneButton()
+    }
 }

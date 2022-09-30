@@ -18,9 +18,11 @@ class InitialView: UIView {
     
     private lazy var imageViewBackGround: UIImageView = {
         let imageViewBackGround = UIImageView()
+        
         imageViewBackGround.translatesAutoresizingMaskIntoConstraints = false
         imageViewBackGround.contentMode = .scaleToFill
         imageViewBackGround.image = UIImage(named: "appetitoLogo")
+        
         return imageViewBackGround
     }()
     
@@ -90,6 +92,7 @@ class InitialView: UIView {
 extension InitialView: ViewConfiguration {
     
     func buildViewHierarchy() {
+        
         addSubview(imageViewBackGround)
         addSubview(titleLabel)
         addSubview(mainButton)
@@ -98,40 +101,43 @@ extension InitialView: ViewConfiguration {
     }
     
     func setupContraints() {
-            let buttonHeight: CGFloat = 48
-            let subtitleHeight: CGFloat = 30
-            let titleHeight: CGFloat = 90
+        
+        let buttonHeight: CGFloat = 48
+        
+        let subtitleHeight: CGFloat = 30
+        
+        let titleHeight: CGFloat = 90
+        
+        NSLayoutConstraint.activate([
+            registerButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
+            registerButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
+            registerButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -60),
+            registerButton.heightAnchor.constraint(equalToConstant: buttonHeight),
             
-            NSLayoutConstraint.activate([
-                
-                registerButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
-                registerButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
-                registerButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -60),
-                registerButton.heightAnchor.constraint(equalToConstant: buttonHeight),
-                
-                mainButton.leadingAnchor.constraint(equalTo: registerButton.leadingAnchor),
-                mainButton.trailingAnchor.constraint(equalTo: registerButton.trailingAnchor),
-                mainButton.bottomAnchor.constraint(equalTo: registerButton.topAnchor, constant: -16),
-                mainButton.heightAnchor.constraint(equalToConstant: buttonHeight),
-                
-                subTitleLabel.bottomAnchor.constraint(equalTo: mainButton.topAnchor, constant: -50),
-                subTitleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 37),
-                subTitleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -37),
-                subTitleLabel.heightAnchor.constraint(equalToConstant: subtitleHeight),
-
-                titleLabel.bottomAnchor.constraint(equalTo: subTitleLabel.topAnchor, constant: 8),
-                titleLabel.leadingAnchor.constraint(equalTo: subTitleLabel.leadingAnchor),
-                titleLabel.trailingAnchor.constraint(equalTo: subTitleLabel.trailingAnchor),
-                titleLabel.heightAnchor.constraint(equalToConstant: titleHeight),
-                
-                imageViewBackGround.bottomAnchor.constraint(equalTo: titleLabel.topAnchor, constant: 16),
-                imageViewBackGround.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-                imageViewBackGround.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-                imageViewBackGround.topAnchor.constraint(equalTo: self.topAnchor)
-                
-            ])
+            mainButton.leadingAnchor.constraint(equalTo: registerButton.leadingAnchor),
+            mainButton.trailingAnchor.constraint(equalTo: registerButton.trailingAnchor),
+            mainButton.bottomAnchor.constraint(equalTo: registerButton.topAnchor, constant: -16),
+            mainButton.heightAnchor.constraint(equalToConstant: buttonHeight),
+            
+            subTitleLabel.bottomAnchor.constraint(equalTo: mainButton.topAnchor, constant: -50),
+            subTitleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 37),
+            subTitleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -37),
+            subTitleLabel.heightAnchor.constraint(equalToConstant: subtitleHeight),
+            
+            titleLabel.bottomAnchor.constraint(equalTo: subTitleLabel.topAnchor, constant: 8),
+            titleLabel.leadingAnchor.constraint(equalTo: subTitleLabel.leadingAnchor),
+            titleLabel.trailingAnchor.constraint(equalTo: subTitleLabel.trailingAnchor),
+            titleLabel.heightAnchor.constraint(equalToConstant: titleHeight),
+            
+            imageViewBackGround.bottomAnchor.constraint(equalTo: titleLabel.topAnchor, constant: 16),
+            imageViewBackGround.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            imageViewBackGround.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            imageViewBackGround.topAnchor.constraint(equalTo: self.topAnchor)
+        ])
     }
+    
     func setupAdditionalConfiguration() {
+        
         self.backgroundColor = UIColor(named: "mainBackground")
         
     }
