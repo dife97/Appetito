@@ -136,8 +136,6 @@ extension HomeViewController: ViewConfiguration {
     func setupAdditionalConfiguration() {
         
         navigationItem.setHidesBackButton(true, animated: true)
-        title = "Inicio"
-        self.navigationController?.navigationBar.tintColor = UIColor(named: "mainYellow")
     }
 }
 
