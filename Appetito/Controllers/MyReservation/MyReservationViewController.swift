@@ -73,7 +73,6 @@ class MyReservationViewController: UIViewController {
         return stack
     }()
     
-    
     lazy var reservationTableView : UITableView = {
         let tableview = UITableView()
         
@@ -100,12 +99,22 @@ class MyReservationViewController: UIViewController {
         super.viewDidLoad()
         
         setupView()
+        
+        reservationTableView.register(MyReservationTableViewCell.self, forCellReuseIdentifier: "MyReservationTableViewCell")
+        reservationTableView.dataSource = self
+        reservationTableView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         checkForReservations()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        reservations = []
     }
     
     private func checkForReservations() {
@@ -126,11 +135,6 @@ class MyReservationViewController: UIViewController {
                 //TODO: alert
             } else {
                 
-                if documents.isEmpty {
-                    
-                    self.configureEmptyLabel()
-                }
-                
                 for document in documents {
                     let reservation = ReservationModel(snapshot: document)
                     
@@ -139,16 +143,8 @@ class MyReservationViewController: UIViewController {
                     }
                 }
                 
-                self.didGetReservations()
+                self.reservationTableView.reloadData()
             }
-        }
-    }
-    
-    private func didGetReservations() {
-        
-        DispatchQueue.main.async {
-            
-            self.configureTableView()
         }
     }
     
@@ -163,22 +159,6 @@ class MyReservationViewController: UIViewController {
                 self.emptyLabel.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
             ])
         }
-    }
-    
-    private func configureTableView() {
-        
-        reservationTableView.register(MyReservationTableViewCell.self, forCellReuseIdentifier: "MyReservationTableViewCell")
-        reservationTableView.dataSource = self
-        reservationTableView.delegate = self
-        
-        view.addSubview(reservationTableView)
-        
-        NSLayoutConstraint.activate([
-            reservationTableView.topAnchor.constraint(equalTo: myReservationView.topAnchor, constant: 170),
-            reservationTableView.leadingAnchor.constraint(equalTo: myReservationView.leadingAnchor, constant: 10),
-            reservationTableView.trailingAnchor.constraint(equalTo: myReservationView.trailingAnchor, constant: -10),
-            reservationTableView.bottomAnchor.constraint(equalTo: myReservationView.bottomAnchor, constant: 0)
-        ])
     }
     
     @objc func didTapDismiss() {
@@ -207,6 +187,7 @@ extension MyReservationViewController: ViewConfiguration {
         view.addSubview(myReservationView)
         view.addSubview(titleLabel)
         view.addSubview(stackView)
+        view.addSubview(reservationTableView)
     }
     
     func setupContraints() {
@@ -225,7 +206,12 @@ extension MyReservationViewController: ViewConfiguration {
             stackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
             stackView.leadingAnchor.constraint(equalTo: myReservationView.leadingAnchor, constant: 46),
             stackView.trailingAnchor.constraint(equalTo: myReservationView.trailingAnchor, constant: 46),
-            stackView.heightAnchor.constraint(equalToConstant: 20)
+            stackView.heightAnchor.constraint(equalToConstant: 20),
+            
+            reservationTableView.topAnchor.constraint(equalTo: myReservationView.topAnchor, constant: 170),
+            reservationTableView.leadingAnchor.constraint(equalTo: myReservationView.leadingAnchor, constant: 10),
+            reservationTableView.trailingAnchor.constraint(equalTo: myReservationView.trailingAnchor, constant: -10),
+            reservationTableView.bottomAnchor.constraint(equalTo: myReservationView.bottomAnchor, constant: 0)
         ])
     }
     
@@ -283,6 +269,4 @@ extension MyReservationViewController: UITableViewDelegate {
             reservationTableView.reloadData()
         }
     }
-    
-    
 }
