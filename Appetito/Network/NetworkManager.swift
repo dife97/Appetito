@@ -22,15 +22,15 @@ struct NetworkManager {
         urlSession.dataTask(with: url) { data, response, error in
             
             if error == nil {
-                guard let response = response as? HTTPURLResponse else { return }
                 
                 guard let data = data else {
                     onComplete(.failure(NSError()))
                     
                     return
                 }
-                
+                guard let response = response as? HTTPURLResponse else { return }
                 if response.statusCode == 200 {
+                    
                     do {
                         let parsedData = try JSONDecoder().decode(CEPModel.self, from: data)
                         
